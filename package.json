@@ -13,13 +13,17 @@
     "pre-commit": "lint-staged",
     "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
     "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
-    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest --coverage"
   },
   "dependencies": {
     "@cloudflare/workers-types": "4.20250620.0",
     "@emotion/cache": "11.14.0",
     "@emotion/react": "11.14.0",
     "@emotion/styled": "11.14.0",
+    "@hookform/resolvers": "^5.2.2",
     "@mui/icons-material": "7.1.2",
     "@mui/lab": "7.0.0-beta.14",
     "@mui/material": "7.3.6",
@@ -55,6 +59,7 @@
     "react-dom": "19.2.3",
     "react-draggable": "4.4.6",
     "react-dropzone": "14.3.8",
+    "react-hook-form": "^7.71.1",
     "react-imask": "7.6.1",
     "react-quill-new": "3.4.6",
     "react-scroll-to-bottom": "4.2.0",
@@ -65,15 +70,20 @@
     "tailwind-merge": "3.3.1",
     "tw-screens": "1.1.0",
     "yet-another-react-lightbox": "3.23.3",
-    "yup": "1.6.1"
+    "yup": "1.6.1",
+    "zod": "^4.3.6"
   },
   "devDependencies": {
     "@eslint/js": "9.29.0",
     "@next/eslint-plugin-next": "15.3.3",
     "@tailwindcss/postcss": "4.1.10",
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
     "@types/node": "22.15.32",
     "@types/react": "19.2.3",
     "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "^5.1.2",
     "dotenv": "^17.2.3",
     "dotenv-cli": "^11.0.0",
     "drizzle-kit": "^0.31.8",
@@ -86,6 +96,7 @@
     "globals": "16.2.0",
     "husky": "9.1.7",
     "jiti": "2.4.2",
+    "jsdom": "^27.4.0",
     "lint-staged": "16.1.2",
     "postcss": "8.5.6",
     "prettier": "3.5.3",
@@ -93,6 +104,7 @@
     "tailwindcss": "4.1.10",
     "typescript": "5.8.3",
     "typescript-eslint": "8.34.1",
+    "vitest": "^4.0.18",
     "wrangler": "4.20.5"
   }
 }

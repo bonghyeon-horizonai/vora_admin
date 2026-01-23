@@ -19,6 +19,23 @@ export const leftMenuItems: MenuItem[] = [
     ],
   },
   {
+    id: "products",
+    icon: "NiInbox",
+    label: "menu-products",
+    description: "menu-products-description",
+    color: "text-primary",
+    href: "/products",
+    children: [
+      {
+        id: "tools",
+        icon: "NiSettings",
+        label: "menu-tools",
+        href: "/products/tools",
+        description: "menu-tools-description",
+      },
+    ],
+  },
+  {
     id: "single-menu",
     icon: "NiDocumentFull",
     label: "menu-single-menu",

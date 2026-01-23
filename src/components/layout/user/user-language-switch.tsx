@@ -57,18 +57,6 @@ export default function UserLanguageSwitch() {
         }}
       >
         <MenuItem
-          className={cn(locale === "de" && "active")}
-          onClick={() => {
-            handleCloseLang();
-            handleOnChangeLocale("de");
-          }}
-        >
-          <ListItemIcon>
-            <Avatar className="nano" alt="German" src="/images/flags/de.jpg" />
-          </ListItemIcon>
-          {t("de")}
-        </MenuItem>
-        <MenuItem
           className={cn(locale === "en" && "active")}
           onClick={() => {
             handleCloseLang();
@@ -81,28 +69,16 @@ export default function UserLanguageSwitch() {
           {t("en")}
         </MenuItem>
         <MenuItem
-          className={cn(locale === "es" && "active")}
+          className={cn(locale === "ko" && "active")}
           onClick={() => {
             handleCloseLang();
-            handleOnChangeLocale("es");
+            handleOnChangeLocale("ko");
           }}
         >
           <ListItemIcon>
-            <Avatar className="nano" alt="Spanish" src="/images/flags/es.jpg" />
+            <Avatar className="nano" alt="Korean" src="/images/flags/ko.jpg" />
           </ListItemIcon>
-          {t("es")}
-        </MenuItem>
-        <MenuItem
-          className={cn(locale === "fr" && "active")}
-          onClick={() => {
-            handleCloseLang();
-            handleOnChangeLocale("fr");
-          }}
-        >
-          <ListItemIcon>
-            <Avatar className="nano" alt="French" src="/images/flags/fr.jpg" />
-          </ListItemIcon>
-          {t("fr")}
+          {t("ko")}
         </MenuItem>
       </Menu>
     </>

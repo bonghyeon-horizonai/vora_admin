@@ -35,10 +35,10 @@ export const sessions = pgTable("sessions", {
 	uniqueIndex("idx_sessions_token").using("btree", table.token.asc().nullsLast().op("text_ops")),
 	index("idx_sessions_user_id").using("btree", table.userId.asc().nullsLast().op("uuid_ops")),
 	foreignKey({
-			columns: [table.userId],
-			foreignColumns: [users.id],
-			name: "fk_sessions_user"
-		}).onDelete("cascade"),
+		columns: [table.userId],
+		foreignColumns: [users.id],
+		name: "fk_sessions_user"
+	}).onDelete("cascade"),
 ]);
 
 export const accounts = pgTable("accounts", {
@@ -57,10 +57,10 @@ export const accounts = pgTable("accounts", {
 }, (table) => [
 	index("idx_accounts_user_id").using("btree", table.userId.asc().nullsLast().op("uuid_ops")),
 	foreignKey({
-			columns: [table.userId],
-			foreignColumns: [users.id],
-			name: "fk_accounts_user"
-		}).onDelete("cascade"),
+		columns: [table.userId],
+		foreignColumns: [users.id],
+		name: "fk_accounts_user"
+	}).onDelete("cascade"),
 ]);
 
 export const invitations = pgTable("invitations", {
@@ -79,15 +79,15 @@ export const invitations = pgTable("invitations", {
 	uniqueIndex("idx_invitations_token").using("btree", table.token.asc().nullsLast().op("text_ops")),
 	index("idx_invitations_user_id").using("btree", table.userId.asc().nullsLast().op("uuid_ops")),
 	foreignKey({
-			columns: [table.invitedUserId],
-			foreignColumns: [users.id],
-			name: "fk_invitations_invited_user"
-		}).onDelete("set null"),
+		columns: [table.invitedUserId],
+		foreignColumns: [users.id],
+		name: "fk_invitations_invited_user"
+	}).onDelete("set null"),
 	foreignKey({
-			columns: [table.userId],
-			foreignColumns: [users.id],
-			name: "fk_invitations_user"
-		}).onDelete("cascade"),
+		columns: [table.userId],
+		foreignColumns: [users.id],
+		name: "fk_invitations_user"
+	}).onDelete("cascade"),
 ]);
 
 export const agents = pgTable("agents", {
@@ -106,10 +106,10 @@ export const agents = pgTable("agents", {
 	index("idx_agents_active_prompt_id").using("btree", table.activeAgentPromptHistoryId.asc().nullsLast().op("uuid_ops")),
 	index("idx_agents_user_id").using("btree", table.userId.asc().nullsLast().op("uuid_ops")),
 	foreignKey({
-			columns: [table.userId],
-			foreignColumns: [users.id],
-			name: "fk_ai_agents_user"
-		}).onDelete("cascade"),
+		columns: [table.userId],
+		foreignColumns: [users.id],
+		name: "fk_ai_agents_user"
+	}).onDelete("cascade"),
 ]);
 
 export const agentPromptHistories = pgTable("agent_prompt_histories", {
@@ -123,10 +123,10 @@ export const agentPromptHistories = pgTable("agent_prompt_histories", {
 }, (table) => [
 	index("idx_prompt_histories_agent_id").using("btree", table.agentId.asc().nullsLast().op("uuid_ops")),
 	foreignKey({
-			columns: [table.agentId],
-			foreignColumns: [agents.id],
-			name: "fk_agent_prompt_histories_agent"
-		}).onDelete("cascade"),
+		columns: [table.agentId],
+		foreignColumns: [agents.id],
+		name: "fk_agent_prompt_histories_agent"
+	}).onDelete("cascade"),
 ]);
 
 export const conversations = pgTable("conversations", {
@@ -158,20 +158,20 @@ export const conversationParticipants = pgTable("conversation_participants", {
 	index("idx_participants_conv_id").using("btree", table.conversationId.asc().nullsLast().op("uuid_ops")),
 	index("idx_participants_user_id").using("btree", table.userId.asc().nullsLast().op("uuid_ops")),
 	foreignKey({
-			columns: [table.agentId],
-			foreignColumns: [agents.id],
-			name: "fk_participants_agent"
-		}).onDelete("set null"),
+		columns: [table.agentId],
+		foreignColumns: [agents.id],
+		name: "fk_participants_agent"
+	}).onDelete("set null"),
 	foreignKey({
-			columns: [table.conversationId],
-			foreignColumns: [conversations.id],
-			name: "fk_participants_conv"
-		}).onDelete("cascade"),
+		columns: [table.conversationId],
+		foreignColumns: [conversations.id],
+		name: "fk_participants_conv"
+	}).onDelete("cascade"),
 	foreignKey({
-			columns: [table.userId],
-			foreignColumns: [users.id],
-			name: "fk_participants_user"
-		}).onDelete("set null"),
+		columns: [table.userId],
+		foreignColumns: [users.id],
+		name: "fk_participants_user"
+	}).onDelete("set null"),
 ]);
 
 export const verification = pgTable("verification", {
@@ -194,20 +194,20 @@ export const messageShares = pgTable("message_shares", {
 	createdAt: timestamp("created_at", { withTimezone: true, mode: 'string' }).default(sql`CURRENT_TIMESTAMP`),
 }, (table) => [
 	foreignKey({
-			columns: [table.agentId],
-			foreignColumns: [agents.id],
-			name: "fk_message_shares_agent"
-		}).onDelete("set null"),
+		columns: [table.agentId],
+		foreignColumns: [agents.id],
+		name: "fk_message_shares_agent"
+	}).onDelete("set null"),
 	foreignKey({
-			columns: [table.conversationId],
-			foreignColumns: [conversations.id],
-			name: "fk_message_shares_conv"
-		}).onDelete("cascade"),
+		columns: [table.conversationId],
+		foreignColumns: [conversations.id],
+		name: "fk_message_shares_conv"
+	}).onDelete("cascade"),
 	foreignKey({
-			columns: [table.userId],
-			foreignColumns: [users.id],
-			name: "fk_message_shares_user"
-		}).onDelete("set null"),
+		columns: [table.userId],
+		foreignColumns: [users.id],
+		name: "fk_message_shares_user"
+	}).onDelete("set null"),
 ]);
 
 export const ragGrokKeys = pgTable("rag_grok_keys", {
@@ -269,25 +269,25 @@ export const messages = pgTable("messages", {
 	index("idx_messages_user_id").using("btree", table.userId.asc().nullsLast().op("uuid_ops")),
 	index("idx_messages_workflows_id").using("btree", table.workflowsId.asc().nullsLast().op("uuid_ops")),
 	foreignKey({
-			columns: [table.agentId],
-			foreignColumns: [agents.id],
-			name: "fk_messages_agent"
-		}).onDelete("set null"),
+		columns: [table.agentId],
+		foreignColumns: [agents.id],
+		name: "fk_messages_agent"
+	}).onDelete("set null"),
 	foreignKey({
-			columns: [table.conversationId],
-			foreignColumns: [conversations.id],
-			name: "fk_messages_conv"
-		}).onDelete("cascade"),
+		columns: [table.conversationId],
+		foreignColumns: [conversations.id],
+		name: "fk_messages_conv"
+	}).onDelete("cascade"),
 	foreignKey({
-			columns: [table.userId],
-			foreignColumns: [users.id],
-			name: "fk_messages_user"
-		}).onDelete("set null"),
+		columns: [table.userId],
+		foreignColumns: [users.id],
+		name: "fk_messages_user"
+	}).onDelete("set null"),
 	foreignKey({
-			columns: [table.workflowsId],
-			foreignColumns: [workflows.id],
-			name: "fk_messages_workflows"
-		}),
+		columns: [table.workflowsId],
+		foreignColumns: [workflows.id],
+		name: "fk_messages_workflows"
+	}),
 ]);
 
 export const files = pgTable("files", {
@@ -312,15 +312,15 @@ export const files = pgTable("files", {
 	index("idx_files_agent_id").using("btree", table.agentId.asc().nullsLast().op("uuid_ops")),
 	index("idx_files_user_id").using("btree", table.userId.asc().nullsLast().op("uuid_ops")),
 	foreignKey({
-			columns: [table.agentId],
-			foreignColumns: [agents.id],
-			name: "fk_files_agent"
-		}).onDelete("set null"),
+		columns: [table.agentId],
+		foreignColumns: [agents.id],
+		name: "fk_files_agent"
+	}).onDelete("set null"),
 	foreignKey({
-			columns: [table.userId],
-			foreignColumns: [users.id],
-			name: "fk_files_user"
-		}).onDelete("set null"),
+		columns: [table.userId],
+		foreignColumns: [users.id],
+		name: "fk_files_user"
+	}).onDelete("set null"),
 ]);
 
 export const userPaymentInfos = pgTable("user_payment_infos", {
@@ -330,10 +330,10 @@ export const userPaymentInfos = pgTable("user_payment_infos", {
 	updatedAt: timestamp("updated_at", { withTimezone: true, mode: 'string' }).default(sql`CURRENT_TIMESTAMP`),
 }, (table) => [
 	foreignKey({
-			columns: [table.userId],
-			foreignColumns: [users.id],
-			name: "fk_payment_infos_user"
-		}).onDelete("cascade"),
+		columns: [table.userId],
+		foreignColumns: [users.id],
+		name: "fk_payment_infos_user"
+	}).onDelete("cascade"),
 ]);
 
 export const tools = pgTable("tools", {
@@ -358,10 +358,10 @@ export const conversationArtifacts = pgTable("conversation_artifacts", {
 }, (table) => [
 	index("idx_artifacts_message_id").using("btree", table.messageId.asc().nullsLast().op("uuid_ops")),
 	foreignKey({
-			columns: [table.messageId],
-			foreignColumns: [messages.id],
-			name: "fk_artifacts_message"
-		}).onDelete("cascade"),
+		columns: [table.messageId],
+		foreignColumns: [messages.id],
+		name: "fk_artifacts_message"
+	}).onDelete("cascade"),
 ]);
 
 export const toolI18N = pgTable("tool_i18n", {
@@ -373,10 +373,10 @@ export const toolI18N = pgTable("tool_i18n", {
 }, (table) => [
 	index("idx_tool_i18n_tool_id").using("btree", table.toolId.asc().nullsLast().op("uuid_ops")),
 	foreignKey({
-			columns: [table.toolId],
-			foreignColumns: [tools.id],
-			name: "fk_tool_i18n_tool"
-		}).onDelete("cascade"),
+		columns: [table.toolId],
+		foreignColumns: [tools.id],
+		name: "fk_tool_i18n_tool"
+	}).onDelete("cascade"),
 ]);
 
 export const productTools = pgTable("product_tools", {
@@ -388,15 +388,15 @@ export const productTools = pgTable("product_tools", {
 	index("idx_product_tools_product_id").using("btree", table.productId.asc().nullsLast().op("uuid_ops")),
 	index("idx_product_tools_tool_id").using("btree", table.toolId.asc().nullsLast().op("uuid_ops")),
 	foreignKey({
-			columns: [table.productId],
-			foreignColumns: [products.id],
-			name: "fk_product_tools_product"
-		}).onDelete("cascade"),
+		columns: [table.productId],
+		foreignColumns: [products.id],
+		name: "fk_product_tools_product"
+	}).onDelete("cascade"),
 	foreignKey({
-			columns: [table.toolId],
-			foreignColumns: [tools.id],
-			name: "fk_product_tools_tool"
-		}).onDelete("cascade"),
+		columns: [table.toolId],
+		foreignColumns: [tools.id],
+		name: "fk_product_tools_tool"
+	}).onDelete("cascade"),
 ]);
 
 export const products = pgTable("products", {
@@ -415,15 +415,15 @@ export const messageFiles = pgTable("message_files", {
 	index("idx_message_files_file_id").using("btree", table.fileId.asc().nullsLast().op("uuid_ops")),
 	index("idx_message_files_message_id").using("btree", table.messageId.asc().nullsLast().op("uuid_ops")),
 	foreignKey({
-			columns: [table.fileId],
-			foreignColumns: [files.id],
-			name: "fk_message_files_file"
-		}).onDelete("cascade"),
+		columns: [table.fileId],
+		foreignColumns: [files.id],
+		name: "fk_message_files_file"
+	}).onDelete("cascade"),
 	foreignKey({
-			columns: [table.messageId],
-			foreignColumns: [messages.id],
-			name: "fk_message_files_message"
-		}).onDelete("cascade"),
+		columns: [table.messageId],
+		foreignColumns: [messages.id],
+		name: "fk_message_files_message"
+	}).onDelete("cascade"),
 ]);
 
 export const productsI18N = pgTable("products_i18n", {
@@ -438,10 +438,10 @@ export const productsI18N = pgTable("products_i18n", {
 }, (table) => [
 	index("idx_product_i18n_product_id").using("btree", table.productId.asc().nullsLast().op("uuid_ops")),
 	foreignKey({
-			columns: [table.productId],
-			foreignColumns: [products.id],
-			name: "fk_product_i18n_product"
-		}).onDelete("cascade"),
+		columns: [table.productId],
+		foreignColumns: [products.id],
+		name: "fk_product_i18n_product"
+	}).onDelete("cascade"),
 ]);
 
 export const userPurchases = pgTable("user_purchases", {
@@ -459,15 +459,15 @@ export const userPurchases = pgTable("user_purchases", {
 	index("idx_purchase_product_id").using("btree", table.productId.asc().nullsLast().op("uuid_ops")),
 	index("idx_purchase_user_id").using("btree", table.userId.asc().nullsLast().op("uuid_ops")),
 	foreignKey({
-			columns: [table.productId],
-			foreignColumns: [products.id],
-			name: "fk_licenses_product"
-		}).onDelete("set null"),
+		columns: [table.productId],
+		foreignColumns: [products.id],
+		name: "fk_licenses_product"
+	}).onDelete("set null"),
 	foreignKey({
-			columns: [table.userId],
-			foreignColumns: [users.id],
-			name: "fk_licenses_user"
-		}).onDelete("set null"),
+		columns: [table.userId],
+		foreignColumns: [users.id],
+		name: "fk_licenses_user"
+	}).onDelete("set null"),
 ]);
 
 export const purchaseToolQuotas = pgTable("purchase_tool_quotas", {
@@ -482,15 +482,15 @@ export const purchaseToolQuotas = pgTable("purchase_tool_quotas", {
 	index("idx_quotas_license_id").using("btree", table.licenseId.asc().nullsLast().op("uuid_ops")),
 	index("idx_quotas_tool_id").using("btree", table.toolId.asc().nullsLast().op("uuid_ops")),
 	foreignKey({
-			columns: [table.licenseId],
-			foreignColumns: [userPurchases.id],
-			name: "fk_quotas_license"
-		}).onDelete("cascade"),
+		columns: [table.licenseId],
+		foreignColumns: [userPurchases.id],
+		name: "fk_quotas_license"
+	}).onDelete("cascade"),
 	foreignKey({
-			columns: [table.toolId],
-			foreignColumns: [tools.id],
-			name: "fk_quotas_tool"
-		}).onDelete("cascade"),
+		columns: [table.toolId],
+		foreignColumns: [tools.id],
+		name: "fk_quotas_tool"
+	}).onDelete("cascade"),
 ]);
 
 export const paymentTransactions = pgTable("payment_transactions", {
@@ -508,10 +508,10 @@ export const paymentTransactions = pgTable("payment_transactions", {
 }, (table) => [
 	index("idx_transactions_user_id").using("btree", table.userId.asc().nullsLast().op("uuid_ops")),
 	foreignKey({
-			columns: [table.userId],
-			foreignColumns: [users.id],
-			name: "fk_transactions_user"
-		}).onDelete("set null"),
+		columns: [table.userId],
+		foreignColumns: [users.id],
+		name: "fk_transactions_user"
+	}).onDelete("set null"),
 ]);
 
 export const purchaseToolUsageLogs = pgTable("purchase_tool_usage_logs", {
@@ -528,25 +528,25 @@ export const purchaseToolUsageLogs = pgTable("purchase_tool_usage_logs", {
 	index("idx_usage_logs_tool_id").using("btree", table.toolId.asc().nullsLast().op("uuid_ops")),
 	index("idx_usage_logs_user_id").using("btree", table.extraUserId.asc().nullsLast().op("uuid_ops")),
 	foreignKey({
-			columns: [table.conversationId],
-			foreignColumns: [conversations.id],
-			name: "fk_usage_logs_conv"
-		}).onDelete("set null"),
+		columns: [table.conversationId],
+		foreignColumns: [conversations.id],
+		name: "fk_usage_logs_conv"
+	}).onDelete("set null"),
 	foreignKey({
-			columns: [table.quotaId],
-			foreignColumns: [purchaseToolQuotas.id],
-			name: "fk_usage_logs_quota"
-		}).onDelete("set null"),
+		columns: [table.quotaId],
+		foreignColumns: [purchaseToolQuotas.id],
+		name: "fk_usage_logs_quota"
+	}).onDelete("set null"),
 	foreignKey({
-			columns: [table.toolId],
-			foreignColumns: [tools.id],
-			name: "fk_usage_logs_tool"
-		}).onDelete("set null"),
+		columns: [table.toolId],
+		foreignColumns: [tools.id],
+		name: "fk_usage_logs_tool"
+	}).onDelete("set null"),
 	foreignKey({
-			columns: [table.extraUserId],
-			foreignColumns: [users.id],
-			name: "fk_usage_logs_user"
-		}).onDelete("set null"),
+		columns: [table.extraUserId],
+		foreignColumns: [users.id],
+		name: "fk_usage_logs_user"
+	}).onDelete("set null"),
 	check("purchase_tool_usage_logs_type_check", sql`type = 'LICENSE'::text`),
 ]);
 
@@ -567,10 +567,10 @@ export const automationTasks = pgTable("automation_tasks", {
 }, (table) => [
 	index("idx_automation_tasks_agent_id").using("btree", table.agentId.asc().nullsLast().op("uuid_ops")),
 	foreignKey({
-			columns: [table.agentId],
-			foreignColumns: [agents.id],
-			name: "fk_automation_tasks_agent"
-		}).onDelete("cascade"),
+		columns: [table.agentId],
+		foreignColumns: [agents.id],
+		name: "fk_automation_tasks_agent"
+	}).onDelete("cascade"),
 ]);
 
 export const taskExecutionLogs = pgTable("task_execution_logs", {
@@ -584,10 +584,10 @@ export const taskExecutionLogs = pgTable("task_execution_logs", {
 }, (table) => [
 	index("idx_execution_logs_task_id").using("btree", table.taskId.asc().nullsLast().op("uuid_ops")),
 	foreignKey({
-			columns: [table.taskId],
-			foreignColumns: [automationTasks.id],
-			name: "fk_execution_logs_task"
-		}).onDelete("cascade"),
+		columns: [table.taskId],
+		foreignColumns: [automationTasks.id],
+		name: "fk_execution_logs_task"
+	}).onDelete("cascade"),
 ]);
 
 export const userFriends = pgTable("user_friends", {
@@ -600,15 +600,15 @@ export const userFriends = pgTable("user_friends", {
 }, (table) => [
 	uniqueIndex("idx_user_friends_pair").using("btree", table.userId.asc().nullsLast().op("uuid_ops"), table.friendUserId.asc().nullsLast().op("uuid_ops")),
 	foreignKey({
-			columns: [table.friendUserId],
-			foreignColumns: [users.id],
-			name: "fk_friends_friend_user"
-		}).onDelete("cascade"),
+		columns: [table.friendUserId],
+		foreignColumns: [users.id],
+		name: "fk_friends_friend_user"
+	}).onDelete("cascade"),
 	foreignKey({
-			columns: [table.userId],
-			foreignColumns: [users.id],
-			name: "fk_friends_user"
-		}).onDelete("cascade"),
+		columns: [table.userId],
+		foreignColumns: [users.id],
+		name: "fk_friends_user"
+	}).onDelete("cascade"),
 ]);
 
 export const logErrors = pgTable("log_errors", {
@@ -625,10 +625,10 @@ export const logErrors = pgTable("log_errors", {
 }, (table) => [
 	index("idx_log_errors_user_id").using("btree", table.userId.asc().nullsLast().op("uuid_ops")),
 	foreignKey({
-			columns: [table.userId],
-			foreignColumns: [users.id],
-			name: "fk_log_errors_user"
-		}).onDelete("set null"),
+		columns: [table.userId],
+		foreignColumns: [users.id],
+		name: "fk_log_errors_user"
+	}).onDelete("set null"),
 ]);
 
 export const ragUserRelations = pgTable("rag_user_relations", {
@@ -642,14 +642,14 @@ export const ragUserRelations = pgTable("rag_user_relations", {
 }, (table) => [
 	index("idx_rag_relations_key_id").using("btree", table.keyId.asc().nullsLast().op("uuid_ops")),
 	foreignKey({
-			columns: [table.keyId],
-			foreignColumns: [ragGrokKeys.id],
-			name: "fk_rag_user_relations_key"
-		}).onDelete("cascade"),
+		columns: [table.keyId],
+		foreignColumns: [ragGrokKeys.id],
+		name: "fk_rag_user_relations_key"
+	}).onDelete("cascade"),
 	foreignKey({
-			columns: [table.userId],
-			foreignColumns: [users.id],
-			name: "fk_rag_user_relations_user"
-		}).onDelete("cascade"),
-	primaryKey({ columns: [table.keyId, table.userId], name: "rag_user_relations_pkey"}),
+		columns: [table.userId],
+		foreignColumns: [users.id],
+		name: "fk_rag_user_relations_user"
+	}).onDelete("cascade"),
+	primaryKey({ columns: [table.keyId, table.userId], name: "rag_user_relations_pkey" }),
 ]);

@@ -17,8 +17,8 @@ export async function createProductAction(data: CreateProductSchema): Promise<Ac
     if (!validated.success) {
         return { success: false, error: 'Invalid input data' };
     }
-
     try {
+        let createdProductId: string;
         await db.transaction(async (tx) => {
             // 1. Create product base
             const [newProduct] = await tx.insert(products).values({
@@ -31,6 +31,7 @@ export async function createProductAction(data: CreateProductSchema): Promise<Ac
                 iconImageUrl: validated.data.iconImageUrl,
                 isActive: validated.data.isActive,
             }).returning();
+            createdProductId = newProduct.id;
 
             // 2. Create i18n entries
             if (validated.data.i18n.length > 0) {
@@ -59,6 +60,11 @@ export async function createProductAction(data: CreateProductSchema): Promise<Ac
                 );
             }
         });
+
+        // Automatically sync with Paddle
+        if (createdProductId!) {
+            await syncPaddleProductAction(createdProductId);
+        }
 
         revalidatePath('/products/list');
         return { success: true };
@@ -115,6 +121,9 @@ export async function updateProductAction(id: string, data: UpdateProductSchema)
                 );
             }
         });
+
+        // Automatically sync with Paddle
+        await syncPaddleProductAction(id);
 
         revalidatePath('/products/list');
         revalidatePath(`/products/list/${id}`);

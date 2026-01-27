@@ -1,9 +1,9 @@
 import { Suspense } from 'react';
 import { Box, Typography, Paper, Stack } from '@mui/material';
 import { getProductList } from '@/features/admin/products/queries';
-import ProductListTable from './components/product-list-table';
-import ProductListFilters from './components/product-list-filters';
-import CreateProductButton from './components/create-product-button';
+import ProductListTable from '../../../../features/admin/products/components/product-list-table';
+import ProductListFilters from '../../../../features/admin/products/components/product-list-filters';
+import CreateProductButton from '../../../../features/admin/products/components/create-product-button';
 import Loading from '@/app/loading';
 import { getLocale, getTranslations } from 'next-intl/server';
 

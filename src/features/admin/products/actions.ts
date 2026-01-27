@@ -5,6 +5,7 @@ import { products, productsI18N, productTools } from '@/lib/db/schema';
 import { eq } from 'drizzle-orm';
 import { revalidatePath } from 'next/cache';
 import { createProductSchema, updateProductSchema, type CreateProductSchema, type UpdateProductSchema } from './schema';
+import { paddle } from '@/lib/paddle';
 
 export type ActionResponse = {
     success: boolean;
@@ -140,32 +141,136 @@ export async function deleteProductAction(id: string): Promise<ActionResponse> {
 /**
  * Search tools for bundling
  */
-export async function searchToolsAction(query: string = '') {
+export async function searchToolsAction(query: string = '', locale: string = 'ko') {
     const { db } = await import('@/lib/db');
     const { tools, toolI18N } = await import('@/lib/db/schema');
-    const { or, ilike, sql } = await import('drizzle-orm');
+    const { or, ilike, sql, aliasedTable, and, eq } = await import('drizzle-orm');
 
     const searchPattern = `%${query}%`;
+    const targetName = aliasedTable(toolI18N, 'target_name');
+    const krName = aliasedTable(toolI18N, 'kr_name');
+    const enName = aliasedTable(toolI18N, 'en_name');
+    const dbLocale = locale === 'en' ? 'EN' : locale === 'jp' ? 'JP' : 'KR';
     const results = await db
         .select({
             id: tools.id,
             toolCode: tools.toolCode,
-            name: sql<string>`COALESCE(
-                (SELECT ${toolI18N.name} FROM ${toolI18N} 
-                 WHERE ${toolI18N.toolId} = ${tools.id} 
-                 ORDER BY (CASE WHEN ${toolI18N.languageCode} = 'KR' THEN 1 WHEN ${toolI18N.languageCode} = 'EN' THEN 2 ELSE 3 END) 
-                 LIMIT 1),
-                ${tools.toolCode}
-            )`,
+            name: sql<string>`COALESCE(${targetName.name}, ${krName.name}, ${enName.name}, ${tools.toolCode})`,
         })
         .from(tools)
+        .leftJoin(targetName, and(eq(tools.id, targetName.toolId), eq(targetName.languageCode, dbLocale as any)))
+        .leftJoin(krName, and(eq(tools.id, krName.toolId), eq(krName.languageCode, 'KR')))
+        .leftJoin(enName, and(eq(tools.id, enName.toolId), eq(enName.languageCode, 'EN')))
         .where(
             query ? or(
                 ilike(tools.toolCode, searchPattern),
-                sql`EXISTS (SELECT 1 FROM tool_i18n WHERE tool_id = ${tools.id} AND name ILIKE ${searchPattern})`
+                ilike(targetName.name, searchPattern),
+                ilike(krName.name, searchPattern),
+                ilike(enName.name, searchPattern)
             ) : undefined
         )
         .limit(20);
 
     return results;
+}
+
+/**
+ * Sync product and price with Paddle
+ */
+export async function syncPaddleProductAction(productId: string): Promise<{ success: boolean; error?: string; paddleProductId?: string; paddlePriceId?: string }> {
+    try {
+        const { getProductById } = await import('./queries');
+        const product = await getProductById(productId, 'EN'); // Get English version for Paddle
+        if (!product) {
+            return { success: false, error: 'Product not found' };
+        }
+
+        const enI18n = product.i18n.find(i => i.languageCode === 'EN');
+        const krI18n = product.i18n.find(i => i.languageCode === 'KR');
+        const jpI18n = product.i18n.find(i => i.languageCode === 'JP');
+
+        const usdPrice = enI18n?.price || '0';
+        const krwPrice = krI18n?.price || '0';
+        const jpyPrice = jpI18n?.price || '0';
+
+        const productName = enI18n?.name || product.productCode || 'Unnamed Product';
+
+        // 1. Handle Product in Paddle
+        let paddleProductId = product.paddleProductId;
+        if (paddleProductId) {
+            // Update existing
+            await paddle.products.update(paddleProductId, {
+                name: productName,
+                description: enI18n?.description || undefined,
+            });
+        } else {
+            // Create new
+            const newPaddleProduct = await paddle.products.create({
+                name: productName,
+                taxCategory: 'standard',
+                description: enI18n?.description || undefined,
+            });
+            paddleProductId = newPaddleProduct.id;
+        }
+
+        // 2. Handle Price in Paddle
+        let paddlePriceId = product.paddlePriceId;
+
+        // Prepare price data
+        const priceData: any = {
+            description: `${productName} Price`,
+            productId: paddleProductId,
+            unitPrice: {
+                amount: Math.round(parseFloat(usdPrice) * 100).toString(), // USD cents
+                currencyCode: 'USD',
+            },
+            unitPriceOverrides: [
+                {
+                    countryCodes: ['KR'],
+                    unitPrice: {
+                        amount: Math.round(parseFloat(krwPrice)).toString(), // KRW 0 decimals
+                        currencyCode: 'KRW',
+                    },
+                },
+                {
+                    countryCodes: ['JP'],
+                    unitPrice: {
+                        amount: Math.round(parseFloat(jpyPrice)).toString(), // JPY 0 decimals
+                        currencyCode: 'JPY',
+                    },
+                },
+            ],
+        };
+
+        // Add billing cycle for subscriptions
+        if (product.type === 'SUBSCRIPTION') {
+            if (product.billingCycle === 'MONTHLY') {
+                priceData.billingCycle = { interval: 'month', frequency: 1 };
+            } else if (product.billingCycle === 'YEARLY') {
+                priceData.billingCycle = { interval: 'year', frequency: 1 };
+            }
+        }
+
+        if (paddlePriceId) {
+            // Update existing with full data (unitPrice, overrides, etc.)
+            await paddle.prices.update(paddlePriceId, priceData);
+        } else {
+            // Create new
+            const newPaddlePrice = await paddle.prices.create(priceData);
+            paddlePriceId = newPaddlePrice.id;
+        }
+
+        // 3. Update DB
+        await db.update(products).set({
+            paddleProductId,
+            paddlePriceId,
+            updatedAt: new Date().toISOString(),
+        }).where(eq(products.id, productId));
+
+        revalidatePath(`/products/list/${productId}`);
+        return { success: true, paddleProductId, paddlePriceId };
+    } catch (e: any) {
+        console.error('Paddle Sync Error:', e);
+        return { success: false, error: e.message || 'Failed to sync with Paddle' };
+    }
 }

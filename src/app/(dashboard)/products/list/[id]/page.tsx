@@ -1,9 +1,9 @@
 import { notFound } from 'next/navigation';
 import { Box, Typography, Paper, Stack } from '@mui/material';
 import { getProductById } from '@/features/admin/products/queries';
-import ProductForm from '../components/product-form';
+import ProductForm from '@/features/admin/products/components/product-form';
 import BackButton from '@/app/(dashboard)/products/tools/components/back-button';
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, getLocale } from 'next-intl/server';
 
 interface PageProps {
     params: Promise<{ id: string }>;
@@ -13,10 +13,10 @@ export default async function ProductDetailPage({ params }: PageProps) {
     const t = await getTranslations('dashboard');
     const { id } = await params;
     const isNew = id === 'new';
-
+    const locale = await getLocale();
     let product = null;
     if (!isNew) {
-        product = await getProductById(id);
+        product = await getProductById(id, locale);
         if (!product) {
             notFound();
         }

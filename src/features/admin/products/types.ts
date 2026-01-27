@@ -14,7 +14,7 @@ export type LanguageCode = 'KR' | 'EN' | 'JP';
 export interface ProductToolItem {
     id: string; // product_tools.id
     toolId: string;
-    toolCode: string;
+    toolCode: string | null;
     name: string | null;
     quotaAllocation: number | null;
     sortOrder: number;
@@ -30,8 +30,9 @@ export interface ProductWithDetails extends Product {
 export interface ProductListItem {
     id: string;
     name: string | null;
-    price: string | null;
-    currencyCode: string | null;
+    usdPrice: string | null;
+    krwPrice: string | null;
+    jpyPrice: string | null;
     isActive: boolean | null;
     createdAt: string | null;
     billingCycle: string | null;

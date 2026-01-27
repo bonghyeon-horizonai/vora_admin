@@ -28,10 +28,11 @@ import {
 import { cn } from '@/lib/utils';
 import type { ProductWithDetails, LanguageCode } from '@/features/admin/products/types';
 import { createProductSchema, type CreateProductSchema } from '@/features/admin/products/schema';
-import { createProductAction, updateProductAction, searchToolsAction } from '@/features/admin/products/actions';
+import { createProductAction, updateProductAction, searchToolsAction, syncPaddleProductAction } from '@/features/admin/products/actions';
 import NiTrashIcon from '@/icons/nexture/ni-bin-empty';
 import NiDragIcon from '@/icons/nexture/ni-drag-vertical';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
+import { useSnackbar } from 'notistack';
 
 interface ProductFormProps {
     product: ProductWithDetails | null;
@@ -46,18 +47,21 @@ const LANGUAGES: { code: LanguageCode; label: string; currency: 'KRW' | 'USD' | 
 
 export default function ProductForm({ product, isNew }: ProductFormProps) {
     const t = useTranslations('dashboard');
+    const locale = useLocale();
+    const { enqueueSnackbar } = useSnackbar();
     const router = useRouter();
     const [isPending, startTransition] = useTransition();
+    const [isSyncing, setIsSyncing] = useState(false);
     const [error, setError] = useState<string | null>(null);
     const [mainTab, setMainTab] = useState(0); // 0: Basic, 1: Detail/Assets
     const [langTab, setLangTab] = useState(0);
 
     const [toolSearchQuery, setToolSearchQuery] = useState('');
-    const [toolSearchResults, setToolSearchResults] = useState<{ id: string; toolCode: string; name: string }[]>([]);
+    const [toolSearchResults, setToolSearchResults] = useState<{ id: string; toolCode: string | null; name: string }[]>([]);
 
     useEffect(() => {
         const timer = setTimeout(async () => {
-            const results = await searchToolsAction(toolSearchQuery);
+            const results = await searchToolsAction(toolSearchQuery, locale);
             setToolSearchResults(results);
         }, 300);
         return () => clearTimeout(timer);
@@ -108,6 +112,29 @@ export default function ProductForm({ product, isNew }: ProductFormProps) {
 
     const watchedTools = watch('tools');
 
+    const onSyncPaddle = async () => {
+        if (isNew || !product?.id) {
+            enqueueSnackbar('Please save the product first before syncing with Paddle', { variant: 'info' });
+            return;
+        }
+
+        setIsSyncing(true);
+        try {
+            const result = await syncPaddleProductAction(product.id);
+            if (result.success) {
+                enqueueSnackbar('Synced with Paddle successfully', { variant: 'success' });
+                if (result.paddleProductId) setValue('paddleProductId', result.paddleProductId);
+                if (result.paddlePriceId) setValue('paddlePriceId', result.paddlePriceId);
+            } else {
+                enqueueSnackbar(result.error || 'Sync failed', { variant: 'error' });
+            }
+        } catch (e) {
+            enqueueSnackbar('An error occurred during sync', { variant: 'error' });
+        } finally {
+            setIsSyncing(false);
+        }
+    };
+
     const onSubmit = (data: CreateProductSchema) => {
         setError(null);
         startTransition(async () => {
@@ -119,7 +146,7 @@ export default function ProductForm({ product, isNew }: ProductFormProps) {
                 router.push('/products/list');
                 router.refresh();
             } else {
-                setError(result.error);
+                setError(result.error || 'Something went wrong');
             }
         });
     };
@@ -226,6 +253,22 @@ export default function ProductForm({ product, isNew }: ProductFormProps) {
                     </Grid>
 
                     <Grid size={{ xs: 12 }}>
+                        <Button
+                            variant="outlined"
+                            onClick={onSyncPaddle}
+                            disabled={isSyncing || isNew}
+                            size="small"
+                        >
+                            {isSyncing ? 'Syncing...' : 'Sync with Paddle API (Auto-generate IDs)'}
+                        </Button>
+                        {isNew && (
+                            <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mt: 1 }}>
+                                * 상품을 먼저 저장한 후 Paddle과 동기화할 수 있습니다.
+                            </Typography>
+                        )}
+                    </Grid>
+
+                    <Grid size={{ xs: 12 }}>
                         <Divider sx={{ my: 2 }} />
                         <Typography variant="h6" sx={{ mb: 2 }}>다국어 가격 정보</Typography>
                         <Tabs
@@ -327,7 +370,9 @@ export default function ProductForm({ product, isNew }: ProductFormProps) {
 
                                 return (
                                     <Paper key={field.id} variant="outlined" sx={{ p: 2, display: 'flex', alignItems: 'center', gap: 2 }}>
-                                        <NiDragIcon sx={{ color: 'text.secondary', cursor: 'grab' }} />
+                                        <Box sx={{ color: 'text.secondary', display: 'flex', alignItems: 'center', cursor: 'grab' }}>
+                                            <NiDragIcon />
+                                        </Box>
                                         <Box sx={{ flex: 1 }}>
                                             <Typography variant="subtitle2">[{displayCode}] {displayName}</Typography>
                                         </Box>

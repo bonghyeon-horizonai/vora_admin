@@ -1,6 +1,6 @@
 import { db } from '@/lib/db';
 import { products, productsI18N, productTools, tools, toolI18N } from '@/lib/db/schema';
-import { eq, and, or, ilike, desc, asc, sql, inArray } from 'drizzle-orm';
+import { eq, and, or, ilike, desc, asc, sql, inArray, aliasedTable } from 'drizzle-orm';
 import type { ProductListParams, ProductListItem, ProductWithDetails } from './types';
 
 /**
@@ -65,11 +65,17 @@ export async function getProductList(params: ProductListParams = {}): Promise<{
         }
     }
 
+    const nameI18n = aliasedTable(productsI18N, 'name_i18n');
+    const enNameI18n = aliasedTable(productsI18N, 'en_name_i18n');
+    const usdPriceI18n = aliasedTable(productsI18N, 'usd_price_i18n');
+    const krwPriceI18n = aliasedTable(productsI18N, 'krw_price_i18n');
+    const jpyPriceI18n = aliasedTable(productsI18N, 'jpy_price_i18n');
+
     // Dynamic sort column
     const sortExpression = (() => {
         switch (sortBy) {
             case 'name':
-                return sql`${productsI18N.name} COLLATE "C"`;
+                return sql`COALESCE(${nameI18n.name}, ${enNameI18n.name}) COLLATE "C"`;
             case 'isActive':
                 return products.isActive;
             case 'createdAt':
@@ -93,17 +99,45 @@ export async function getProductList(params: ProductListParams = {}): Promise<{
             isActive: products.isActive,
             createdAt: products.createdAt,
             billingCycle: products.billingCycle,
-            name: productsI18N.name,
-            price: productsI18N.price,
-            currencyCode: productsI18N.currencyCode,
+            name: sql<string>`COALESCE(${nameI18n.name}, ${enNameI18n.name})`,
+            usdPrice: usdPriceI18n.price,
+            krwPrice: krwPriceI18n.price,
+            jpyPrice: jpyPriceI18n.price,
         })
         .from(products)
         .leftJoin(
-            productsI18N,
+            nameI18n,
             and(
-                eq(products.id, productsI18N.productId),
-                eq(productsI18N.languageCode, dbLanguageCode),
-                eq(productsI18N.currencyCode, 'USD') // Display USD price by default as per req
+                eq(products.id, nameI18n.productId),
+                eq(nameI18n.languageCode, dbLanguageCode)
+            )
+        )
+        .leftJoin(
+            enNameI18n,
+            and(
+                eq(products.id, enNameI18n.productId),
+                eq(enNameI18n.languageCode, 'EN')
+            )
+        )
+        .leftJoin(
+            usdPriceI18n,
+            and(
+                eq(products.id, usdPriceI18n.productId),
+                eq(usdPriceI18n.currencyCode, 'USD')
+            )
+        )
+        .leftJoin(
+            krwPriceI18n,
+            and(
+                eq(products.id, krwPriceI18n.productId),
+                eq(krwPriceI18n.currencyCode, 'KRW')
+            )
+        )
+        .leftJoin(
+            jpyPriceI18n,
+            and(
+                eq(products.id, jpyPriceI18n.productId),
+                eq(jpyPriceI18n.currencyCode, 'JPY')
             )
         )
         .where(and(...conditions))
@@ -115,8 +149,9 @@ export async function getProductList(params: ProductListParams = {}): Promise<{
     const data: ProductListItem[] = rawData.map(item => ({
         id: item.id,
         name: item.name,
-        price: item.price,
-        currencyCode: item.currencyCode,
+        usdPrice: item.usdPrice,
+        krwPrice: item.krwPrice,
+        jpyPrice: item.jpyPrice,
         isActive: item.isActive,
         createdAt: item.createdAt,
         billingCycle: item.billingCycle,
@@ -133,7 +168,8 @@ export async function getProductList(params: ProductListParams = {}): Promise<{
 /**
  * Get a single product by ID with full details
  */
-export async function getProductById(id: string): Promise<ProductWithDetails | null> {
+export async function getProductById(id: string, locale: string = 'ko'): Promise<ProductWithDetails | null> {
+    const dbLocale = locale === 'en' ? 'EN' : locale === 'jp' ? 'JP' : 'KR';
     const productBase = await db
         .select()
         .from(products)
@@ -147,23 +183,24 @@ export async function getProductById(id: string): Promise<ProductWithDetails | n
         .from(productsI18N)
         .where(eq(productsI18N.productId, id));
 
+    const targetName = aliasedTable(toolI18N, 'target_name');
+    const krName = aliasedTable(toolI18N, 'kr_name');
+    const enName = aliasedTable(toolI18N, 'en_name');
+
     const bundledTools = await db
         .select({
             id: productTools.id,
             toolId: productTools.toolId,
             toolCode: tools.toolCode,
-            name: sql<string>`COALESCE(
-                (SELECT ${toolI18N.name} FROM ${toolI18N} 
-                 WHERE ${toolI18N.toolId} = ${tools.id} 
-                 ORDER BY (CASE WHEN ${toolI18N.languageCode} = 'KR' THEN 1 WHEN ${toolI18N.languageCode} = 'EN' THEN 2 ELSE 3 END) 
-                 LIMIT 1),
-                ${tools.toolCode}
-            )`,
+            name: sql<string>`COALESCE(${targetName.name}, ${krName.name}, ${enName.name}, ${tools.toolCode})`,
             quotaAllocation: productTools.quotaAllocation,
             sortOrder: productTools.sortOrder,
         })
         .from(productTools)
         .innerJoin(tools, eq(productTools.toolId, tools.id))
+        .leftJoin(targetName, and(eq(tools.id, targetName.toolId), eq(targetName.languageCode, dbLocale as any)))
+        .leftJoin(krName, and(eq(tools.id, krName.toolId), eq(krName.languageCode, 'KR')))
+        .leftJoin(enName, and(eq(tools.id, enName.toolId), eq(enName.languageCode, 'EN')))
         .where(eq(productTools.productId, id))
         .orderBy(asc(productTools.sortOrder));
 

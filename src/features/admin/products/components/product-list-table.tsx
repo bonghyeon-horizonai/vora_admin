@@ -84,13 +84,37 @@ export default function ProductListTable({
             ),
         },
         {
-            field: 'price',
-            headerName: t('products-col-price'),
-            width: 120,
+            field: 'usdPrice',
+            headerName: 'USD',
+            width: 100,
             renderCell: (params: GridRenderCellParams) => (
                 <Box sx={{ display: 'flex', alignItems: 'center', height: '100%' }}>
                     <Typography variant="body2">
                         {params.value ? `$${params.value}` : '-'}
+                    </Typography>
+                </Box>
+            ),
+        },
+        {
+            field: 'krwPrice',
+            headerName: 'KRW',
+            width: 100,
+            renderCell: (params: GridRenderCellParams) => (
+                <Box sx={{ display: 'flex', alignItems: 'center', height: '100%' }}>
+                    <Typography variant="body2">
+                        {params.value ? `₩${Number(params.value).toLocaleString()}` : '-'}
+                    </Typography>
+                </Box>
+            ),
+        },
+        {
+            field: 'jpyPrice',
+            headerName: 'JPY',
+            width: 100,
+            renderCell: (params: GridRenderCellParams) => (
+                <Box sx={{ display: 'flex', alignItems: 'center', height: '100%' }}>
+                    <Typography variant="body2">
+                        {params.value ? `¥${Number(params.value).toLocaleString()}` : '-'}
                     </Typography>
                 </Box>
             ),

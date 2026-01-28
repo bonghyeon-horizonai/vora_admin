@@ -7,6 +7,7 @@ export const billingProviderEnum = pgEnum("billing_provider_enum", ['PADDLE', 'S
 export const conversationModeEnum = pgEnum("conversation_mode_enum", ['GENERAL', 'PDCA', 'DISCUSSION'])
 export const conversationStatusEnum = pgEnum("conversation_status_enum", ['ACTIVE', 'COMPLETED', 'ARCHIVED'])
 export const currencyCodeEnum = pgEnum("currency_code_enum", ['USD', 'KRW', 'JPY'])
+export const feedTypeEnum = pgEnum("feed_type_enum", ['NORMAL', 'FRIEND'])
 export const fileProviderEnum = pgEnum("file_provider_enum", ['GROK', 'S3', 'LOCAL', 'AZURE'])
 export const fileStatusEnum = pgEnum("file_status_enum", ['PENDING', 'INDEXED', 'FAILED', 'SUCCESS'])
 export const friendStatusEnum = pgEnum("friend_status_enum", ['PENDING', 'USED', 'EXPIRED', 'CANCELED'])
@@ -323,6 +324,20 @@ export const files = pgTable("files", {
 		}).onDelete("set null"),
 ]);
 
+export const tools = pgTable("tools", {
+	id: uuid().defaultRandom().primaryKey().notNull(),
+	category: toolCategoryEnum(),
+	toolCode: text("tool_code"),
+	internalUsageLimit: integer("internal_usage_limit"),
+	createdAt: timestamp("created_at", { withTimezone: true, mode: 'string' }).default(sql`CURRENT_TIMESTAMP`),
+	isFree: boolean("is_free"),
+	tier: integer(),
+	iconImageUrl: text("icon_image_url"),
+	isActive: boolean("is_active").default(true),
+	updatedAt: timestamp("updated_at", { withTimezone: true, mode: 'string' }).default(sql`CURRENT_TIMESTAMP`),
+	deletedAt: timestamp("deleted_at", { withTimezone: true, mode: 'string' }),
+});
+
 export const userPaymentInfos = pgTable("user_payment_infos", {
 	userId: uuid("user_id").primaryKey().notNull(),
 	billingCustomerId: text("billing_customer_id"),
@@ -335,19 +350,6 @@ export const userPaymentInfos = pgTable("user_payment_infos", {
 			name: "fk_payment_infos_user"
 		}).onDelete("cascade"),
 ]);
-
-export const tools = pgTable("tools", {
-	id: uuid().defaultRandom().primaryKey().notNull(),
-	category: toolCategoryEnum(),
-	toolCode: text("tool_code"),
-	internalUsageLimit: integer("internal_usage_limit"),
-	createdAt: timestamp("created_at", { withTimezone: true, mode: 'string' }).default(sql`CURRENT_TIMESTAMP`),
-	isFree: boolean("is_free"),
-	tier: integer(),
-	iconImageUrl: text("icon_image_url"),
-	isActive: boolean("is_active").default(true),
-	updatedAt: timestamp("updated_at", { withTimezone: true, mode: 'string' }).default(sql`CURRENT_TIMESTAMP`),
-});
 
 export const conversationArtifacts = pgTable("conversation_artifacts", {
 	id: uuid().defaultRandom().primaryKey().notNull(),
@@ -587,6 +589,29 @@ export const taskExecutionLogs = pgTable("task_execution_logs", {
 			columns: [table.taskId],
 			foreignColumns: [automationTasks.id],
 			name: "fk_execution_logs_task"
+		}).onDelete("cascade"),
+]);
+
+export const userFeeds = pgTable("user_feeds", {
+	id: uuid().defaultRandom().primaryKey().notNull(),
+	userId: uuid("user_id").notNull(),
+	type: feedTypeEnum(),
+	i18NKey: text("i18n_key"),
+	messageValue: text("message_value"),
+	conversationId: uuid("conversation_id"),
+	isActive: boolean("is_active").default(true).notNull(),
+	createdAt: timestamp("created_at", { withTimezone: true, mode: 'string' }).default(sql`CURRENT_TIMESTAMP`),
+	updatedAt: timestamp("updated_at", { withTimezone: true, mode: 'string' }).default(sql`CURRENT_TIMESTAMP`),
+}, (table) => [
+	foreignKey({
+			columns: [table.userId],
+			foreignColumns: [users.id],
+			name: "fk_feeds_user"
+		}).onDelete("cascade"),
+	foreignKey({
+			columns: [table.conversationId],
+			foreignColumns: [conversations.id],
+			name: "fk_messages_conv"
 		}).onDelete("cascade"),
 ]);
 

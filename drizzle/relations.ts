@@ -1,5 +1,5 @@
 import { relations } from "drizzle-orm/relations";
-import { users, sessions, accounts, invitations, agents, agentPromptHistories, conversationParticipants, conversations, messageShares, messages, workflows, files, userPaymentInfos, conversationArtifacts, tools, toolI18N, products, productTools, messageFiles, productsI18N, userPurchases, purchaseToolQuotas, paymentTransactions, purchaseToolUsageLogs, automationTasks, taskExecutionLogs, userFriends, logErrors, ragGrokKeys, ragUserRelations } from "./schema";
+import { users, sessions, accounts, invitations, agents, agentPromptHistories, conversationParticipants, conversations, messageShares, messages, workflows, files, userPaymentInfos, conversationArtifacts, tools, toolI18N, products, productTools, messageFiles, productsI18N, userPurchases, purchaseToolQuotas, paymentTransactions, purchaseToolUsageLogs, automationTasks, taskExecutionLogs, userFeeds, userFriends, logErrors, ragGrokKeys, ragUserRelations } from "./schema";
 
 export const sessionsRelations = relations(sessions, ({one}) => ({
 	user: one(users, {
@@ -26,6 +26,7 @@ export const usersRelations = relations(users, ({many}) => ({
 	userPurchases: many(userPurchases),
 	paymentTransactions: many(paymentTransactions),
 	purchaseToolUsageLogs: many(purchaseToolUsageLogs),
+	userFeeds: many(userFeeds),
 	userFriends_friendUserId: many(userFriends, {
 		relationName: "userFriends_friendUserId_users_id"
 	}),
@@ -96,6 +97,7 @@ export const conversationsRelations = relations(conversations, ({many}) => ({
 	messageShares: many(messageShares),
 	messages: many(messages),
 	purchaseToolUsageLogs: many(purchaseToolUsageLogs),
+	userFeeds: many(userFeeds),
 }));
 
 export const messageSharesRelations = relations(messageShares, ({one}) => ({
@@ -275,6 +277,17 @@ export const taskExecutionLogsRelations = relations(taskExecutionLogs, ({one}) =
 	automationTask: one(automationTasks, {
 		fields: [taskExecutionLogs.taskId],
 		references: [automationTasks.id]
+	}),
+}));
+
+export const userFeedsRelations = relations(userFeeds, ({one}) => ({
+	user: one(users, {
+		fields: [userFeeds.userId],
+		references: [users.id]
+	}),
+	conversation: one(conversations, {
+		fields: [userFeeds.conversationId],
+		references: [conversations.id]
 	}),
 }));
 

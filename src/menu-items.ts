@@ -27,6 +27,13 @@ export const leftMenuItems: MenuItem[] = [
     href: "/products",
     children: [
       {
+        id: "products-list",
+        icon: "NiList",
+        label: "menu-products-list",
+        href: "/products/list",
+        description: "menu-products-list-description",
+      },
+      {
         id: "tools",
         icon: "NiSettings",
         label: "menu-tools",

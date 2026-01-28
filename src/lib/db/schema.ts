@@ -384,6 +384,7 @@ export const productTools = pgTable("product_tools", {
 	productId: uuid("product_id").notNull(),
 	toolId: uuid("tool_id").notNull(),
 	quotaAllocation: integer("quota_allocation"),
+	sortOrder: integer("sort_order").default(0),
 }, (table) => [
 	index("idx_product_tools_product_id").using("btree", table.productId.asc().nullsLast().op("uuid_ops")),
 	index("idx_product_tools_tool_id").using("btree", table.toolId.asc().nullsLast().op("uuid_ops")),
@@ -402,9 +403,17 @@ export const productTools = pgTable("product_tools", {
 export const products = pgTable("products", {
 	id: uuid().defaultRandom().primaryKey().notNull(),
 	paddleProductId: text("paddle_product_id"),
-	isActive: boolean("is_active"),
+	paddlePriceId: text("paddle_price_id"),
+	type: productTypeEnum("type").default('SUBSCRIPTION'),
+	category: text("category"),
+	billingCycle: text("billing_cycle").default('MONTHLY'),
+	productCode: text("product_code"),
+	iconImageUrl: text("icon_image_url"),
+	isActive: boolean("is_active").default(true),
 	sortOrder: integer("sort_order"),
 	createdAt: timestamp("created_at", { withTimezone: true, mode: 'string' }).default(sql`CURRENT_TIMESTAMP`),
+	updatedAt: timestamp("updated_at", { withTimezone: true, mode: 'string' }).default(sql`CURRENT_TIMESTAMP`),
+	deletedAt: timestamp("deleted_at", { withTimezone: true, mode: 'string' }),
 });
 
 export const messageFiles = pgTable("message_files", {

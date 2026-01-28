@@ -1,0 +1,10 @@
+ALTER TABLE "products" ALTER COLUMN "is_active" SET DEFAULT true;--> statement-breakpoint
+ALTER TABLE "product_tools" ADD COLUMN "sort_order" integer DEFAULT 0;--> statement-breakpoint
+ALTER TABLE "products" ADD COLUMN "paddle_price_id" text;--> statement-breakpoint
+ALTER TABLE "products" ADD COLUMN "type" "product_type_enum" DEFAULT 'SUBSCRIPTION';--> statement-breakpoint
+ALTER TABLE "products" ADD COLUMN "category" text;--> statement-breakpoint
+ALTER TABLE "products" ADD COLUMN "billing_cycle" text DEFAULT 'MONTHLY';--> statement-breakpoint
+ALTER TABLE "products" ADD COLUMN "product_code" text;--> statement-breakpoint
+ALTER TABLE "products" ADD COLUMN "icon_image_url" text;--> statement-breakpoint
+ALTER TABLE "products" ADD COLUMN "updated_at" timestamp with time zone DEFAULT CURRENT_TIMESTAMP;--> statement-breakpoint
+ALTER TABLE "products" ADD COLUMN "deleted_at" timestamp with time zone;

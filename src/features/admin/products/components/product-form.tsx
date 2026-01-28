@@ -72,8 +72,8 @@ export default function ProductForm({ product, isNew }: ProductFormProps) {
         category: product?.category || 'GENERAL',
         billingCycle: (product?.billingCycle as 'MONTHLY' | 'YEARLY' | 'ONCE') || 'MONTHLY',
         productCode: product?.productCode || '',
-        paddleProductId: product?.paddleProductId || '',
-        paddlePriceId: product?.paddlePriceId || '',
+        paddleProductId: product?.paddleMetadata?.productId || '',
+        paddlePriceId: product?.paddleMetadata?.priceId || '',
         iconImageUrl: product?.iconImageUrl || '',
         isActive: product?.isActive ?? true,
         i18n: LANGUAGES.map((lang) => {

@@ -2,10 +2,19 @@ import { products, productsI18N } from '@/lib/db/schema';
 import { InferSelectModel, InferInsertModel } from 'drizzle-orm';
 
 // Base types from schema
-export type Product = InferSelectModel<typeof products>;
+export type Product = Omit<InferSelectModel<typeof products>, 'paddleMetadata'> & {
+    paddleMetadata: PaddleMetadata | null;
+};
 export type ProductInsert = InferInsertModel<typeof products>;
 export type ProductI18n = InferSelectModel<typeof productsI18N>;
 export type ProductI18nInsert = InferInsertModel<typeof productsI18N>;
+
+export interface PaddleMetadata {
+    productId?: string;
+    priceId?: string;
+    status?: string;
+    syncedAt?: string;
+}
 
 // Language codes
 export type LanguageCode = 'KR' | 'EN' | 'JP';

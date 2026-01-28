@@ -26,8 +26,10 @@ export async function createProductAction(data: CreateProductSchema): Promise<Ac
                 category: validated.data.category,
                 billingCycle: validated.data.billingCycle,
                 productCode: validated.data.productCode,
-                paddleProductId: validated.data.paddleProductId,
-                paddlePriceId: validated.data.paddlePriceId,
+                paddleMetadata: {
+                    productId: validated.data.paddleProductId || undefined,
+                    priceId: validated.data.paddlePriceId || undefined,
+                },
                 iconImageUrl: validated.data.iconImageUrl,
                 isActive: validated.data.isActive,
             }).returning();
@@ -87,8 +89,10 @@ export async function updateProductAction(id: string, data: UpdateProductSchema)
                 category: validated.data.category,
                 billingCycle: validated.data.billingCycle,
                 productCode: validated.data.productCode,
-                paddleProductId: validated.data.paddleProductId,
-                paddlePriceId: validated.data.paddlePriceId,
+                paddleMetadata: {
+                    productId: validated.data.paddleProductId || undefined,
+                    priceId: validated.data.paddlePriceId || undefined,
+                },
                 iconImageUrl: validated.data.iconImageUrl,
                 isActive: validated.data.isActive,
                 updatedAt: new Date().toISOString(),
@@ -205,7 +209,8 @@ export async function syncPaddleProductAction(productId: string): Promise<{ succ
         const productName = enI18n?.name || product.productCode || 'Unnamed Product';
 
         // 1. Handle Product in Paddle
-        let paddleProductId = product.paddleProductId;
+        const currentMetadata: any = product.paddleMetadata || {};
+        let paddleProductId = currentMetadata.productId;
         if (paddleProductId) {
             // Update existing
             await paddle.products.update(paddleProductId, {
@@ -223,7 +228,7 @@ export async function syncPaddleProductAction(productId: string): Promise<{ succ
         }
 
         // 2. Handle Price in Paddle
-        let paddlePriceId = product.paddlePriceId;
+        let paddlePriceId = currentMetadata.priceId;
 
         // Prepare price data
         const priceData: any = {
@@ -271,8 +276,12 @@ export async function syncPaddleProductAction(productId: string): Promise<{ succ
 
         // 3. Update DB
         await db.update(products).set({
-            paddleProductId,
-            paddlePriceId,
+            paddleMetadata: {
+                ...currentMetadata,
+                productId: paddleProductId,
+                priceId: paddlePriceId,
+                syncedAt: new Date().toISOString(),
+            },
             updatedAt: new Date().toISOString(),
         }).where(eq(products.id, productId));
 

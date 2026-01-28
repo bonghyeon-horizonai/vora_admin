@@ -402,8 +402,7 @@ export const productTools = pgTable("product_tools", {
 
 export const products = pgTable("products", {
 	id: uuid().defaultRandom().primaryKey().notNull(),
-	paddleProductId: text("paddle_product_id"),
-	paddlePriceId: text("paddle_price_id"),
+	paddleMetadata: jsonb("paddle_metadata"),
 	type: productTypeEnum("type").default('SUBSCRIPTION'),
 	category: text("category"),
 	billingCycle: text("billing_cycle").default('MONTHLY'),

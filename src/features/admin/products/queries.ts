@@ -1,7 +1,7 @@
 import { db } from '@/lib/db';
 import { products, productsI18N, productTools, tools, toolI18N } from '@/lib/db/schema';
 import { eq, and, or, ilike, desc, asc, sql, inArray, aliasedTable } from 'drizzle-orm';
-import type { ProductListParams, ProductListItem, ProductWithDetails } from './types';
+import type { ProductListParams, ProductListItem, ProductWithDetails, PaddleMetadata } from './types';
 
 /**
  * Get paginated list of products with search and filter
@@ -206,6 +206,7 @@ export async function getProductById(id: string, locale: string = 'ko'): Promise
 
     return {
         ...productBase[0],
+        paddleMetadata: productBase[0].paddleMetadata as unknown as PaddleMetadata | null,
         i18n,
         tools: bundledTools.map(t => ({
             ...t,

@@ -1,0 +1,38 @@
+{
+    "family": "vora-admin-dev",
+    "networkMode": "awsvpc",
+    "containerDefinitions": [
+        {
+            "name": "vora-dev-container",
+            "image": "vora-admin-dev",
+            "portMappings": [
+                {
+                    "containerPort": 3000,
+                    "hostPort": 3000,
+                    "protocol": "tcp"
+                }
+            ],
+            "environment": [
+                {
+                    "name": "PORT",
+                    "value": "3000"
+                }
+            ],
+            "essential": true,
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-group": "/ecs/vora-dev",
+                    "awslogs-region": "ap-northeast-2",
+                    "awslogs-stream-prefix": "ecs"
+                }
+            }
+        }
+    ],
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "cpu": "256",
+    "memory": "512",
+    "executionRoleArn": "arn:aws:iam::444339626829:role/vora-dev-ecs-execution-role"
+}

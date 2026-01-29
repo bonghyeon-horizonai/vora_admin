@@ -1,10 +1,19 @@
 "use client";
 
 import MuiLayerOverride from "./mui-layer-override";
-import { createContext, ReactNode, useContext, useEffect, useState } from "react";
+import {
+  createContext,
+  ReactNode,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 import { useLocalStorage } from "react-use";
 
-import { createTheme, ThemeProvider as MuiThemeProvider } from "@mui/material/styles";
+import {
+  createTheme,
+  ThemeProvider as MuiThemeProvider,
+} from "@mui/material/styles";
 
 import { DEFAULTS } from "@/config";
 import {
@@ -243,28 +252,47 @@ export const muiTheme = createTheme({
 });
 
 export default function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setTheme] = useLocalStorage<ThemeVariant>(LS_KEYS.themeColor, DEFAULTS.themeColor);
-  const [mode, setMode] = useLocalStorage<ModeVariant>(LS_KEYS.themeMode, DEFAULTS.themeMode);
+  const [theme, setTheme] = useLocalStorage<ThemeVariant>(
+    LS_KEYS.themeColor,
+    DEFAULTS.themeColor,
+  );
+  const [mode, setMode] = useLocalStorage<ModeVariant>(
+    LS_KEYS.themeMode,
+    DEFAULTS.themeMode,
+  );
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
   // Set the theme and mode on the document element
   useEffect(() => {
     const classList = document.documentElement.classList;
 
-    const preferredSystemMode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-    const finalMode = mode === "system" ? preferredSystemMode : (mode ?? preferredSystemMode);
+    const preferredSystemMode = window.matchMedia(
+      "(prefers-color-scheme: dark)",
+    ).matches
+      ? "dark"
+      : "light";
+    const finalMode =
+      mode === "system" ? preferredSystemMode : (mode ?? preferredSystemMode);
     classList.add(theme ?? DEFAULTS.themeColor, finalMode);
     setIsDarkMode(finalMode === "dark");
-    const removeList = [...Object.values(THEME_OPTIONS), ...THEME_MODE_OPTIONS].filter(
-      (x) => x !== theme && x !== finalMode,
-    );
+    const removeList = [
+      ...Object.values(THEME_OPTIONS),
+      ...THEME_MODE_OPTIONS,
+    ].filter((x) => x !== theme && x !== finalMode);
     classList.remove(...removeList);
   }, [theme, mode]);
 
-  const [content, setContent] = useLocalStorage<ContentType>(LS_KEYS.contentType, DEFAULTS.contentType);
+  const [content, setContent] = useLocalStorage<ContentType>(
+    LS_KEYS.contentType,
+    DEFAULTS.contentType,
+  );
 
   useEffect(() => {
     setTimeout(
-      () => document.documentElement.style.setProperty("--layout-duration", `${DEFAULTS.transitionDuration}ms`),
+      () =>
+        document.documentElement.style.setProperty(
+          "--layout-duration",
+          `${DEFAULTS.transitionDuration}ms`,
+        ),
       200,
     );
   }, []);
@@ -282,7 +310,10 @@ export default function ThemeProvider({ children }: { children: ReactNode }) {
       }}
     >
       <MuiLayerOverride />
-      <MuiThemeProvider theme={muiTheme} defaultMode={mode || DEFAULTS.themeMode}>
+      <MuiThemeProvider
+        theme={muiTheme}
+        defaultMode={mode || DEFAULTS.themeMode}
+      >
         {children}
       </MuiThemeProvider>
     </ThemeContext.Provider>

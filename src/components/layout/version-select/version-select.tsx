@@ -2,12 +2,21 @@
 
 import { SyntheticEvent, useState } from "react";
 
-import { Box, Button, Fade, Menu, MenuItem, PopoverVirtualElement } from "@mui/material";
+import {
+  Box,
+  Button,
+  Fade,
+  Menu,
+  MenuItem,
+  PopoverVirtualElement,
+} from "@mui/material";
 
 import NiChevronRightSmall from "@/icons/nexture/ni-chevron-right-small";
 import { cn } from "@/lib/utils";
 export default function VersionSelect({ className }: { className?: string }) {
-  const [anchorEl, setAnchorEl] = useState<EventTarget | Element | PopoverVirtualElement | null>(null);
+  const [anchorEl, setAnchorEl] = useState<
+    EventTarget | Element | PopoverVirtualElement | null
+  >(null);
   const open = Boolean(anchorEl);
   const handleClick = (event: Event | SyntheticEvent) => {
     setAnchorEl(event.currentTarget);
@@ -23,7 +32,10 @@ export default function VersionSelect({ className }: { className?: string }) {
         color="grey"
         onClick={handleClick}
         endIcon={
-          <NiChevronRightSmall size="medium" className={cn("-ml-1 transition-transform", open && "rotate-90")} />
+          <NiChevronRightSmall
+            size="medium"
+            className={cn("-ml-1 transition-transform", open && "rotate-90")}
+          />
         }
       >
         <Box className="w-full truncate text-clip">Next v7.3.1</Box>

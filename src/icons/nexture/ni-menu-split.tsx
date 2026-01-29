@@ -1,4 +1,8 @@
-import { NextureIconsProps, sizeHelper, strokeSizeHelper } from "../nexture-icons";
+import {
+  NextureIconsProps,
+  sizeHelper,
+  strokeSizeHelper,
+} from "../nexture-icons";
 
 export default function NiMenuSplit({
   className,
@@ -19,9 +23,24 @@ export default function NiMenuSplit({
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <path d="M4 5L7 5" stroke="currentColor" strokeWidth={iconStrokeWidth} strokeLinecap="round" />
-        <path d="M4 12L7 12" stroke="currentColor" strokeWidth={iconStrokeWidth} strokeLinecap="round" />
-        <path d="M4 19L7 19" stroke="currentColor" strokeWidth={iconStrokeWidth} strokeLinecap="round" />
+        <path
+          d="M4 5L7 5"
+          stroke="currentColor"
+          strokeWidth={iconStrokeWidth}
+          strokeLinecap="round"
+        />
+        <path
+          d="M4 12L7 12"
+          stroke="currentColor"
+          strokeWidth={iconStrokeWidth}
+          strokeLinecap="round"
+        />
+        <path
+          d="M4 19L7 19"
+          stroke="currentColor"
+          strokeWidth={iconStrokeWidth}
+          strokeLinecap="round"
+        />
         <path
           opacity={oneTone ? 1 : 0.6}
           d="M20 5L11 5"

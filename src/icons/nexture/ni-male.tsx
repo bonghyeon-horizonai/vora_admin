@@ -1,4 +1,8 @@
-import { NextureIconsProps, sizeHelper, strokeSizeHelper } from "../nexture-icons";
+import {
+  NextureIconsProps,
+  sizeHelper,
+  strokeSizeHelper,
+} from "../nexture-icons";
 
 export default function NiMale({
   className,
@@ -27,7 +31,13 @@ export default function NiMale({
           strokeLinecap="round"
           strokeLinejoin="round"
         />
-        <circle cx="10" cy="14" r="8" stroke="currentColor" strokeWidth={iconStrokeWidth} />
+        <circle
+          cx="10"
+          cy="14"
+          r="8"
+          stroke="currentColor"
+          strokeWidth={iconStrokeWidth}
+        />
       </svg>
     );
   } else {

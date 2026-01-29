@@ -137,5 +137,10 @@ export const leftMenuItems: MenuItem[] = [
 ];
 
 export const leftMenuBottomItems: MenuItem[] = [
-  { id: "settings", label: "menu-settings", href: "/settings", icon: "NiSettings" },
+  {
+    id: "settings",
+    label: "menu-settings",
+    href: "/settings",
+    icon: "NiSettings",
+  },
 ];

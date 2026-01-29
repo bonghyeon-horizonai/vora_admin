@@ -1,4 +1,8 @@
-import { NextureIconsProps, sizeHelper, strokeSizeHelper } from "../nexture-icons";
+import {
+  NextureIconsProps,
+  sizeHelper,
+  strokeSizeHelper,
+} from "../nexture-icons";
 
 export default function NiSpinner({
   className,
@@ -19,10 +23,30 @@ export default function NiSpinner({
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <path d="M12 2V6" stroke="currentColor" strokeWidth={iconStrokeWidth} strokeLinecap="round" />
-        <path d="M12 18V22" stroke="currentColor" strokeWidth={iconStrokeWidth} strokeLinecap="round" />
-        <path d="M2 12L6 12" stroke="currentColor" strokeWidth={iconStrokeWidth} strokeLinecap="round" />
-        <path d="M18 12L22 12" stroke="currentColor" strokeWidth={iconStrokeWidth} strokeLinecap="round" />
+        <path
+          d="M12 2V6"
+          stroke="currentColor"
+          strokeWidth={iconStrokeWidth}
+          strokeLinecap="round"
+        />
+        <path
+          d="M12 18V22"
+          stroke="currentColor"
+          strokeWidth={iconStrokeWidth}
+          strokeLinecap="round"
+        />
+        <path
+          d="M2 12L6 12"
+          stroke="currentColor"
+          strokeWidth={iconStrokeWidth}
+          strokeLinecap="round"
+        />
+        <path
+          d="M18 12L22 12"
+          stroke="currentColor"
+          strokeWidth={iconStrokeWidth}
+          strokeLinecap="round"
+        />
         <path
           opacity={oneTone ? 1 : 0.6}
           d="M4.92871 4.92896L7.75714 7.75738"
@@ -63,10 +87,30 @@ export default function NiSpinner({
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <path d="M12 2V6" stroke="currentColor" strokeWidth={iconStrokeWidth} strokeLinecap="round" />
-        <path d="M12 18V22" stroke="currentColor" strokeWidth={iconStrokeWidth} strokeLinecap="round" />
-        <path d="M2 12L6 12" stroke="currentColor" strokeWidth={iconStrokeWidth} strokeLinecap="round" />
-        <path d="M18 12L22 12" stroke="currentColor" strokeWidth={iconStrokeWidth} strokeLinecap="round" />
+        <path
+          d="M12 2V6"
+          stroke="currentColor"
+          strokeWidth={iconStrokeWidth}
+          strokeLinecap="round"
+        />
+        <path
+          d="M12 18V22"
+          stroke="currentColor"
+          strokeWidth={iconStrokeWidth}
+          strokeLinecap="round"
+        />
+        <path
+          d="M2 12L6 12"
+          stroke="currentColor"
+          strokeWidth={iconStrokeWidth}
+          strokeLinecap="round"
+        />
+        <path
+          d="M18 12L22 12"
+          stroke="currentColor"
+          strokeWidth={iconStrokeWidth}
+          strokeLinecap="round"
+        />
         <path
           opacity={oneTone ? 1 : 0.6}
           d="M4.92871 4.92896L7.75714 7.75738"

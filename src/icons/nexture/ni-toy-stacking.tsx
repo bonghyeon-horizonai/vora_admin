@@ -1,4 +1,8 @@
-import { NextureIconsProps, sizeHelper, strokeSizeHelper } from "../nexture-icons";
+import {
+  NextureIconsProps,
+  sizeHelper,
+  strokeSizeHelper,
+} from "../nexture-icons";
 
 export default function NiToyStacking({
   className,
@@ -35,8 +39,18 @@ export default function NiToyStacking({
           stroke="currentColor"
           strokeWidth={iconStrokeWidth}
         />
-        <path d="M12 2V4" stroke="currentColor" strokeWidth={iconStrokeWidth} strokeLinecap="round" />
-        <path d="M12 21V22" stroke="currentColor" strokeWidth={iconStrokeWidth} strokeLinecap="round" />
+        <path
+          d="M12 2V4"
+          stroke="currentColor"
+          strokeWidth={iconStrokeWidth}
+          strokeLinecap="round"
+        />
+        <path
+          d="M12 21V22"
+          stroke="currentColor"
+          strokeWidth={iconStrokeWidth}
+          strokeLinecap="round"
+        />
       </svg>
     );
   } else {

@@ -1,4 +1,8 @@
-import { NextureIconsProps, sizeHelper, strokeSizeHelper } from "../nexture-icons";
+import {
+  NextureIconsProps,
+  sizeHelper,
+  strokeSizeHelper,
+} from "../nexture-icons";
 
 export default function NiFaceFrown({
   className,
@@ -19,7 +23,13 @@ export default function NiFaceFrown({
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth={iconStrokeWidth} />
+        <circle
+          cx="12"
+          cy="12"
+          r="10"
+          stroke="currentColor"
+          strokeWidth={iconStrokeWidth}
+        />
         <path
           opacity={oneTone ? 1 : 0.6}
           d="M15 15.5C13.3431 13.8431 10.6569 13.8431 9 15.5"

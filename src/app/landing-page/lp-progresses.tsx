@@ -1,5 +1,12 @@
 "use client";
-import { Box, Card, CardContent, CircularProgress, Grid, Typography } from "@mui/material";
+import {
+  Box,
+  Card,
+  CardContent,
+  CircularProgress,
+  Grid,
+  Typography,
+} from "@mui/material";
 
 export default function LPProgresses() {
   return (
@@ -8,7 +15,10 @@ export default function LPProgresses() {
         <Card className="h-24">
           <CardContent className="flex flex-row items-start justify-between">
             <Box>
-              <Typography variant="subtitle2" className="text-text-secondary leading-5 transition-colors">
+              <Typography
+                variant="subtitle2"
+                className="text-text-secondary leading-5 transition-colors"
+              >
                 Purchasing
               </Typography>
               <Typography variant="h5" className="text-leading-5">
@@ -16,9 +26,17 @@ export default function LPProgresses() {
               </Typography>
             </Box>
             <Box className="relative inline-flex w-10">
-              <CircularProgress variant="determinate" value={75} className="relative z-1 h-10! w-10!" />
+              <CircularProgress
+                variant="determinate"
+                value={75}
+                className="relative z-1 h-10! w-10!"
+              />
               <Box className="absolute top-0 right-0 bottom-0 left-0 flex items-center justify-center">
-                <Typography variant="caption" component="div" className="text-text-secondary">
+                <Typography
+                  variant="caption"
+                  component="div"
+                  className="text-text-secondary"
+                >
                   75%
                 </Typography>
               </Box>
@@ -31,7 +49,10 @@ export default function LPProgresses() {
         <Card className="h-24">
           <CardContent className="flex flex-row items-start justify-between">
             <Box>
-              <Typography variant="subtitle2" className="text-text-secondary leading-5 transition-colors">
+              <Typography
+                variant="subtitle2"
+                className="text-text-secondary leading-5 transition-colors"
+              >
                 Production
               </Typography>
               <Typography variant="h5" className="text-leading-5">
@@ -39,9 +60,17 @@ export default function LPProgresses() {
               </Typography>
             </Box>
             <Box className="relative inline-flex w-10">
-              <CircularProgress variant="determinate" value={50} className="relative z-1 h-10! w-10!" />
+              <CircularProgress
+                variant="determinate"
+                value={50}
+                className="relative z-1 h-10! w-10!"
+              />
               <Box className="absolute top-0 right-0 bottom-0 left-0 flex items-center justify-center">
-                <Typography variant="caption" component="div" className="text-text-secondary">
+                <Typography
+                  variant="caption"
+                  component="div"
+                  className="text-text-secondary"
+                >
                   50%
                 </Typography>
               </Box>
@@ -54,7 +83,10 @@ export default function LPProgresses() {
         <Card className="h-24">
           <CardContent className="flex flex-row items-start justify-between">
             <Box>
-              <Typography variant="subtitle2" className="text-text-secondary leading-5 transition-colors">
+              <Typography
+                variant="subtitle2"
+                className="text-text-secondary leading-5 transition-colors"
+              >
                 Packaging
               </Typography>
               <Typography variant="h5" className="text-leading-5">
@@ -62,9 +94,17 @@ export default function LPProgresses() {
               </Typography>
             </Box>
             <Box className="relative inline-flex w-10">
-              <CircularProgress variant="determinate" value={33} className="relative z-1 h-10! w-10!" />
+              <CircularProgress
+                variant="determinate"
+                value={33}
+                className="relative z-1 h-10! w-10!"
+              />
               <Box className="absolute top-0 right-0 bottom-0 left-0 flex items-center justify-center">
-                <Typography variant="caption" component="div" className="text-text-secondary">
+                <Typography
+                  variant="caption"
+                  component="div"
+                  className="text-text-secondary"
+                >
                   33%
                 </Typography>
               </Box>
@@ -77,7 +117,10 @@ export default function LPProgresses() {
         <Card className="h-24">
           <CardContent className="flex flex-row items-start justify-between">
             <Box>
-              <Typography variant="subtitle2" className="text-text-secondary leading-5 transition-colors">
+              <Typography
+                variant="subtitle2"
+                className="text-text-secondary leading-5 transition-colors"
+              >
                 Delivery
               </Typography>
               <Typography variant="h5" className="text-leading-5">
@@ -85,9 +128,17 @@ export default function LPProgresses() {
               </Typography>
             </Box>
             <Box className="relative inline-flex w-10">
-              <CircularProgress variant="determinate" value={87} className="relative z-1 h-10! w-10!" />
+              <CircularProgress
+                variant="determinate"
+                value={87}
+                className="relative z-1 h-10! w-10!"
+              />
               <Box className="absolute top-0 right-0 bottom-0 left-0 flex items-center justify-center">
-                <Typography variant="caption" component="div" className="text-text-secondary">
+                <Typography
+                  variant="caption"
+                  component="div"
+                  className="text-text-secondary"
+                >
                   87%
                 </Typography>
               </Box>
@@ -100,7 +151,10 @@ export default function LPProgresses() {
         <Card className="h-24">
           <CardContent className="flex flex-row items-start justify-between">
             <Box>
-              <Typography variant="subtitle2" className="text-text-secondary leading-5 transition-colors">
+              <Typography
+                variant="subtitle2"
+                className="text-text-secondary leading-5 transition-colors"
+              >
                 Education
               </Typography>
               <Typography variant="h5" className="text-leading-5">
@@ -108,9 +162,17 @@ export default function LPProgresses() {
               </Typography>
             </Box>
             <Box className="relative inline-flex w-10">
-              <CircularProgress variant="determinate" value={25} className="relative z-1 h-10! w-10!" />
+              <CircularProgress
+                variant="determinate"
+                value={25}
+                className="relative z-1 h-10! w-10!"
+              />
               <Box className="absolute top-0 right-0 bottom-0 left-0 flex items-center justify-center">
-                <Typography variant="caption" component="div" className="text-text-secondary">
+                <Typography
+                  variant="caption"
+                  component="div"
+                  className="text-text-secondary"
+                >
                   25%
                 </Typography>
               </Box>
@@ -123,7 +185,10 @@ export default function LPProgresses() {
         <Card className="h-24">
           <CardContent className="flex flex-row items-start justify-between">
             <Box>
-              <Typography variant="subtitle2" className="text-text-secondary leading-5 transition-colors">
+              <Typography
+                variant="subtitle2"
+                className="text-text-secondary leading-5 transition-colors"
+              >
                 Payments
               </Typography>
               <Typography variant="h5" className="text-leading-5">
@@ -131,9 +196,17 @@ export default function LPProgresses() {
               </Typography>
             </Box>
             <Box className="relative inline-flex w-10">
-              <CircularProgress variant="determinate" value={22} className="relative z-1 h-10! w-10!" />
+              <CircularProgress
+                variant="determinate"
+                value={22}
+                className="relative z-1 h-10! w-10!"
+              />
               <Box className="absolute top-0 right-0 bottom-0 left-0 flex items-center justify-center">
-                <Typography variant="caption" component="div" className="text-text-secondary">
+                <Typography
+                  variant="caption"
+                  component="div"
+                  className="text-text-secondary"
+                >
                   22%
                 </Typography>
               </Box>

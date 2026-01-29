@@ -1,4 +1,8 @@
-import { NextureIconsProps, sizeHelper, strokeSizeHelper } from "../nexture-icons";
+import {
+  NextureIconsProps,
+  sizeHelper,
+  strokeSizeHelper,
+} from "../nexture-icons";
 
 export default function NiPaintBucket({
   className,
@@ -37,7 +41,12 @@ export default function NiPaintBucket({
           stroke="currentColor"
           strokeWidth={iconStrokeWidth}
         />
-        <path d="M15.8237 7.82373L10 2" stroke="currentColor" strokeWidth={iconStrokeWidth} strokeLinecap="round" />
+        <path
+          d="M15.8237 7.82373L10 2"
+          stroke="currentColor"
+          strokeWidth={iconStrokeWidth}
+          strokeLinecap="round"
+        />
       </svg>
     );
   } else {

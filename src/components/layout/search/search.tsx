@@ -71,7 +71,12 @@ export default function Search() {
 
   return (
     <>
-      <Tooltip title={`Search (${isMac ? "cmd" : "ctrl"}+k)`} placement="bottom" arrow open={!open && tooltipShow}>
+      <Tooltip
+        title={`Search (${isMac ? "cmd" : "ctrl"}+k)`}
+        placement="bottom"
+        arrow
+        open={!open && tooltipShow}
+      >
         <Button
           variant="text"
           size="large"
@@ -83,7 +88,9 @@ export default function Search() {
           onClick={handleClickOpenDialog}
           onMouseEnter={() => setTooltipShow(true)}
           onMouseLeave={() => setTooltipShow(false)}
-          startIcon={<NiSearch variant={open ? "contained" : "outlined"} size={24} />}
+          startIcon={
+            <NiSearch variant={open ? "contained" : "outlined"} size={24} />
+          }
         />
       </Tooltip>
 
@@ -129,7 +136,9 @@ export default function Search() {
                 value="all"
               />
               <Tab
-                icon={<NiDocumentImage size="medium" className="mr-0 md:mr-1" />}
+                icon={
+                  <NiDocumentImage size="medium" className="mr-0 md:mr-1" />
+                }
                 iconPosition="start"
                 label={<Box className="hidden md:flex">Products</Box>}
                 value="products"
@@ -156,18 +165,29 @@ export default function Search() {
             <TabPanel value="all" className="p-0">
               <Box className="flex flex-col gap-2.5">
                 <Box>
-                  <Typography variant="body2" className="text-text-disabled mb-2 font-medium">
+                  <Typography
+                    variant="body2"
+                    className="text-text-disabled mb-2 font-medium"
+                  >
                     Recent
                   </Typography>
                   <List>
                     <ListItem className="p-0">
                       <ListItemButton classes={{ root: "group items-start" }}>
                         <ListItemAvatar>
-                          <Avatar alt="Olivia Bennett" src="/images/products/product-1.jpg" className="mr-3" />
+                          <Avatar
+                            alt="Olivia Bennett"
+                            src="/images/products/product-1.jpg"
+                            className="mr-3"
+                          />
                         </ListItemAvatar>
                         <ListItemText
                           primary={
-                            <Typography component="span" className="leading-4" variant="body1">
+                            <Typography
+                              component="span"
+                              className="leading-4"
+                              variant="body1"
+                            >
                               Stretchy
                             </Typography>
                           }
@@ -187,11 +207,19 @@ export default function Search() {
                     <ListItem className="p-0">
                       <ListItemButton classes={{ root: "group items-start" }}>
                         <ListItemAvatar>
-                          <Avatar alt="Olivia Bennett" src="/images/products/product-2.jpg" className="mr-3" />
+                          <Avatar
+                            alt="Olivia Bennett"
+                            src="/images/products/product-2.jpg"
+                            className="mr-3"
+                          />
                         </ListItemAvatar>
                         <ListItemText
                           primary={
-                            <Typography component="span" className="leading-4" variant="body1">
+                            <Typography
+                              component="span"
+                              className="leading-4"
+                              variant="body1"
+                            >
                               Pony Soprano
                             </Typography>
                           }
@@ -211,11 +239,19 @@ export default function Search() {
                     <ListItem className="p-0">
                       <ListItemButton classes={{ root: "group items-start" }}>
                         <ListItemAvatar>
-                          <Avatar alt="Olivia Bennett" src="/images/products/product-3.jpg" className="mr-3" />
+                          <Avatar
+                            alt="Olivia Bennett"
+                            src="/images/products/product-3.jpg"
+                            className="mr-3"
+                          />
                         </ListItemAvatar>
                         <ListItemText
                           primary={
-                            <Typography component="span" className="leading-4" variant="body1">
+                            <Typography
+                              component="span"
+                              className="leading-4"
+                              variant="body1"
+                            >
                               Buck Rogers
                             </Typography>
                           }
@@ -235,7 +271,10 @@ export default function Search() {
                   </List>
                 </Box>
                 <Box>
-                  <Typography variant="body2" className="text-text-disabled mb-2 font-medium">
+                  <Typography
+                    variant="body2"
+                    className="text-text-disabled mb-2 font-medium"
+                  >
                     Categories
                   </Typography>
                   <List>
@@ -243,12 +282,19 @@ export default function Search() {
                       <ListItemButton classes={{ root: "group items-start" }}>
                         <ListItemAvatar>
                           <Avatar className="medium bg-primary-light/10 mr-3">
-                            <NiController size="medium" className="text-primary" />
+                            <NiController
+                              size="medium"
+                              className="text-primary"
+                            />
                           </Avatar>
                         </ListItemAvatar>
                         <ListItemText
                           primary={
-                            <Typography component="span" className="leading-4" variant="body1">
+                            <Typography
+                              component="span"
+                              className="leading-4"
+                              variant="body1"
+                            >
                               Electronic Devices
                             </Typography>
                           }
@@ -276,12 +322,19 @@ export default function Search() {
                       <ListItemButton classes={{ root: "group items-start" }}>
                         <ListItemAvatar>
                           <Avatar className="medium bg-secondary-light/10 mr-3">
-                            <NiDocumentCode size="medium" className="text-secondary" />
+                            <NiDocumentCode
+                              size="medium"
+                              className="text-secondary"
+                            />
                           </Avatar>
                         </ListItemAvatar>
                         <ListItemText
                           primary={
-                            <Typography component="span" className="leading-4" variant="body1">
+                            <Typography
+                              component="span"
+                              className="leading-4"
+                              variant="body1"
+                            >
                               Digital Products
                             </Typography>
                           }
@@ -309,12 +362,19 @@ export default function Search() {
                       <ListItemButton classes={{ root: "group items-start" }}>
                         <ListItemAvatar>
                           <Avatar className="medium bg-accent-1/10 mr-3">
-                            <NiBriefcase size="medium" className="text-accent-1" />
+                            <NiBriefcase
+                              size="medium"
+                              className="text-accent-1"
+                            />
                           </Avatar>
                         </ListItemAvatar>
                         <ListItemText
                           primary={
-                            <Typography component="span" className="leading-4" variant="body1">
+                            <Typography
+                              component="span"
+                              className="leading-4"
+                              variant="body1"
+                            >
                               Bags
                             </Typography>
                           }
@@ -341,18 +401,29 @@ export default function Search() {
                   </List>
                 </Box>
                 <Box>
-                  <Typography variant="body2" className="text-text-disabled mb-2 font-medium">
+                  <Typography
+                    variant="body2"
+                    className="text-text-disabled mb-2 font-medium"
+                  >
                     Users
                   </Typography>
                   <List>
                     <ListItem className="p-0">
                       <ListItemButton classes={{ root: "group items-start" }}>
                         <ListItemAvatar>
-                          <Avatar alt="Zoila Vittorino" src="/images/avatars/avatar-1.jpg" className="mr-3" />
+                          <Avatar
+                            alt="Zoila Vittorino"
+                            src="/images/avatars/avatar-1.jpg"
+                            className="mr-3"
+                          />
                         </ListItemAvatar>
                         <ListItemText
                           primary={
-                            <Typography component="span" className="leading-4" variant="body1">
+                            <Typography
+                              component="span"
+                              className="leading-4"
+                              variant="body1"
+                            >
                               Zoila Vittorino
                             </Typography>
                           }
@@ -370,11 +441,19 @@ export default function Search() {
                     <ListItem className="p-0">
                       <ListItemButton classes={{ root: "group items-start" }}>
                         <ListItemAvatar>
-                          <Avatar alt="Travis Howard" src="/images/avatars/avatar-2.jpg" className="mr-3" />
+                          <Avatar
+                            alt="Travis Howard"
+                            src="/images/avatars/avatar-2.jpg"
+                            className="mr-3"
+                          />
                         </ListItemAvatar>
                         <ListItemText
                           primary={
-                            <Typography component="span" className="leading-4" variant="body1">
+                            <Typography
+                              component="span"
+                              className="leading-4"
+                              variant="body1"
+                            >
                               Travis Howard
                             </Typography>
                           }
@@ -392,11 +471,19 @@ export default function Search() {
                     <ListItem className="p-0">
                       <ListItemButton classes={{ root: "group items-start" }}>
                         <ListItemAvatar>
-                          <Avatar alt="Olivia Bennett" src="/images/avatars/avatar-3.jpg" className="mr-3" />
+                          <Avatar
+                            alt="Olivia Bennett"
+                            src="/images/avatars/avatar-3.jpg"
+                            className="mr-3"
+                          />
                         </ListItemAvatar>
                         <ListItemText
                           primary={
-                            <Typography component="span" className="leading-4" variant="body1">
+                            <Typography
+                              component="span"
+                              className="leading-4"
+                              variant="body1"
+                            >
                               Olivia Bennett
                             </Typography>
                           }

@@ -55,19 +55,46 @@ export default function LPInventory() {
           Inventory
         </Typography>
 
-        <FormControl className="outlined" variant="standard" size="small" fullWidth>
+        <FormControl
+          className="outlined"
+          variant="standard"
+          size="small"
+          fullWidth
+        >
           <FormLabel component="label">SKU</FormLabel>
-          <Input placeholder="SKU" value={inventory.sku} onChange={handleSkuChange} />
+          <Input
+            placeholder="SKU"
+            value={inventory.sku}
+            onChange={handleSkuChange}
+          />
         </FormControl>
 
-        <FormControl className="outlined" variant="standard" size="small" fullWidth>
+        <FormControl
+          className="outlined"
+          variant="standard"
+          size="small"
+          fullWidth
+        >
           <FormLabel component="label">Barcode</FormLabel>
-          <Input placeholder="Barcode" value={inventory.barcode} onChange={handleBarcodeChange} />
+          <Input
+            placeholder="Barcode"
+            value={inventory.barcode}
+            onChange={handleBarcodeChange}
+          />
         </FormControl>
 
-        <FormControl className="outlined" variant="standard" size="small" fullWidth>
+        <FormControl
+          className="outlined"
+          variant="standard"
+          size="small"
+          fullWidth
+        >
           <FormLabel component="label">Quantity</FormLabel>
-          <Input placeholder="Quantity" value={inventory.quantity} onChange={handleQuantityChange} />
+          <Input
+            placeholder="Quantity"
+            value={inventory.quantity}
+            onChange={handleQuantityChange}
+          />
         </FormControl>
 
         <FormControl component="fieldset" variant="standard" className="mb-0">

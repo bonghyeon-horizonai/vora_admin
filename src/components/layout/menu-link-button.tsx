@@ -56,7 +56,11 @@ export const MenuLinkButton = ({
           variant={isActive ? "contained" : iconVariant}
           icon={icon as any}
           size={"large"}
-          className={cn("transition-transform group-hover:scale-[0.85]", isActive && "scale-[0.85]", iconClassName)}
+          className={cn(
+            "transition-transform group-hover:scale-[0.85]",
+            isActive && "scale-[0.85]",
+            iconClassName,
+          )}
         />
       );
     }

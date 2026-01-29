@@ -1,7 +1,14 @@
 import React from "react";
 import { useTranslations } from "use-intl";
 
-import { Chip, Fade, ListItemIcon, Menu, MenuItem, PopoverVirtualElement } from "@mui/material";
+import {
+  Chip,
+  Fade,
+  ListItemIcon,
+  Menu,
+  MenuItem,
+  PopoverVirtualElement,
+} from "@mui/material";
 
 import NiChevronRightSmall from "@/icons/nexture/ni-chevron-right-small";
 import NiMoon from "@/icons/nexture/ni-moon";
@@ -12,7 +19,9 @@ import { useThemeContext } from "@/theme/theme-provider";
 
 export default function UserModeSwitch() {
   const { mode, setMode } = useThemeContext();
-  const [anchorElMode, setAnchorElMode] = React.useState<EventTarget | Element | PopoverVirtualElement | null>(null);
+  const [anchorElMode, setAnchorElMode] = React.useState<
+    EventTarget | Element | PopoverVirtualElement | null
+  >(null);
   const openMode = Boolean(anchorElMode);
   const handleClickMode = (event: Event | React.SyntheticEvent) => {
     setAnchorElMode(event.currentTarget);
@@ -45,12 +54,21 @@ export default function UserModeSwitch() {
 
   return (
     <>
-      <MenuItem onClick={handleClickMode} className={cn(openMode && "bg-grey-500/10")}>
+      <MenuItem
+        onClick={handleClickMode}
+        className={cn(openMode && "bg-grey-500/10")}
+      >
         <ListItemIcon>{getModeIcon()}</ListItemIcon>
         <div className="w-full">{t("user-mode")}</div>
         <Chip variant="outlined" label={getModeLabel()} size="small" />
         <ListItemIcon>
-          <NiChevronRightSmall size={20} className={cn("mr-0 ml-1 transition-transform", openMode && "rotate-90")} />
+          <NiChevronRightSmall
+            size={20}
+            className={cn(
+              "mr-0 ml-1 transition-transform",
+              openMode && "rotate-90",
+            )}
+          />
         </ListItemIcon>
       </MenuItem>
       <Menu

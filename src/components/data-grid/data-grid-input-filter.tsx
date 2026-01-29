@@ -14,11 +14,20 @@ export default function DataGridInputFilter(props: DataGridInputFilterProps) {
   };
 
   return (
-    <FormControl className="outlined edit-input" variant="outlined" size="small" fullWidth>
+    <FormControl
+      className="outlined edit-input"
+      variant="outlined"
+      size="small"
+      fullWidth
+    >
       <TextField
         variant="outlined"
         size="small"
-        label={isHeaderFilter ? capitalize(item.operator) : apiRef.current.getLocaleText("filterPanelInputLabel")}
+        label={
+          isHeaderFilter
+            ? capitalize(item.operator)
+            : apiRef.current.getLocaleText("filterPanelInputLabel")
+        }
         onChange={handleChange}
         defaultValue={item.value}
         slotProps={{ htmlInput: editorProps }}

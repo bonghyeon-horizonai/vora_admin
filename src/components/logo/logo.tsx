@@ -1,6 +1,12 @@
 import { cn } from "@/lib/utils";
 
-export default function Logo({ classNameFull, classNameMobile }: { classNameFull?: string; classNameMobile?: string }) {
+export default function Logo({
+  classNameFull,
+  classNameMobile,
+}: {
+  classNameFull?: string;
+  classNameMobile?: string;
+}) {
   return (
     <>
       <svg
@@ -32,9 +38,19 @@ export default function Logo({ classNameFull, classNameMobile }: { classNameFull
           fill="url(#paint0_linear_8328_30318)"
         />
         <defs>
-          <linearGradient id="paint0_linear_8328_30318" x1="11" y1="0" x2="11" y2="27" gradientUnits="userSpaceOnUse">
+          <linearGradient
+            id="paint0_linear_8328_30318"
+            x1="11"
+            y1="0"
+            x2="11"
+            y2="27"
+            gradientUnits="userSpaceOnUse"
+          >
             <stop style={{ stopColor: "hsl(var(--primary-light))" }} />
-            <stop offset="1" style={{ stopColor: "hsl(var(--primary-dark))" }} />
+            <stop
+              offset="1"
+              style={{ stopColor: "hsl(var(--primary-dark))" }}
+            />
           </linearGradient>
         </defs>
       </svg>
@@ -52,9 +68,19 @@ export default function Logo({ classNameFull, classNameMobile }: { classNameFull
           fill="url(#paint0_linear_8328_30325)"
         />
         <defs>
-          <linearGradient id="paint0_linear_8328_30325" x1="11" y1="0" x2="11" y2="27" gradientUnits="userSpaceOnUse">
+          <linearGradient
+            id="paint0_linear_8328_30325"
+            x1="11"
+            y1="0"
+            x2="11"
+            y2="27"
+            gradientUnits="userSpaceOnUse"
+          >
             <stop style={{ stopColor: "hsl(var(--primary-light))" }} />
-            <stop offset="1" style={{ stopColor: "hsl(var(--primary-dark))" }} />
+            <stop
+              offset="1"
+              style={{ stopColor: "hsl(var(--primary-dark))" }}
+            />
           </linearGradient>
         </defs>
       </svg>

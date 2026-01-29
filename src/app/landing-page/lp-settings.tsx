@@ -1,7 +1,13 @@
 "use client";
 import { useTranslations } from "use-intl";
 
-import { Card, CardContent, ListItemIcon, MenuItem, MenuList } from "@mui/material";
+import {
+  Card,
+  CardContent,
+  ListItemIcon,
+  MenuItem,
+  MenuList,
+} from "@mui/material";
 
 import UserLanguageSwitch from "@/components/layout/user/user-language-switch";
 import UserModeSwitch from "@/components/layout/user/user-mode-switch";

@@ -2,7 +2,15 @@
 
 import Link from "next/link";
 
-import { Breadcrumbs, Button, Card, CardContent, Grid, Tooltip, Typography } from "@mui/material";
+import {
+  Breadcrumbs,
+  Button,
+  Card,
+  CardContent,
+  Grid,
+  Tooltip,
+  Typography,
+} from "@mui/material";
 
 import NiCellsPlus from "@/icons/nexture/ni-cells-plus";
 import NiKnobs from "@/icons/nexture/ni-knobs";
@@ -23,7 +31,10 @@ export default function Page() {
           </Breadcrumbs>
         </Grid>
 
-        <Grid size={{ xs: 12, md: "auto" }} className="flex flex-row items-start gap-2">
+        <Grid
+          size={{ xs: 12, md: "auto" }}
+          className="flex flex-row items-start gap-2"
+        >
           <Tooltip title="Configuration">
             <Button
               className="icon-only surface-standard flex-none"
@@ -48,7 +59,11 @@ export default function Page() {
       <Grid container size={12}>
         <Grid size={{ lg: 8, xs: 12 }}>
           <Card>
-            <Typography variant="h6" component="h6" className="card-title px-4 pt-4">
+            <Typography
+              variant="h6"
+              component="h6"
+              className="card-title px-4 pt-4"
+            >
               Empty Card
             </Typography>
             <CardContent></CardContent>
@@ -57,7 +72,11 @@ export default function Page() {
 
         <Grid size={{ lg: 4, xs: 12 }}>
           <Card>
-            <Typography variant="h6" component="h6" className="card-title px-4 pt-4">
+            <Typography
+              variant="h6"
+              component="h6"
+              className="card-title px-4 pt-4"
+            >
               Empty Card
             </Typography>
             <CardContent></CardContent>

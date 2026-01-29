@@ -1,6 +1,14 @@
-import { NextureIconsProps, sizeHelper, strokeSizeHelper } from "../nexture-icons";
+import {
+  NextureIconsProps,
+  sizeHelper,
+  strokeSizeHelper,
+} from "../nexture-icons";
 
-export default function NiCross({ className, variant = "outlined", size = "medium" }: NextureIconsProps) {
+export default function NiCross({
+  className,
+  variant = "outlined",
+  size = "medium",
+}: NextureIconsProps) {
   const iconSize = sizeHelper(size);
   const iconStrokeWidth = strokeSizeHelper(iconSize);
 

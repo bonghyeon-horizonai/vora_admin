@@ -29,7 +29,10 @@ import NiEyeClose from "@/icons/nexture/ni-eye-close";
 import NiEyeOpen from "@/icons/nexture/ni-eye-open";
 
 const validationSchema = yup.object({
-  email: yup.string().required("The field is required").email("Enter a valid email"),
+  email: yup
+    .string()
+    .required("The field is required")
+    .email("Enter a valid email"),
   password: yup.string().required("The field is required"),
 });
 
@@ -74,17 +77,27 @@ export default function Page() {
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
 
-  const handleMouseDownPassword = (event: React.MouseEvent<HTMLButtonElement>) => {
+  const handleMouseDownPassword = (
+    event: React.MouseEvent<HTMLButtonElement>,
+  ) => {
     event.preventDefault();
   };
 
-  const handleMouseUpPassword = (event: React.MouseEvent<HTMLButtonElement>) => {
+  const handleMouseUpPassword = (
+    event: React.MouseEvent<HTMLButtonElement>,
+  ) => {
     event.preventDefault();
   };
 
   const googleSVG = () => {
     return (
-      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 20 20"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <path
           d="M19.6169 10.2876C19.6169 9.60932 19.5561 8.95714 19.443 8.33105H10.4343V12.0354H15.5822C15.3561 13.2267 14.6778 14.2354 13.6604 14.9137V17.3224H16.7648C18.5735 15.6528 19.6169 13.2006 19.6169 10.2876Z"
           fill="#4285F4"
@@ -107,7 +120,13 @@ export default function Page() {
 
   const githubSVG = () => {
     return (
-      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 20 20"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <path
           fillRule="evenodd"
           clipRule="evenodd"
@@ -120,7 +139,10 @@ export default function Page() {
 
   return (
     <Box className="bg-waves flex min-h-screen w-full items-center justify-center bg-cover bg-center p-4">
-      <Paper elevation={3} className="bg-background-paper shadow-darker-xs w-[32rem] max-w-full rounded-4xl py-14">
+      <Paper
+        elevation={3}
+        className="bg-background-paper shadow-darker-xs w-[32rem] max-w-full rounded-4xl py-14"
+      >
         <Box className="flex flex-col gap-4 px-8 sm:px-14">
           <Box className="flex flex-col">
             <Box className="mb-14 flex justify-center">
@@ -139,15 +161,25 @@ export default function Page() {
 
               <Box className="flex flex-col gap-5">
                 <Box className="flex flex-col gap-2 md:flex-row">
-                  <Button variant="outlined" color="grey" className="flex-none md:w-1/2">
+                  <Button
+                    variant="outlined"
+                    color="grey"
+                    className="flex-none md:w-1/2"
+                  >
                     <Box className="mr-2">{googleSVG()}</Box>Sign in with Google
                   </Button>
-                  <Button variant="outlined" color="grey" className="flex-none md:w-1/2">
+                  <Button
+                    variant="outlined"
+                    color="grey"
+                    className="flex-none md:w-1/2"
+                  >
                     <Box className="mr-2">{githubSVG()}</Box>Sign in with Google
                   </Button>
                 </Box>
 
-                <Divider className="text-text-secondary my-0 text-sm">OR</Divider>
+                <Divider className="text-text-secondary my-0 text-sm">
+                  OR
+                </Divider>
 
                 <Box
                   component={"form"}
@@ -157,10 +189,16 @@ export default function Page() {
                   }}
                   className="flex flex-col"
                 >
-                  <FormControl className="outlined" variant="standard" size="small">
+                  <FormControl
+                    className="outlined"
+                    variant="standard"
+                    size="small"
+                  >
                     <FormLabel component="label" className="flex flex-row">
                       Email
-                      {formik.touched.email && formik.errors.email && <InputErrorTooltip title={formik.errors.email} />}
+                      {formik.touched.email && formik.errors.email && (
+                        <InputErrorTooltip title={formik.errors.email} />
+                      )}
                     </FormLabel>
                     <Input
                       id="email"
@@ -172,7 +210,11 @@ export default function Page() {
                     />
                   </FormControl>
 
-                  <FormControl className="outlined" variant="standard" size="small">
+                  <FormControl
+                    className="outlined"
+                    variant="standard"
+                    size="small"
+                  >
                     <FormLabel component="label" className="flex flex-row">
                       Password
                       {formik.touched.password && formik.errors.password && (
@@ -197,9 +239,15 @@ export default function Page() {
                             onMouseUp={handleMouseUpPassword}
                           >
                             {showPassword ? (
-                              <NiEyeClose size="medium" className="text-text-secondary" />
+                              <NiEyeClose
+                                size="medium"
+                                className="text-text-secondary"
+                              />
                             ) : (
-                              <NiEyeOpen size="medium" className="text-text-secondary" />
+                              <NiEyeOpen
+                                size="medium"
+                                className="text-text-secondary"
+                              />
                             )}
                           </IconButton>
                         </InputAdornment>
@@ -208,15 +256,27 @@ export default function Page() {
                   </FormControl>
 
                   {submitted && !formik.isValid && (
-                    <Alert severity="error" icon={<NiCrossSquare />} className="neutral bg-background-paper/60! mb-4">
-                      <AlertTitle variant="subtitle2">The following inputs have errors!</AlertTitle>
+                    <Alert
+                      severity="error"
+                      icon={<NiCrossSquare />}
+                      className="neutral bg-background-paper/60! mb-4"
+                    >
+                      <AlertTitle variant="subtitle2">
+                        The following inputs have errors!
+                      </AlertTitle>
                       {Object.entries(formik.errors).map(([key, value]) => {
                         return (
-                          <Box className="flex flex-row gap-0.5" key={crypto.randomUUID()}>
+                          <Box
+                            className="flex flex-row gap-0.5"
+                            key={crypto.randomUUID()}
+                          >
                             <Typography variant="body2" className="text-error">
                               {capitalize(key)}:
                             </Typography>
-                            <Typography variant="body2" className="text-text-primary">
+                            <Typography
+                              variant="body2"
+                              className="text-text-primary"
+                            >
                               {value}
                             </Typography>
                           </Box>
@@ -237,7 +297,8 @@ export default function Page() {
                   </Box>
 
                   <Typography variant="body2" className="text-text-secondary">
-                    By clicking Continue, Sign in with Google, or Sign in with GitHub, you agree to the{" "}
+                    By clicking Continue, Sign in with Google, or Sign in with
+                    GitHub, you agree to the{" "}
                     <Link
                       target="_blank"
                       href="/auth/terms-and-conditions"
@@ -246,7 +307,11 @@ export default function Page() {
                       Terms and Conditions
                     </Link>{" "}
                     and{" "}
-                    <Link target="_blank" href="/auth/privacy-policy" className="link-primary link-underline-hover">
+                    <Link
+                      target="_blank"
+                      href="/auth/privacy-policy"
+                      className="link-primary link-underline-hover"
+                    >
                       Privacy Policy
                     </Link>
                     .
@@ -260,7 +325,10 @@ export default function Page() {
                 </Typography>
                 <Typography variant="body1" className="text-text-secondary">
                   New to Gogo? Please use your email to{" "}
-                  <Link href="/auth/sign-up" className="link-primary link-underline-hover">
+                  <Link
+                    href="/auth/sign-up"
+                    className="link-primary link-underline-hover"
+                  >
                     sign up
                   </Link>
                   .

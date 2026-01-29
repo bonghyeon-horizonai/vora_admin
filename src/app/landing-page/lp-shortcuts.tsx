@@ -25,7 +25,11 @@ export default function LPShortcuts() {
   return (
     <Card className="h-full">
       <Box className="flex flex-1 flex-row items-start justify-between pr-4">
-        <Typography variant="h6" component="h6" className="card-title px-4 pt-4">
+        <Typography
+          variant="h6"
+          component="h6"
+          className="card-title px-4 pt-4"
+        >
           Shortcuts
         </Typography>
         <Button
@@ -47,7 +51,11 @@ export default function LPShortcuts() {
               </ListItemAvatar>
               <ListItemText
                 primary={
-                  <Typography component="p" variant="subtitle2" className="leading-4">
+                  <Typography
+                    component="p"
+                    variant="subtitle2"
+                    className="leading-4"
+                  >
                     Add Product
                   </Typography>
                 }
@@ -71,7 +79,11 @@ export default function LPShortcuts() {
               </ListItemAvatar>
               <ListItemText
                 primary={
-                  <Typography component="p" variant="subtitle2" className="leading-4">
+                  <Typography
+                    component="p"
+                    variant="subtitle2"
+                    className="leading-4"
+                  >
                     Add Category
                   </Typography>
                 }
@@ -96,7 +108,11 @@ export default function LPShortcuts() {
               </ListItemAvatar>
               <ListItemText
                 primary={
-                  <Typography component="p" variant="subtitle2" className="leading-4">
+                  <Typography
+                    component="p"
+                    variant="subtitle2"
+                    className="leading-4"
+                  >
                     Discounts
                   </Typography>
                 }
@@ -121,7 +137,11 @@ export default function LPShortcuts() {
               </ListItemAvatar>
               <ListItemText
                 primary={
-                  <Typography component="p" variant="subtitle2" className="leading-4">
+                  <Typography
+                    component="p"
+                    variant="subtitle2"
+                    className="leading-4"
+                  >
                     Teams
                   </Typography>
                 }
@@ -146,7 +166,11 @@ export default function LPShortcuts() {
               </ListItemAvatar>
               <ListItemText
                 primary={
-                  <Typography component="p" variant="subtitle2" className="leading-4">
+                  <Typography
+                    component="p"
+                    variant="subtitle2"
+                    className="leading-4"
+                  >
                     Comments
                   </Typography>
                 }

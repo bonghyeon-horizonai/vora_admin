@@ -1,4 +1,8 @@
-import { NextureIconsProps, sizeHelper, strokeSizeHelper } from "../nexture-icons";
+import {
+  NextureIconsProps,
+  sizeHelper,
+  strokeSizeHelper,
+} from "../nexture-icons";
 
 export default function NiFitness({
   className,
@@ -41,7 +45,12 @@ export default function NiFitness({
           strokeWidth={iconStrokeWidth}
           strokeLinecap="round"
         />
-        <path opacity={oneTone ? 1 : 0.6} d="M15.5 12L8.5 12" stroke="currentColor" strokeWidth={iconStrokeWidth} />
+        <path
+          opacity={oneTone ? 1 : 0.6}
+          d="M15.5 12L8.5 12"
+          stroke="currentColor"
+          strokeWidth={iconStrokeWidth}
+        />
       </svg>
     );
   } else {
@@ -70,7 +79,11 @@ export default function NiFitness({
           d="M21.3769 8.26025C21.7854 8.19235 22.1722 8.46897 22.2402 8.87744C22.5848 10.9452 22.5848 13.0558 22.2402 15.1235C22.1722 15.532 21.7854 15.8086 21.3769 15.7407C20.9685 15.6726 20.6919 15.2859 20.7598 14.8774C21.0772 12.9728 21.0772 11.0282 20.7598 9.12353C20.6919 8.71507 20.9685 8.32833 21.3769 8.26025Z"
           fill="currentColor"
         />
-        <path opacity={oneTone ? 1 : 0.4} d="M15.5 11.25V12.75L8.5 12.75V11.25L15.5 11.25Z" fill="currentColor" />
+        <path
+          opacity={oneTone ? 1 : 0.4}
+          d="M15.5 11.25V12.75L8.5 12.75V11.25L15.5 11.25Z"
+          fill="currentColor"
+        />
       </svg>
     );
   }

@@ -32,11 +32,15 @@ const validationSchema = yup.object({
     .string()
     .required("The field is required")
     .min(8, "Should be at least 8 characters")
-    .test("uppercase", "Should be an uppercase and a lowercase letter", (value: any) => {
-      const hasUpperCase = /[A-Z]/.test(value);
-      const hasLowerCase = /[a-z]/.test(value);
-      return hasUpperCase && hasLowerCase;
-    })
+    .test(
+      "uppercase",
+      "Should be an uppercase and a lowercase letter",
+      (value: any) => {
+        const hasUpperCase = /[A-Z]/.test(value);
+        const hasLowerCase = /[a-z]/.test(value);
+        return hasUpperCase && hasLowerCase;
+      },
+    )
     .test("symbol", "Should be a special character", (value: any) => {
       const hasSymbol = /[^A-Za-z 0-9]/g.test(value);
       return hasSymbol;
@@ -97,7 +101,10 @@ export default function Page() {
 
   return (
     <Box className="bg-waves flex min-h-screen w-full items-center justify-center bg-cover bg-center p-4">
-      <Paper elevation={3} className="bg-background-paper shadow-darker-xs w-[32rem] max-w-full rounded-4xl py-14">
+      <Paper
+        elevation={3}
+        className="bg-background-paper shadow-darker-xs w-[32rem] max-w-full rounded-4xl py-14"
+      >
         <Box className="flex flex-col gap-4 px-8 sm:px-14">
           <Box className="flex flex-col">
             <Box className="mb-14 flex justify-center">
@@ -123,7 +130,11 @@ export default function Page() {
                   }}
                   className="flex flex-col"
                 >
-                  <FormControl className="outlined" variant="standard" size="small">
+                  <FormControl
+                    className="outlined"
+                    variant="standard"
+                    size="small"
+                  >
                     <FormLabel component="label" className="flex flex-row">
                       Password{" "}
                       {formik.touched.password && formik.errors.password && (
@@ -139,12 +150,17 @@ export default function Page() {
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
                     />
-                    <Typography variant="body2" className="text-text-secondary mt-2 inline-block align-middle">
+                    <Typography
+                      variant="body2"
+                      className="text-text-secondary mt-2 inline-block align-middle"
+                    >
                       <span className="inline">Must be</span>
                       <span
                         className={cn(
                           "mx-1 inline-block h-4 w-4 rounded-md align-text-bottom",
-                          isPasswordLengthValid() ? "bg-success text-text-contrast" : "bg-grey-100 text-text-secondary",
+                          isPasswordLengthValid()
+                            ? "bg-success text-text-contrast"
+                            : "bg-grey-100 text-text-secondary",
                         )}
                       >
                         {isPasswordLengthValid() ? (
@@ -153,26 +169,44 @@ export default function Page() {
                           <NiCross size={"tiny"}></NiCross>
                         )}
                       </span>
-                      <span className={cn("inline font-semibold", isPasswordLengthValid() && "text-success")}>
+                      <span
+                        className={cn(
+                          "inline font-semibold",
+                          isPasswordLengthValid() && "text-success",
+                        )}
+                      >
                         at least 8 characters long,{" "}
                       </span>
                       <span className="inline">must contain</span>
                       <span
                         className={cn(
                           "mx-1 inline-block h-4 w-4 rounded-md align-text-bottom",
-                          isPasswordCaseValid() ? "bg-success text-text-contrast" : "bg-grey-100 text-text-secondary",
+                          isPasswordCaseValid()
+                            ? "bg-success text-text-contrast"
+                            : "bg-grey-100 text-text-secondary",
                         )}
                       >
-                        {isPasswordCaseValid() ? <NiCheck size={"tiny"}></NiCheck> : <NiCross size={"tiny"}></NiCross>}
+                        {isPasswordCaseValid() ? (
+                          <NiCheck size={"tiny"}></NiCheck>
+                        ) : (
+                          <NiCross size={"tiny"}></NiCross>
+                        )}
                       </span>
-                      <span className={cn("inline font-semibold", isPasswordCaseValid() && "text-success")}>
+                      <span
+                        className={cn(
+                          "inline font-semibold",
+                          isPasswordCaseValid() && "text-success",
+                        )}
+                      >
                         lowercase and uppercase letters,{" "}
                       </span>
                       <span className="inline">must have at least</span>
                       <span
                         className={cn(
                           "mx-1 inline-block h-4 w-4 rounded-md align-text-bottom",
-                          isPasswordSymbolValid() ? "bg-success text-text-contrast" : "bg-grey-100 text-text-secondary",
+                          isPasswordSymbolValid()
+                            ? "bg-success text-text-contrast"
+                            : "bg-grey-100 text-text-secondary",
                         )}
                       >
                         {isPasswordSymbolValid() ? (
@@ -181,22 +215,39 @@ export default function Page() {
                           <NiCross size={"tiny"}></NiCross>
                         )}
                       </span>
-                      <span className={cn("inline font-semibold", isPasswordSymbolValid() && "text-success")}>
+                      <span
+                        className={cn(
+                          "inline font-semibold",
+                          isPasswordSymbolValid() && "text-success",
+                        )}
+                      >
                         one special character.
                       </span>
                     </Typography>
                   </FormControl>
 
                   {submitted && !formik.isValid && (
-                    <Alert severity="error" icon={<NiCrossSquare />} className="neutral bg-background-paper/60! mb-4">
-                      <AlertTitle variant="subtitle2">The following inputs have errors!</AlertTitle>
+                    <Alert
+                      severity="error"
+                      icon={<NiCrossSquare />}
+                      className="neutral bg-background-paper/60! mb-4"
+                    >
+                      <AlertTitle variant="subtitle2">
+                        The following inputs have errors!
+                      </AlertTitle>
                       {Object.entries(formik.errors).map(([key, value]) => {
                         return (
-                          <Box className="flex flex-row gap-0.5" key={crypto.randomUUID()}>
+                          <Box
+                            className="flex flex-row gap-0.5"
+                            key={crypto.randomUUID()}
+                          >
                             <Typography variant="body2" className="text-error">
                               {capitalize(key)}:
                             </Typography>
-                            <Typography variant="body2" className="text-text-primary">
+                            <Typography
+                              variant="body2"
+                              className="text-text-primary"
+                            >
                               {value}
                             </Typography>
                           </Box>
@@ -212,7 +263,8 @@ export default function Page() {
                   </Box>
 
                   <Typography variant="body2" className="text-text-secondary">
-                    By clicking Continue, Sign in with Google, or Sign in with GitHub, you agree to the{" "}
+                    By clicking Continue, Sign in with Google, or Sign in with
+                    GitHub, you agree to the{" "}
                     <Link
                       target="_blank"
                       href="/auth/terms-and-conditions"
@@ -221,7 +273,11 @@ export default function Page() {
                       Terms and Conditions
                     </Link>{" "}
                     and{" "}
-                    <Link target="_blank" href="/auth/privacy-policy" className="link-primary link-underline-hover">
+                    <Link
+                      target="_blank"
+                      href="/auth/privacy-policy"
+                      className="link-primary link-underline-hover"
+                    >
                       Privacy Policy
                     </Link>
                     .
@@ -235,7 +291,10 @@ export default function Page() {
                 </Typography>
                 <Typography variant="body1" className="text-text-secondary">
                   If you already have an account, please{" "}
-                  <Link href="/auth/sign-in" className="link-primary link-underline-hover">
+                  <Link
+                    href="/auth/sign-in"
+                    className="link-primary link-underline-hover"
+                  >
                     sign in
                   </Link>
                   .

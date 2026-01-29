@@ -59,7 +59,12 @@ export default async function RootLayout({
     <html
       lang={locale}
       suppressHydrationWarning
-      style={{ "--inner-shadow-opacity": "0.6", "--foreground-opacity": "0.6" } as React.CSSProperties}
+      style={
+        {
+          "--inner-shadow-opacity": "0.6",
+          "--foreground-opacity": "0.6",
+        } as React.CSSProperties
+      }
       className={`${mulish.variable} ${urbanist.variable}`}
     >
       <head>
@@ -67,7 +72,11 @@ export default async function RootLayout({
         <link rel="stylesheet" href="/initial-loader.css" />
 
         {/* Load the loader script directly for fastest execution */}
-        <Script id="loader-script" src="/initial-loader.js" strategy="beforeInteractive" />
+        <Script
+          id="loader-script"
+          src="/initial-loader.js"
+          strategy="beforeInteractive"
+        />
       </head>
       <body className="antialiased">
         {/* Initial loader */}

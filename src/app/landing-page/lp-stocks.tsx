@@ -24,13 +24,21 @@ export default function LpStocks() {
             </Box>
             <Box className="flex flex-1 flex-col gap-2">
               <Box className="flex flex-row items-center justify-between">
-                <Link href="#" variant="subtitle2" color="textPrimary" underline="hover">
+                <Link
+                  href="#"
+                  variant="subtitle2"
+                  color="textPrimary"
+                  underline="hover"
+                >
                   Social Media
                 </Link>
                 <Chip label="6/12" variant="outlined" />
               </Box>
               <Box className="bg-grey-50 h-0.5 w-full">
-                <Box className="bg-primary h-0.5" style={{ width: "18%" }}></Box>
+                <Box
+                  className="bg-primary h-0.5"
+                  style={{ width: "18%" }}
+                ></Box>
               </Box>
             </Box>
           </Box>
@@ -41,13 +49,21 @@ export default function LpStocks() {
             </Box>
             <Box className="flex flex-1 flex-col gap-2">
               <Box className="flex flex-row items-center justify-between">
-                <Link href="#" variant="subtitle2" color="textPrimary" underline="hover">
+                <Link
+                  href="#"
+                  variant="subtitle2"
+                  color="textPrimary"
+                  underline="hover"
+                >
                   Books
                 </Link>
                 <Chip label="8/12" variant="outlined" />
               </Box>
               <Box className="bg-grey-50 h-0.5 w-full">
-                <Box className="bg-primary h-0.5" style={{ width: "36%" }}></Box>
+                <Box
+                  className="bg-primary h-0.5"
+                  style={{ width: "36%" }}
+                ></Box>
               </Box>
             </Box>
           </Box>
@@ -58,13 +74,21 @@ export default function LpStocks() {
             </Box>
             <Box className="flex flex-1 flex-col gap-2">
               <Box className="flex flex-row items-center justify-between">
-                <Link href="#" variant="subtitle2" color="textPrimary" underline="hover">
+                <Link
+                  href="#"
+                  variant="subtitle2"
+                  color="textPrimary"
+                  underline="hover"
+                >
                   Toys
                 </Link>
                 <Chip label="1/12" variant="outlined" />
               </Box>
               <Box className="bg-grey-50 h-0.5 w-full">
-                <Box className="bg-primary h-0.5" style={{ width: "50%" }}></Box>
+                <Box
+                  className="bg-primary h-0.5"
+                  style={{ width: "50%" }}
+                ></Box>
               </Box>
             </Box>
           </Box>
@@ -75,13 +99,21 @@ export default function LpStocks() {
             </Box>
             <Box className="flex flex-1 flex-col gap-2">
               <Box className="flex flex-row items-center justify-between">
-                <Link href="#" variant="subtitle2" color="textPrimary" underline="hover">
+                <Link
+                  href="#"
+                  variant="subtitle2"
+                  color="textPrimary"
+                  underline="hover"
+                >
                   Electronics
                 </Link>
                 <Chip label="6/12" variant="outlined" />
               </Box>
               <Box className="bg-grey-50 h-0.5 w-full">
-                <Box className="bg-primary h-0.5" style={{ width: "10%" }}></Box>
+                <Box
+                  className="bg-primary h-0.5"
+                  style={{ width: "10%" }}
+                ></Box>
               </Box>
             </Box>
           </Box>
@@ -92,13 +124,21 @@ export default function LpStocks() {
             </Box>
             <Box className="flex flex-1 flex-col gap-2">
               <Box className="flex flex-row items-center justify-between">
-                <Link href="#" variant="subtitle2" color="textPrimary" underline="hover">
+                <Link
+                  href="#"
+                  variant="subtitle2"
+                  color="textPrimary"
+                  underline="hover"
+                >
                   Accessories
                 </Link>
                 <Chip label="4/12" variant="outlined" />
               </Box>
               <Box className="bg-grey-50 h-0.5 w-full">
-                <Box className="bg-primary h-0.5" style={{ width: "80%" }}></Box>
+                <Box
+                  className="bg-primary h-0.5"
+                  style={{ width: "80%" }}
+                ></Box>
               </Box>
             </Box>
           </Box>

@@ -80,7 +80,13 @@ export default function Notifications() {
       avatarImage: "/images/avatars/avatar-1.jpg",
       temporaryUnread: true,
       markedUnread: false,
-      chips: [{ label: "product-1.jpg", image: "/images/products/product-1.jpg", id: "1001" }],
+      chips: [
+        {
+          label: "product-1.jpg",
+          image: "/images/products/product-1.jpg",
+          id: "1001",
+        },
+      ],
     },
     {
       id: "101",
@@ -174,7 +180,10 @@ export default function Notifications() {
   };
 
   const handleClose = (event: any) => {
-    if (anchorRef.current && anchorRef.current.contains(event.target as HTMLElement)) {
+    if (
+      anchorRef.current &&
+      anchorRef.current.contains(event.target as HTMLElement)
+    ) {
       return;
     }
     markAllTemporaryRead();
@@ -183,7 +192,10 @@ export default function Notifications() {
 
   const [tabValue, setTabValue] = React.useState("1");
 
-  const handleTabValueChange = (event: React.SyntheticEvent, newValue: string) => {
+  const handleTabValueChange = (
+    event: React.SyntheticEvent,
+    newValue: string,
+  ) => {
     setTabValue(newValue);
   };
 
@@ -269,7 +281,12 @@ export default function Notifications() {
 
   return (
     <>
-      <Tooltip title="Notifications" placement="bottom" arrow open={!open && tooltipShow}>
+      <Tooltip
+        title="Notifications"
+        placement="bottom"
+        arrow
+        open={!open && tooltipShow}
+      >
         <Badge
           badgeContent={count}
           color="primary"
@@ -291,9 +308,15 @@ export default function Notifications() {
             ref={anchorRef}
             startIcon={
               notificationOn ? (
-                <NiBell size="large" variant={open ? "contained" : "outlined"} />
+                <NiBell
+                  size="large"
+                  variant={open ? "contained" : "outlined"}
+                />
               ) : (
-                <NiBellInactive size="large" variant={open ? "contained" : "outlined"} />
+                <NiBellInactive
+                  size="large"
+                  variant={open ? "contained" : "outlined"}
+                />
               )
             }
           />
@@ -313,11 +336,18 @@ export default function Notifications() {
               <ClickAwayListener onClickAway={handleClose}>
                 <Card className="shadow-darker-sm! w-xs md:w-sm">
                   <Box className="flex flex-1 flex-row items-start justify-between pr-4">
-                    <Typography variant="h6" component="h6" className="card-title px-4 pt-4">
+                    <Typography
+                      variant="h6"
+                      component="h6"
+                      className="card-title px-4 pt-4"
+                    >
                       Notifications
                     </Typography>
                     <Box className="flex flex-row">
-                      <Tooltip title={notificationOn ? "Turn off" : "Turn on"} arrow>
+                      <Tooltip
+                        title={notificationOn ? "Turn off" : "Turn on"}
+                        arrow
+                      >
                         {notificationOn ? (
                           <Button
                             className="icon-only mt-3"
@@ -354,7 +384,10 @@ export default function Notifications() {
                     </Box>
                   </Box>
                   <TabContext value={tabValue}>
-                    <TabList className="mb-5 px-4" onChange={handleTabValueChange}>
+                    <TabList
+                      className="mb-5 px-4"
+                      onChange={handleTabValueChange}
+                    >
                       <Tab
                         icon={<NiStructure size="tiny" />}
                         iconPosition="start"
@@ -379,29 +412,33 @@ export default function Notifications() {
                     </TabList>
                     <TabPanel value="1" className="mb-4 p-0">
                       <List className="max-h-96 overflow-auto">
-                        {notificationData.map((notification: NotificationData) => {
-                          return (
-                            <NotificationItem
-                              key={notification.id}
-                              {...notification}
-                              onMarkAsRead={() => {
-                                handleMarkAsRead(notification.id);
-                              }}
-                              onMarkAsUnread={() => {
-                                handleMarkAsUnread(notification.id);
-                              }}
-                              onClick={(event) => {
-                                handleClick(notification.href, event);
-                              }}
-                            />
-                          );
-                        })}
+                        {notificationData.map(
+                          (notification: NotificationData) => {
+                            return (
+                              <NotificationItem
+                                key={notification.id}
+                                {...notification}
+                                onMarkAsRead={() => {
+                                  handleMarkAsRead(notification.id);
+                                }}
+                                onMarkAsUnread={() => {
+                                  handleMarkAsUnread(notification.id);
+                                }}
+                                onClick={(event) => {
+                                  handleClick(notification.href, event);
+                                }}
+                              />
+                            );
+                          },
+                        )}
                       </List>
                     </TabPanel>
                     <TabPanel value="2" className="mb-4 p-0">
                       <List className="max-h-96 overflow-auto">
                         {notificationData
-                          .filter((notification) => notification.type === "system")
+                          .filter(
+                            (notification) => notification.type === "system",
+                          )
                           .map((notification: NotificationData) => {
                             return (
                               <NotificationItem
@@ -424,7 +461,9 @@ export default function Notifications() {
                     <TabPanel value="3" className="mb-4 p-0">
                       <List className="max-h-96 overflow-auto">
                         {notificationData
-                          .filter((notification) => notification.type === "user")
+                          .filter(
+                            (notification) => notification.type === "user",
+                          )
                           .map((notification: NotificationData) => {
                             return (
                               <NotificationItem
@@ -447,7 +486,12 @@ export default function Notifications() {
                   </TabContext>
 
                   <CardActions disableSpacing>
-                    <Button variant="outlined" size="tiny" color="grey" className="w-full">
+                    <Button
+                      variant="outlined"
+                      size="tiny"
+                      color="grey"
+                      className="w-full"
+                    >
                       View All
                     </Button>
                   </CardActions>
@@ -484,9 +528,9 @@ function NotificationItem({
   onMarkAsUnread: () => void;
   onClick: (event: any) => void;
 }) {
-  const [anchorElEllipsis, setAnchorElEllipsis] = React.useState<EventTarget | Element | PopoverVirtualElement | null>(
-    null,
-  );
+  const [anchorElEllipsis, setAnchorElEllipsis] = React.useState<
+    EventTarget | Element | PopoverVirtualElement | null
+  >(null);
   const open = Boolean(anchorElEllipsis);
 
   const handleClickEllipsis = (event: Event | React.SyntheticEvent) => {
@@ -519,8 +563,12 @@ function NotificationItem({
         }}
       >
         <MenuList dense>
-          {markedUnread && <MenuItem onClick={handleMarkAsRead}>Mark as Read</MenuItem>}
-          {!markedUnread && <MenuItem onClick={handleMarkAsUnread}>Mark as Unread</MenuItem>}
+          {markedUnread && (
+            <MenuItem onClick={handleMarkAsRead}>Mark as Read</MenuItem>
+          )}
+          {!markedUnread && (
+            <MenuItem onClick={handleMarkAsUnread}>Mark as Unread</MenuItem>
+          )}
         </MenuList>
       </Menu>
       <ListItem key={id} className="group relative px-4 py-0">
@@ -529,16 +577,28 @@ function NotificationItem({
             event.preventDefault();
             onClick(event);
           }}
-          classes={{ root: cn("w-full items-start", (temporaryUnread || markedUnread) && "bg-primary-dark/5") }}
+          classes={{
+            root: cn(
+              "w-full items-start",
+              (temporaryUnread || markedUnread) && "bg-primary-dark/5",
+            ),
+          }}
           LinkComponent={href ? Link : Box}
           href={href ? href : "#"}
         >
           <ListItemAvatar>
             {type === "user" ? (
-              <Avatar alt="notificaiton avatar" src={avatarImage} className="mr-3" />
+              <Avatar
+                alt="notificaiton avatar"
+                src={avatarImage}
+                className="mr-3"
+              />
             ) : (
               <Avatar className={cn("medium mr-3", avatarColorBackground)}>
-                <NextureIcons icon={avatarIcon as IconName} className={avatarColorMain} />
+                <NextureIcons
+                  icon={avatarIcon as IconName}
+                  className={avatarColorMain}
+                />
               </Avatar>
             )}
           </ListItemAvatar>
@@ -547,10 +607,18 @@ function NotificationItem({
               className="pr-8"
               primary={
                 <Typography component="span" className="leading-4">
-                  <Typography component="span" variant="subtitle1" className="leading-4">
+                  <Typography
+                    component="span"
+                    variant="subtitle1"
+                    className="leading-4"
+                  >
                     {labelBold}
                   </Typography>{" "}
-                  <Typography component="span" variant="body1" className="leading-4">
+                  <Typography
+                    component="span"
+                    variant="body1"
+                    className="leading-4"
+                  >
                     {labelRegular}
                   </Typography>
                 </Typography>
@@ -571,7 +639,14 @@ function NotificationItem({
                       />
                     );
                   } else {
-                    return <Chip variant="outlined" label={chip.label} size="small" key={chip.id} />;
+                    return (
+                      <Chip
+                        variant="outlined"
+                        label={chip.label}
+                        size="small"
+                        key={chip.id}
+                      />
+                    );
                   }
                 })}
               </Box>
@@ -582,13 +657,23 @@ function NotificationItem({
                 {actions.map((action) => {
                   if (action.type === "positive") {
                     return (
-                      <Button size="tiny" color="primary" variant="contained" key={action.id}>
+                      <Button
+                        size="tiny"
+                        color="primary"
+                        variant="contained"
+                        key={action.id}
+                      >
                         {action.label}
                       </Button>
                     );
                   } else {
                     return (
-                      <Button size="tiny" color="primary" variant="text" key={action.id}>
+                      <Button
+                        size="tiny"
+                        color="primary"
+                        variant="text"
+                        key={action.id}
+                      >
                         {action.label}
                       </Button>
                     );

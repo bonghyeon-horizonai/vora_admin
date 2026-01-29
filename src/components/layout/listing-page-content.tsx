@@ -109,7 +109,8 @@ export default function ListingPageContent() {
   const filteredItems = currentItems.filter(
     (item) =>
       item.label.toLowerCase().includes(search.toLowerCase()) ||
-      (item.description && item.description.toLowerCase().includes(search.toLowerCase())),
+      (item.description &&
+        item.description.toLowerCase().includes(search.toLowerCase())),
   );
 
   const handleItemClick = (href?: string) => {
@@ -121,14 +122,20 @@ export default function ListingPageContent() {
   return (
     <>
       <Grid size={12} className="flex flex-row gap-1.5">
-        <FormControl variant="filled" size="medium" className="surface mb-0 flex-1">
+        <FormControl
+          variant="filled"
+          size="medium"
+          className="surface mb-0 flex-1"
+        >
           <InputLabel>Search</InputLabel>
           <FilledInput
             value={search}
             onChange={handleSearchChange}
             endAdornment={
               <InputAdornment position="end">
-                <IconButton edge="end">{<NiSearch size="medium" className="text-text-disabled" />}</IconButton>
+                <IconButton edge="end">
+                  {<NiSearch size="medium" className="text-text-disabled" />}
+                </IconButton>
               </InputAdornment>
             }
           />
@@ -139,9 +146,13 @@ export default function ListingPageContent() {
         {filteredItems.length > 0 ? (
           filteredItems.map((item, index) => {
             const isIndexEven = Math.round(index / 2) === index / 2;
-            const background = isIndexEven ? "bg-primary-light/10" : "bg-secondary-light/10";
+            const background = isIndexEven
+              ? "bg-primary-light/10"
+              : "bg-secondary-light/10";
             const color = isIndexEven ? "text-primary" : "text-secondary";
-            const icon = item.icon ? (item.icon as IconName) : (item.listIcon as IconName);
+            const icon = item.icon
+              ? (item.icon as IconName)
+              : (item.listIcon as IconName);
             return (
               <Grid size={{ xs: 12, md: 6, lg: 4 }} key={item.id}>
                 <Card
@@ -160,13 +171,19 @@ export default function ListingPageContent() {
                       color,
                     )}
                   >
-                    <NextureIcons icon={icon ? icon : "NiSquircle"} size={"large"} />
+                    <NextureIcons
+                      icon={icon ? icon : "NiSquircle"}
+                      size={"large"}
+                    />
                   </Box>
                   <CardContent>
                     <Typography variant="h6" className="text-leading-5">
                       {t(item.label)}
                     </Typography>
-                    <Typography variant="body2" className="text-text-secondary line-clamp-2 leading-4">
+                    <Typography
+                      variant="body2"
+                      className="text-text-secondary line-clamp-2 leading-4"
+                    >
                       {item.description && t(item.description)}
                     </Typography>
                   </CardContent>

@@ -1,4 +1,8 @@
-import { NextureIconsProps, sizeHelper, strokeSizeHelper } from "../nexture-icons";
+import {
+  NextureIconsProps,
+  sizeHelper,
+  strokeSizeHelper,
+} from "../nexture-icons";
 
 export default function NiCalendar({
   className,
@@ -66,8 +70,18 @@ export default function NiCalendar({
           strokeWidth={iconStrokeWidth}
           strokeLinecap="round"
         />
-        <path d="M8 2L8 5" stroke="currentColor" strokeWidth={iconStrokeWidth} strokeLinecap="round" />
-        <path d="M16 2L16 5" stroke="currentColor" strokeWidth={iconStrokeWidth} strokeLinecap="round" />
+        <path
+          d="M8 2L8 5"
+          stroke="currentColor"
+          strokeWidth={iconStrokeWidth}
+          strokeLinecap="round"
+        />
+        <path
+          d="M16 2L16 5"
+          stroke="currentColor"
+          strokeWidth={iconStrokeWidth}
+          strokeLinecap="round"
+        />
       </svg>
     );
   } else {

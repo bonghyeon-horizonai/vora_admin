@@ -15,27 +15,83 @@ export default function IllustrationAccess({ className }: IllustrationProps) {
         fill="currentColor"
         fillOpacity="0.1"
       />
-      <circle cx="34.5" cy="100.5" r="12.5" fill="currentColor" fillOpacity="0.1" />
-      <circle cx="152.5" cy="253.5" r="12.5" fill="currentColor" fillOpacity="0.1" />
-      <circle cx="237.5" cy="57.5" r="7.5" fill="currentColor" fillOpacity="0.1" />
-      <circle cx="200.5" cy="106.5" r="27.5" fill="currentColor" fillOpacity="0.1" />
-      <circle cx="125.5" cy="46.5" r="7.5" fill="currentColor" fillOpacity="0.1" />
-      <circle cx="31.5" cy="229.5" r="7.5" fill="currentColor" fillOpacity="0.1" />
+      <circle
+        cx="34.5"
+        cy="100.5"
+        r="12.5"
+        fill="currentColor"
+        fillOpacity="0.1"
+      />
+      <circle
+        cx="152.5"
+        cy="253.5"
+        r="12.5"
+        fill="currentColor"
+        fillOpacity="0.1"
+      />
+      <circle
+        cx="237.5"
+        cy="57.5"
+        r="7.5"
+        fill="currentColor"
+        fillOpacity="0.1"
+      />
+      <circle
+        cx="200.5"
+        cy="106.5"
+        r="27.5"
+        fill="currentColor"
+        fillOpacity="0.1"
+      />
+      <circle
+        cx="125.5"
+        cy="46.5"
+        r="7.5"
+        fill="currentColor"
+        fillOpacity="0.1"
+      />
+      <circle
+        cx="31.5"
+        cy="229.5"
+        r="7.5"
+        fill="currentColor"
+        fillOpacity="0.1"
+      />
       <circle cx="186" cy="32" r="5" fill="currentColor" fillOpacity="0.1" />
       <circle cx="254" cy="214" r="5" fill="currentColor" fillOpacity="0.1" />
       <circle cx="220" cy="240" r="5" fill="currentColor" fillOpacity="0.1" />
       <circle cx="254" cy="99" r="5" fill="currentColor" fillOpacity="0.1" />
       <circle cx="74" cy="250" r="5" fill="currentColor" fillOpacity="0.1" />
-      <path d="M163 76H86" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+      <path
+        d="M163 76H86"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
       <path
         d="M120 94H174C176.209 94 178 95.7909 178 98V214.5C178 216.709 176.209 218.5 174 218.5H120C117.791 218.5 116 216.709 116 214.5V98C116 95.7909 117.791 94 120 94Z"
         stroke="currentColor"
         strokeWidth="2.5"
         strokeLinecap="round"
       />
-      <path d="M140 87L140 76" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M157 87L157 76" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M149 83L149 76" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+      <path
+        d="M140 87L140 76"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M157 87L157 76"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M149 83L149 76"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
       <circle cx="69" cy="76" r="11" stroke="currentColor" strokeWidth="2.5" />
       <circle cx="89" cy="65" r="11" stroke="currentColor" strokeWidth="2.5" />
       <path
@@ -81,9 +137,24 @@ export default function IllustrationAccess({ className }: IllustrationProps) {
         strokeWidth="2.5"
         strokeLinecap="round"
       />
-      <path d="M229 95L233 92" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M220.5 84.5L224 81" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M211 77L214 73" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+      <path
+        d="M229 95L233 92"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M220.5 84.5L224 81"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M211 77L214 73"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
       <path
         d="M215.284 104.856L217.149 103.348C218.507 102.249 219.037 100.421 218.477 98.7666C218.036 97.4619 217.34 96.2576 216.431 95.2231C215.278 93.9111 213.43 93.4561 211.8 94.0828L209.561 94.9435C209.482 94.9736 209.404 95.0038 209.326 95.0341C208.14 95.494 206.815 94.7578 206.617 93.5013L206.198 90.8501C205.926 89.1248 204.608 87.7517 202.895 87.4092C201.544 87.1391 200.154 87.1391 198.803 87.4092C197.09 87.7517 195.772 89.1248 195.5 90.8501L195.081 93.5016C194.883 94.7581 193.558 95.4943 192.372 95.0344C192.293 95.004 192.215 94.9737 192.137 94.9435L189.897 94.0828C188.267 93.4561 186.419 93.9111 185.266 95.2231C184.357 96.2576 183.661 97.4619 183.22 98.7666C182.66 100.421 183.19 102.249 184.548 103.348L186.413 104.856L186.578 104.989C187.59 105.804 187.59 107.36 186.578 108.175L186.414 108.307L184.549 109.816C183.191 110.915 182.661 112.743 183.221 114.397C183.662 115.702 184.357 116.906 185.266 117.941C186.419 119.253 188.268 119.708 189.898 119.081L192.137 118.22C192.215 118.19 192.293 118.16 192.371 118.13C193.557 117.67 194.882 118.406 195.081 119.663L195.5 122.317C195.772 124.042 197.09 125.415 198.803 125.758C200.154 126.028 201.544 126.028 202.895 125.758C204.608 125.415 205.926 124.042 206.198 122.317L206.617 119.663C206.815 118.406 208.14 117.67 209.326 118.13C209.404 118.16 209.482 118.19 209.56 118.22L211.799 119.081C213.43 119.708 215.278 119.253 216.431 117.941C217.34 116.906 218.035 115.702 218.477 114.397C219.036 112.743 218.506 110.915 217.148 109.816L215.283 108.307L215.119 108.175C214.107 107.36 214.107 105.804 215.119 104.989L215.284 104.856Z"
         stroke="currentColor"
@@ -94,7 +165,15 @@ export default function IllustrationAccess({ className }: IllustrationProps) {
         stroke="currentColor"
         strokeWidth="2.5"
       />
-      <rect x="124" y="102" width="46" height="58" rx="4" fill="currentColor" fillOpacity="0.1" />
+      <rect
+        x="124"
+        y="102"
+        width="46"
+        height="58"
+        rx="4"
+        fill="currentColor"
+        fillOpacity="0.1"
+      />
       <circle cx="108" cy="85" r="2" fill="currentColor" fillOpacity="0.1" />
       <circle cx="77" cy="214" r="2" fill="currentColor" fillOpacity="0.1" />
     </svg>

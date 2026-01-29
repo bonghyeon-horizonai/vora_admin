@@ -1,6 +1,8 @@
 import { IllustrationProps } from "./illustration-props";
 
-export default function IllustrationIntegrate({ className }: IllustrationProps) {
+export default function IllustrationIntegrate({
+  className,
+}: IllustrationProps) {
   return (
     <svg
       className={className}
@@ -16,19 +18,59 @@ export default function IllustrationIntegrate({ className }: IllustrationProps) 
         strokeWidth="2.5"
         strokeLinecap="round"
       />
-      <path d="M201 153H79" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M162 182H118" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+      <path
+        d="M201 153H79"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M162 182H118"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
       <path
         d="M130 167H150C152.209 167 154 168.791 154 171V178C154 180.209 152.209 182 150 182H130C127.791 182 126 180.209 126 178V171C126 168.791 127.791 167 130 167Z"
         stroke="currentColor"
         strokeWidth="2.5"
         strokeLinecap="round"
       />
-      <circle cx="50.5" cy="186.5" r="12.5" fill="currentColor" fillOpacity="0.1" />
-      <circle cx="223.5" cy="106.5" r="12.5" fill="currentColor" fillOpacity="0.1" />
-      <circle cx="58.5" cy="66.5" r="7.5" fill="currentColor" fillOpacity="0.1" />
-      <circle cx="256.5" cy="156.5" r="7.5" fill="currentColor" fillOpacity="0.1" />
-      <circle cx="213.5" cy="206.5" r="7.5" fill="currentColor" fillOpacity="0.1" />
+      <circle
+        cx="50.5"
+        cy="186.5"
+        r="12.5"
+        fill="currentColor"
+        fillOpacity="0.1"
+      />
+      <circle
+        cx="223.5"
+        cy="106.5"
+        r="12.5"
+        fill="currentColor"
+        fillOpacity="0.1"
+      />
+      <circle
+        cx="58.5"
+        cy="66.5"
+        r="7.5"
+        fill="currentColor"
+        fillOpacity="0.1"
+      />
+      <circle
+        cx="256.5"
+        cy="156.5"
+        r="7.5"
+        fill="currentColor"
+        fillOpacity="0.1"
+      />
+      <circle
+        cx="213.5"
+        cy="206.5"
+        r="7.5"
+        fill="currentColor"
+        fillOpacity="0.1"
+      />
       <circle cx="79" cy="31" r="5" fill="currentColor" fillOpacity="0.1" />
       <circle cx="154" cy="41" r="5" fill="currentColor" fillOpacity="0.1" />
       <circle cx="33" cy="114" r="5" fill="currentColor" fillOpacity="0.1" />
@@ -40,8 +82,18 @@ export default function IllustrationIntegrate({ className }: IllustrationProps) 
         strokeWidth="2.5"
         strokeLinecap="round"
       />
-      <path d="M157.639 61.9512L166.266 61.9512" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M161.955 66.262L161.955 57.6348" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+      <path
+        d="M157.639 61.9512L166.266 61.9512"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M161.955 66.262L161.955 57.6348"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
       <path
         d="M155 174L215.256 174C224.503 174 232 166.389 232 157C232 147.611 224.503 140 215.256 140L202 140"
         stroke="currentColor"
@@ -62,17 +114,76 @@ export default function IllustrationIntegrate({ className }: IllustrationProps) 
         strokeWidth="2.5"
         strokeLinecap="round"
       />
-      <path d="M98 96L182 96" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M120.5 96L140 145" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M108 78L120.5 96" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M172 78L159.5 96" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M139 77.5L120.5 96" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M141 77.5L159.5 96" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M159.5 96L140 145" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M175 206L107 206" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeDasharray="6 6" />
-      <path d="M175 200L107 200" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeDasharray="6 6" />
-      <path d="M175 212L107 212" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeDasharray="6 6" />
-      <path d="M175 218L107 218" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeDasharray="6 6" />
+      <path
+        d="M98 96L182 96"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M120.5 96L140 145"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M108 78L120.5 96"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M172 78L159.5 96"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M139 77.5L120.5 96"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M141 77.5L159.5 96"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M159.5 96L140 145"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M175 206L107 206"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeDasharray="6 6"
+      />
+      <path
+        d="M175 200L107 200"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeDasharray="6 6"
+      />
+      <path
+        d="M175 212L107 212"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeDasharray="6 6"
+      />
+      <path
+        d="M175 218L107 218"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeDasharray="6 6"
+      />
       <path
         d="M118.5 224L107 224"
         stroke="currentColor"
@@ -80,9 +191,24 @@ export default function IllustrationIntegrate({ className }: IllustrationProps) 
         strokeLinecap="round"
         strokeDasharray="6 6"
       />
-      <path d="M175 224L172 224" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M166.5 224L125 224" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M183 55L183 31" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+      <path
+        d="M175 224L172 224"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M166.5 224L125 224"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M183 55L183 31"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
       <path
         d="M191 49L183.707 56.2929C183.317 56.6834 182.683 56.6834 182.293 56.2929L175 49"
         stroke="currentColor"

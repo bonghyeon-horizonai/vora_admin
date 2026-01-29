@@ -3,7 +3,9 @@ import { ChartsLabelCustomMarkProps } from "@mui/x-charts";
 
 import { colorWithOpacity } from "@/lib/chart-helper";
 
-export default function CustomChartMark({ color }: Readonly<ChartsLabelCustomMarkProps>) {
+export default function CustomChartMark({
+  color,
+}: Readonly<ChartsLabelCustomMarkProps>) {
   return (
     <Box
       style={{

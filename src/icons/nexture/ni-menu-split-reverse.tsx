@@ -1,4 +1,8 @@
-import { NextureIconsProps, sizeHelper, strokeSizeHelper } from "../nexture-icons";
+import {
+  NextureIconsProps,
+  sizeHelper,
+  strokeSizeHelper,
+} from "../nexture-icons";
 
 export default function NiMenuSplitReverse({
   className,
@@ -19,9 +23,24 @@ export default function NiMenuSplitReverse({
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <path d="M20 5L17 5" stroke="currentColor" strokeWidth={iconStrokeWidth} strokeLinecap="round" />
-        <path d="M20 12L17 12" stroke="currentColor" strokeWidth={iconStrokeWidth} strokeLinecap="round" />
-        <path d="M20 19L17 19" stroke="currentColor" strokeWidth={iconStrokeWidth} strokeLinecap="round" />
+        <path
+          d="M20 5L17 5"
+          stroke="currentColor"
+          strokeWidth={iconStrokeWidth}
+          strokeLinecap="round"
+        />
+        <path
+          d="M20 12L17 12"
+          stroke="currentColor"
+          strokeWidth={iconStrokeWidth}
+          strokeLinecap="round"
+        />
+        <path
+          d="M20 19L17 19"
+          stroke="currentColor"
+          strokeWidth={iconStrokeWidth}
+          strokeLinecap="round"
+        />
         <path
           opacity={oneTone ? 1 : 0.6}
           d="M4 5L13 5"

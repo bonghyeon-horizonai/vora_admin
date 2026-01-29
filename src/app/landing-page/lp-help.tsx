@@ -1,7 +1,16 @@
 "use client";
 import ScrollToBottom from "react-scroll-to-bottom";
 
-import { Box, Button, Card, CardContent, FormControl, Link, TextareaAutosize, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Card,
+  CardContent,
+  FormControl,
+  Link,
+  TextareaAutosize,
+  Typography,
+} from "@mui/material";
 
 import NiArrowOutUp from "@/icons/nexture/ni-arrow-out-up";
 import NiFaceSmile from "@/icons/nexture/ni-face-smile";
@@ -32,9 +41,15 @@ export default function LPHelp() {
               </Box>
               <Box className="flex flex-row gap-3">
                 <Box className="h-9 w-9">
-                  <img src={"/images/avatars/avatar-1.jpg"} alt="avatar" className="h-9 w-9 rounded-md" />
+                  <img
+                    src={"/images/avatars/avatar-1.jpg"}
+                    alt="avatar"
+                    className="h-9 w-9 rounded-md"
+                  />
                 </Box>
-                <Box className="bg-grey-25 rounded-md px-4 py-2 leading-5">Hi, I need help tracking book orders.</Box>
+                <Box className="bg-grey-25 rounded-md px-4 py-2 leading-5">
+                  Hi, I need help tracking book orders.
+                </Box>
               </Box>
             </Box>
 
@@ -55,7 +70,8 @@ export default function LPHelp() {
                   <NiRobot size={"medium"} className="text-primary" />
                 </Box>
                 <Box className="bg-grey-25 rounded-md px-4 py-2 leading-5">
-                  Of course! Could you share the order numbers so I can assist you?
+                  Of course! Could you share the order numbers so I can assist
+                  you?
                 </Box>
               </Box>
             </Box>
@@ -74,13 +90,19 @@ export default function LPHelp() {
               </Box>
               <Box className="flex flex-row gap-3">
                 <Box className="h-9 w-9">
-                  <img src={"/images/avatars/avatar-1.jpg"} alt="avatar" className="h-9 w-9 rounded-md" />
+                  <img
+                    src={"/images/avatars/avatar-1.jpg"}
+                    alt="avatar"
+                    className="h-9 w-9 rounded-md"
+                  />
                 </Box>
                 <Box className="flex flex-col items-start gap-1">
                   <Box className="bg-grey-25 rounded-md px-4 py-2 leading-5">
                     Sure, they are #501852, #501853, #501854.
                   </Box>
-                  <Box className="bg-grey-25 rounded-md px-4 py-2 leading-5">Provide the links please.</Box>
+                  <Box className="bg-grey-25 rounded-md px-4 py-2 leading-5">
+                    Provide the links please.
+                  </Box>
                 </Box>
               </Box>
             </Box>
@@ -137,9 +159,15 @@ export default function LPHelp() {
               </Box>
               <Box className="flex flex-row gap-3">
                 <Box className="h-9 w-9">
-                  <img src={"/images/avatars/avatar-1.jpg"} alt="avatar" className="h-9 w-9 rounded-md" />
+                  <img
+                    src={"/images/avatars/avatar-1.jpg"}
+                    alt="avatar"
+                    className="h-9 w-9 rounded-md"
+                  />
                 </Box>
-                <Box className="bg-grey-25 rounded-md px-4 py-2 leading-5">No, that is all. Thanks!</Box>
+                <Box className="bg-grey-25 rounded-md px-4 py-2 leading-5">
+                  No, that is all. Thanks!
+                </Box>
               </Box>
             </Box>
           </Box>

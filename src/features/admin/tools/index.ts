@@ -1,5 +1,5 @@
 // Types
-export * from './types';
+export * from "./types";
 
 // Schema
-export * from './schema';
+export * from "./schema";

@@ -1,4 +1,8 @@
-import { NextureIconsProps, sizeHelper, strokeSizeHelper } from "../nexture-icons";
+import {
+  NextureIconsProps,
+  sizeHelper,
+  strokeSizeHelper,
+} from "../nexture-icons";
 
 export default function NiDocumentNumber({
   className,
@@ -43,7 +47,10 @@ export default function NiDocumentNumber({
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <path d="M12.7494 11.2506V12.7506H11.2494V11.2506H12.7494Z" fill="currentColor" />
+        <path
+          d="M12.7494 11.2506V12.7506H11.2494V11.2506H12.7494Z"
+          fill="currentColor"
+        />
         <path
           fillRule="evenodd"
           clipRule="evenodd"

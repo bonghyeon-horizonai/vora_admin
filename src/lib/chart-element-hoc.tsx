@@ -1,10 +1,18 @@
 import { colorWithOpacity } from "./chart-helper";
 import { ComponentProps, ComponentType } from "react";
 
-import { BarElementProps, PieArcProps, ScatterMarkerProps } from "@mui/x-charts";
+import {
+  BarElementProps,
+  PieArcProps,
+  ScatterMarkerProps,
+} from "@mui/x-charts";
 import { FunnelSection } from "@mui/x-charts-pro";
 
-type ChartElementType = BarElementProps | PieArcProps | ScatterMarkerProps | ComponentProps<typeof FunnelSection>;
+type ChartElementType =
+  | BarElementProps
+  | PieArcProps
+  | ScatterMarkerProps
+  | ComponentProps<typeof FunnelSection>;
 
 export const withChartElementStyle = <T extends ChartElementType>(
   Component: ComponentType<T>,
@@ -17,7 +25,12 @@ export const withChartElementStyle = <T extends ChartElementType>(
     const componentProps = {
       ...other,
       ...additionalProps,
-      style: { ...("style" in props ? props.style : {}), stroke: color, strokeWidth: 2, fill: fillColor },
+      style: {
+        ...("style" in props ? props.style : {}),
+        stroke: color,
+        strokeWidth: 2,
+        fill: fillColor,
+      },
       color,
     } as T;
 

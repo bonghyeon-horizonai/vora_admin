@@ -17,7 +17,10 @@ import {
 
 import Logo from "@/components/logo/logo";
 import { DEFAULTS } from "@/config";
-import { RadiobuttonSmallChecked, RadiobuttonSmallEmptyOutlined } from "@/icons/form/mui-radiobutton";
+import {
+  RadiobuttonSmallChecked,
+  RadiobuttonSmallEmptyOutlined,
+} from "@/icons/form/mui-radiobutton";
 
 export default function Page() {
   const router = useRouter();
@@ -29,7 +32,10 @@ export default function Page() {
 
   return (
     <Box className="bg-waves flex min-h-screen w-full items-center justify-center bg-cover bg-center p-4">
-      <Paper elevation={3} className="bg-background-paper shadow-darker-xs w-[32rem] max-w-full rounded-4xl py-14">
+      <Paper
+        elevation={3}
+        className="bg-background-paper shadow-darker-xs w-[32rem] max-w-full rounded-4xl py-14"
+      >
         <Box className="flex flex-col gap-4 px-8 sm:px-14">
           <Box className="flex flex-col">
             <Box className="mb-14 flex justify-center">
@@ -47,7 +53,11 @@ export default function Page() {
               </Box>
 
               <Box className="flex flex-col gap-5">
-                <Box component={"form"} onSubmit={handleSubmit} className="flex flex-col">
+                <Box
+                  component={"form"}
+                  onSubmit={handleSubmit}
+                  className="flex flex-col"
+                >
                   <RadioGroup name="row-radio-buttons-group">
                     <FormControl className="mb-2">
                       <FormControlLabel
@@ -84,7 +94,8 @@ export default function Page() {
                   </Box>
 
                   <Typography variant="body2" className="text-text-secondary">
-                    By clicking Continue, Sign in with Google, or Sign in with GitHub, you agree to the{" "}
+                    By clicking Continue, Sign in with Google, or Sign in with
+                    GitHub, you agree to the{" "}
                     <Link
                       target="_blank"
                       href="/auth/terms-and-conditions"
@@ -93,7 +104,11 @@ export default function Page() {
                       Terms and Conditions
                     </Link>{" "}
                     and{" "}
-                    <Link target="_blank" href="/auth/privacy-policy" className="link-primary link-underline-hover">
+                    <Link
+                      target="_blank"
+                      href="/auth/privacy-policy"
+                      className="link-primary link-underline-hover"
+                    >
                       Privacy Policy
                     </Link>
                     .
@@ -107,7 +122,10 @@ export default function Page() {
                 </Typography>
                 <Typography variant="body1" className="text-text-secondary">
                   If you have the code, please{" "}
-                  <Link href="/auth/set-verification" className="link-primary link-underline-hover">
+                  <Link
+                    href="/auth/set-verification"
+                    className="link-primary link-underline-hover"
+                  >
                     submit
                   </Link>{" "}
                   here.

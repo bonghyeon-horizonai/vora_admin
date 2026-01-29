@@ -1,4 +1,8 @@
-import { NextureIconsProps, sizeHelper, strokeSizeHelper } from "../nexture-icons";
+import {
+  NextureIconsProps,
+  sizeHelper,
+  strokeSizeHelper,
+} from "../nexture-icons";
 
 export default function NiMountain({
   className,
@@ -24,7 +28,14 @@ export default function NiMountain({
           stroke="currentColor"
           strokeWidth={iconStrokeWidth}
         />
-        <circle opacity={oneTone ? 1 : 0.6} cx="8" cy="6" r="2" stroke="currentColor" strokeWidth={iconStrokeWidth} />
+        <circle
+          opacity={oneTone ? 1 : 0.6}
+          cx="8"
+          cy="6"
+          r="2"
+          stroke="currentColor"
+          strokeWidth={iconStrokeWidth}
+        />
       </svg>
     );
   } else {

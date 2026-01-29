@@ -56,20 +56,91 @@ export default function IllustrationEmail({ className }: IllustrationProps) {
         strokeWidth="2.5"
         strokeLinecap="round"
       />
-      <path d="M103 90L117 90" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+      <path
+        d="M103 90L117 90"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
       <circle cx="90" cy="90" r="5" stroke="currentColor" strokeWidth="2.5" />
-      <path d="M88 185V199" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M198.995 47V61" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M81.0049 192.005L95.0049 192.005" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M192 54.005L206 54.005" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M194 95L201 95" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M207 85H194" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <circle cx="68.5" cy="30.5" r="7.5" fill="currentColor" fillOpacity="0.1" />
-      <circle cx="211.5" cy="32.5" r="7.5" fill="currentColor" fillOpacity="0.1" />
-      <circle cx="111.5" cy="241.5" r="7.5" fill="currentColor" fillOpacity="0.1" />
-      <circle cx="41.5" cy="206.5" r="7.5" fill="currentColor" fillOpacity="0.1" />
-      <circle cx="142.5" cy="48.5" r="12.5" fill="currentColor" fillOpacity="0.1" />
-      <circle cx="249.5" cy="183.5" r="12.5" fill="currentColor" fillOpacity="0.1" />
+      <path
+        d="M88 185V199"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M198.995 47V61"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M81.0049 192.005L95.0049 192.005"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M192 54.005L206 54.005"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M194 95L201 95"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M207 85H194"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <circle
+        cx="68.5"
+        cy="30.5"
+        r="7.5"
+        fill="currentColor"
+        fillOpacity="0.1"
+      />
+      <circle
+        cx="211.5"
+        cy="32.5"
+        r="7.5"
+        fill="currentColor"
+        fillOpacity="0.1"
+      />
+      <circle
+        cx="111.5"
+        cy="241.5"
+        r="7.5"
+        fill="currentColor"
+        fillOpacity="0.1"
+      />
+      <circle
+        cx="41.5"
+        cy="206.5"
+        r="7.5"
+        fill="currentColor"
+        fillOpacity="0.1"
+      />
+      <circle
+        cx="142.5"
+        cy="48.5"
+        r="12.5"
+        fill="currentColor"
+        fillOpacity="0.1"
+      />
+      <circle
+        cx="249.5"
+        cy="183.5"
+        r="12.5"
+        fill="currentColor"
+        fillOpacity="0.1"
+      />
       <circle cx="166" cy="252" r="5" fill="currentColor" fillOpacity="0.1" />
       <circle cx="27" cy="90" r="5" fill="currentColor" fillOpacity="0.1" />
       <circle cx="245" cy="66" r="5" fill="currentColor" fillOpacity="0.1" />

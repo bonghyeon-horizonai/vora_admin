@@ -11,14 +11,62 @@ export default function IllustrationLaunch({ className }: IllustrationProps) {
       xmlns="http://www.w3.org/2000/svg"
     >
       <circle cx="100" cy="190" r="36" fill="currentColor" fillOpacity="0.1" />
-      <circle cx="157.5" cy="203.5" r="21.5" fill="currentColor" fillOpacity="0.1" />
-      <circle cx="208.5" cy="199.5" r="12.5" fill="currentColor" fillOpacity="0.1" />
-      <circle cx="37.5" cy="203.5" r="12.5" fill="currentColor" fillOpacity="0.1" />
-      <circle cx="200.5" cy="97.5" r="12.5" fill="currentColor" fillOpacity="0.1" />
-      <circle cx="60.5" cy="92.5" r="7.5" fill="currentColor" fillOpacity="0.1" />
-      <circle cx="224.5" cy="158.5" r="7.5" fill="currentColor" fillOpacity="0.1" />
-      <circle cx="169.5" cy="164.5" r="7.5" fill="currentColor" fillOpacity="0.1" />
-      <circle cx="205.5" cy="241.5" r="7.5" fill="currentColor" fillOpacity="0.1" />
+      <circle
+        cx="157.5"
+        cy="203.5"
+        r="21.5"
+        fill="currentColor"
+        fillOpacity="0.1"
+      />
+      <circle
+        cx="208.5"
+        cy="199.5"
+        r="12.5"
+        fill="currentColor"
+        fillOpacity="0.1"
+      />
+      <circle
+        cx="37.5"
+        cy="203.5"
+        r="12.5"
+        fill="currentColor"
+        fillOpacity="0.1"
+      />
+      <circle
+        cx="200.5"
+        cy="97.5"
+        r="12.5"
+        fill="currentColor"
+        fillOpacity="0.1"
+      />
+      <circle
+        cx="60.5"
+        cy="92.5"
+        r="7.5"
+        fill="currentColor"
+        fillOpacity="0.1"
+      />
+      <circle
+        cx="224.5"
+        cy="158.5"
+        r="7.5"
+        fill="currentColor"
+        fillOpacity="0.1"
+      />
+      <circle
+        cx="169.5"
+        cy="164.5"
+        r="7.5"
+        fill="currentColor"
+        fillOpacity="0.1"
+      />
+      <circle
+        cx="205.5"
+        cy="241.5"
+        r="7.5"
+        fill="currentColor"
+        fillOpacity="0.1"
+      />
       <circle cx="253" cy="79" r="5" fill="currentColor" fillOpacity="0.1" />
       <circle cx="167" cy="41" r="5" fill="currentColor" fillOpacity="0.1" />
       <circle cx="39" cy="38" r="5" fill="currentColor" fillOpacity="0.1" />
@@ -45,10 +93,30 @@ export default function IllustrationLaunch({ className }: IllustrationProps) {
         strokeWidth="2.5"
         strokeLinecap="round"
       />
-      <path d="M79 115V153" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M116 145L116 167" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M158 138L158 178" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M141 157L141 197" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+      <path
+        d="M79 115V153"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M116 145L116 167"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M158 138L158 178"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M141 157L141 197"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
       <path
         d="M68.5 124L78.2929 114.207C78.6834 113.817 79.3166 113.817 79.7071 114.207L89.5 124"
         stroke="currentColor"
@@ -91,7 +159,13 @@ export default function IllustrationLaunch({ className }: IllustrationProps) {
         strokeWidth="2.5"
         strokeLinecap="round"
       />
-      <circle cx="136.5" cy="82.5" r="5.5" stroke="currentColor" strokeWidth="2.5" />
+      <circle
+        cx="136.5"
+        cy="82.5"
+        r="5.5"
+        stroke="currentColor"
+        strokeWidth="2.5"
+      />
     </svg>
   );
 }

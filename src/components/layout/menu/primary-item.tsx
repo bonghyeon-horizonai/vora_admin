@@ -17,14 +17,23 @@ type Props = {
   className?: string;
 };
 
-export const PrimaryItem = memo(function PrimaryItem({ item, onSelect, isActive, menuType, className }: Props) {
+export const PrimaryItem = memo(function PrimaryItem({
+  item,
+  onSelect,
+  isActive,
+  menuType,
+  className,
+}: Props) {
   const t = useTranslations("dashboard");
 
   const pathname = usePathname();
   const selected = useMemo(() => {
     if (!item) return false;
     if (item.href && isPathMatch(pathname, item.href)) return true;
-    if (item.children) return item.children.some((child) => child.href && isPathMatch(pathname, child.href));
+    if (item.children)
+      return item.children.some(
+        (child) => child.href && isPathMatch(pathname, child.href),
+      );
 
     return false;
   }, [item, pathname]);
@@ -81,7 +90,12 @@ export const PrimaryItem = memo(function PrimaryItem({ item, onSelect, isActive,
       )}
 
       {menuType === MenuType.Minimal && (
-        <Box className={cn("group flex w-11 flex-col items-center gap-2", className)}>
+        <Box
+          className={cn(
+            "group flex w-11 flex-col items-center gap-2",
+            className,
+          )}
+        >
           <Tooltip
             key={`left-menu-primary-item-${item.id}`}
             open={tooltipOpen}
@@ -90,7 +104,9 @@ export const PrimaryItem = memo(function PrimaryItem({ item, onSelect, isActive,
             title={t(item.label)}
             placement="right"
             arrow
-            slotProps={{ tooltip: { className: cn("large", selected && "text-primary") } }}
+            slotProps={{
+              tooltip: { className: cn("large", selected && "text-primary") },
+            }}
           >
             <Button
               id={item.id}

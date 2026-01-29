@@ -1,4 +1,8 @@
-import { NextureIconsProps, sizeHelper, strokeSizeHelper } from "../nexture-icons";
+import {
+  NextureIconsProps,
+  sizeHelper,
+  strokeSizeHelper,
+} from "../nexture-icons";
 
 export default function NiSearch({
   className,
@@ -25,7 +29,13 @@ export default function NiSearch({
           strokeWidth={iconStrokeWidth}
           strokeLinecap="round"
         />
-        <circle cx="11.5" cy="11.5" r="9.5" stroke="currentColor" strokeWidth={iconStrokeWidth} />
+        <circle
+          cx="11.5"
+          cy="11.5"
+          r="9.5"
+          stroke="currentColor"
+          strokeWidth={iconStrokeWidth}
+        />
       </svg>
     );
   } else {

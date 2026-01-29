@@ -1,3 +1,3 @@
 export default function Page() {
-    return <div>Admin Logs</div>;
+  return <div>Admin Logs</div>;
 }

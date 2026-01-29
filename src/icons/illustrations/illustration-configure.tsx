@@ -1,6 +1,8 @@
 import { IllustrationProps } from "./illustration-props";
 
-export default function IllustrationConfigure({ className }: IllustrationProps) {
+export default function IllustrationConfigure({
+  className,
+}: IllustrationProps) {
   return (
     <svg
       className={className}
@@ -10,11 +12,41 @@ export default function IllustrationConfigure({ className }: IllustrationProps) 
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <circle cx="38.5" cy="76.5" r="12.5" fill="currentColor" fillOpacity="0.1" />
-      <circle cx="182.5" cy="57.5" r="20.5" fill="currentColor" fillOpacity="0.1" />
-      <circle cx="252.5" cy="167.5" r="7.5" fill="currentColor" fillOpacity="0.1" />
-      <circle cx="145.5" cy="241.5" r="7.5" fill="currentColor" fillOpacity="0.1" />
-      <circle cx="25.5" cy="200.5" r="7.5" fill="currentColor" fillOpacity="0.1" />
+      <circle
+        cx="38.5"
+        cy="76.5"
+        r="12.5"
+        fill="currentColor"
+        fillOpacity="0.1"
+      />
+      <circle
+        cx="182.5"
+        cy="57.5"
+        r="20.5"
+        fill="currentColor"
+        fillOpacity="0.1"
+      />
+      <circle
+        cx="252.5"
+        cy="167.5"
+        r="7.5"
+        fill="currentColor"
+        fillOpacity="0.1"
+      />
+      <circle
+        cx="145.5"
+        cy="241.5"
+        r="7.5"
+        fill="currentColor"
+        fillOpacity="0.1"
+      />
+      <circle
+        cx="25.5"
+        cy="200.5"
+        r="7.5"
+        fill="currentColor"
+        fillOpacity="0.1"
+      />
       <circle cx="138" cy="50" r="5" fill="currentColor" fillOpacity="0.1" />
       <circle cx="82" cy="28" r="5" fill="currentColor" fillOpacity="0.1" />
       <circle cx="245" cy="58" r="5" fill="currentColor" fillOpacity="0.1" />
@@ -30,7 +62,12 @@ export default function IllustrationConfigure({ className }: IllustrationProps) 
         strokeWidth="2.5"
         strokeLinecap="round"
       />
-      <path d="M107 138L118.5 125.929" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+      <path
+        d="M107 138L118.5 125.929"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
       <path
         d="M229.346 124.155L230.302 123.381C230.998 122.818 231.27 121.881 230.983 121.032C230.756 120.364 230.4 119.746 229.934 119.216C229.343 118.543 228.395 118.31 227.559 118.631L226.411 119.072L226.291 119.119C225.683 119.355 225.004 118.977 224.902 118.333L224.687 116.973C224.548 116.089 223.872 115.385 222.994 115.209C222.301 115.071 221.588 115.071 220.896 115.209C220.018 115.385 219.342 116.089 219.202 116.973L218.987 118.333C218.886 118.977 218.206 119.355 217.598 119.119L217.478 119.072L216.33 118.631C215.494 118.31 214.546 118.543 213.955 119.216C213.489 119.746 213.132 120.364 212.906 121.032C212.619 121.881 212.891 122.818 213.587 123.381L214.543 124.155L214.628 124.223C215.147 124.64 215.147 125.439 214.628 125.856L214.544 125.924L213.587 126.698C212.891 127.261 212.619 128.198 212.906 129.047C213.133 129.715 213.489 130.333 213.955 130.863C214.546 131.536 215.494 131.769 216.33 131.448L217.478 131.007L217.598 130.96C218.206 130.724 218.886 131.102 218.987 131.746L219.202 133.107C219.342 133.992 220.018 134.696 220.896 134.871C221.588 135.01 222.301 135.01 222.994 134.871C223.872 134.696 224.548 133.992 224.687 133.107L224.902 131.746C225.004 131.102 225.683 130.725 226.291 130.96L226.411 131.007L227.559 131.448C228.395 131.769 229.342 131.536 229.934 130.863C230.4 130.333 230.756 129.715 230.983 129.047C231.27 128.198 230.998 127.261 230.302 126.698L229.345 125.924L229.261 125.856C228.742 125.439 228.742 124.64 229.261 124.223L229.346 124.155Z"
         stroke="currentColor"
@@ -41,27 +78,102 @@ export default function IllustrationConfigure({ className }: IllustrationProps) 
         stroke="currentColor"
         strokeWidth="2.5"
       />
-      <path d="M107.207 108L107.207 112" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M107.207 164L107.207 168" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M77.2119 138.005L81.2119 138.005" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M133.212 138.005L137.212 138.005" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M92.208 112.022L94.208 115.486" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M120.208 160.519L122.208 163.983" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M81.2334 153.005L84.6975 151.005" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M129.731 125.005L133.196 123.005" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M81.2285 123.006L84.6926 125.006" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M129.726 151.006L133.19 153.006" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M92.2148 163.985L94.2148 160.521" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M120.216 115.488L122.216 112.023" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+      <path
+        d="M107.207 108L107.207 112"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M107.207 164L107.207 168"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M77.2119 138.005L81.2119 138.005"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M133.212 138.005L137.212 138.005"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M92.208 112.022L94.208 115.486"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M120.208 160.519L122.208 163.983"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M81.2334 153.005L84.6975 151.005"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M129.731 125.005L133.196 123.005"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M81.2285 123.006L84.6926 125.006"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M129.726 151.006L133.19 153.006"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M92.2148 163.985L94.2148 160.521"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M120.216 115.488L122.216 112.023"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
       <path
         d="M200 218L200 207.668C200 207.557 199.981 207.446 199.945 207.342L195.895 195.597C195.591 194.714 196.555 193.933 197.355 194.413L201.83 197.098C202.224 197.334 202.727 197.272 203.052 196.948L206.293 193.707C206.683 193.317 207.316 193.317 207.707 193.707L210.91 196.91C211.251 197.252 211.789 197.3 212.186 197.025L215.734 194.569C216.502 194.037 217.516 194.756 217.267 195.657L214.036 207.369C214.012 207.456 214 207.546 214 207.635L214 218"
         stroke="currentColor"
         strokeWidth="2.5"
         strokeLinecap="round"
       />
-      <path d="M219 218H195" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M219 226H195" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M214 234H200" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+      <path
+        d="M219 218H195"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M219 226H195"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M214 234H200"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
       <path
         d="M207.5 164C194.521 164 184 174.521 184 187.5C184 197.291 189.987 211.658 198.5 218.125H216.5C225.013 211.658 231 197.291 231 187.5C231 174.521 220.479 164 207.5 164Z"
         fill="currentColor"

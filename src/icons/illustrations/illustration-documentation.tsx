@@ -1,6 +1,8 @@
 import { IllustrationProps } from "./illustration-props";
 
-export default function IllustrationDocumentation({ className }: IllustrationProps) {
+export default function IllustrationDocumentation({
+  className,
+}: IllustrationProps) {
   return (
     <svg
       className={className}
@@ -29,11 +31,36 @@ export default function IllustrationDocumentation({ className }: IllustrationPro
         strokeWidth="2.5"
         strokeLinecap="round"
       />
-      <path d="M75 85L111 85" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M75 97L142 97" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M75 109L142 109" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M75 121L142 121" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M75 133L111 133" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+      <path
+        d="M75 85L111 85"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M75 97L142 97"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M75 109L142 109"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M75 121L142 121"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M75 133L111 133"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
       <path
         d="M49 191.748L49 134C49 133.448 49.4477 133 50 133L58 133C58.5523 133 59 133.448 59 134L59 191.708C59 191.899 58.9456 192.085 58.8431 192.246L53.6704 200.356C53.6294 200.421 53.5343 200.417 53.4981 200.35L49.1196 192.222C49.0411 192.076 49 191.913 49 191.748Z"
         stroke="currentColor"
@@ -46,11 +73,41 @@ export default function IllustrationDocumentation({ className }: IllustrationPro
         strokeWidth="2.5"
         strokeLinecap="round"
       />
-      <circle cx="200.5" cy="57.5" r="12.5" fill="currentColor" fillOpacity="0.1" />
-      <circle cx="44.5" cy="84.5" r="12.5" fill="currentColor" fillOpacity="0.1" />
-      <circle cx="25.5" cy="200.5" r="7.5" fill="currentColor" fillOpacity="0.1" />
-      <circle cx="145.5" cy="244.5" r="7.5" fill="currentColor" fillOpacity="0.1" />
-      <circle cx="252.5" cy="167.5" r="7.5" fill="currentColor" fillOpacity="0.1" />
+      <circle
+        cx="200.5"
+        cy="57.5"
+        r="12.5"
+        fill="currentColor"
+        fillOpacity="0.1"
+      />
+      <circle
+        cx="44.5"
+        cy="84.5"
+        r="12.5"
+        fill="currentColor"
+        fillOpacity="0.1"
+      />
+      <circle
+        cx="25.5"
+        cy="200.5"
+        r="7.5"
+        fill="currentColor"
+        fillOpacity="0.1"
+      />
+      <circle
+        cx="145.5"
+        cy="244.5"
+        r="7.5"
+        fill="currentColor"
+        fillOpacity="0.1"
+      />
+      <circle
+        cx="252.5"
+        cy="167.5"
+        r="7.5"
+        fill="currentColor"
+        fillOpacity="0.1"
+      />
       <circle cx="243" cy="239" r="5" fill="currentColor" fillOpacity="0.1" />
       <circle cx="253" cy="94" r="5" fill="currentColor" fillOpacity="0.1" />
       <circle cx="84" cy="28" r="5" fill="currentColor" fillOpacity="0.1" />

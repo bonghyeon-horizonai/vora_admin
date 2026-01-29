@@ -91,31 +91,137 @@ export default function IllustrationDatabase({ className }: IllustrationProps) {
         strokeLinecap="round"
         strokeDasharray="6 6"
       />
-      <circle cx="86.5" cy="48.5" r="12.5" fill="currentColor" fillOpacity="0.1" />
-      <circle cx="222.5" cy="165.5" r="12.5" fill="currentColor" fillOpacity="0.1" />
-      <circle cx="197.5" cy="48.5" r="7.5" fill="currentColor" fillOpacity="0.1" />
-      <circle cx="31.5" cy="30.5" r="7.5" fill="currentColor" fillOpacity="0.1" />
-      <circle cx="27.5" cy="183.5" r="7.5" fill="currentColor" fillOpacity="0.1" />
-      <circle cx="65.5" cy="247.5" r="7.5" fill="currentColor" fillOpacity="0.1" />
+      <circle
+        cx="86.5"
+        cy="48.5"
+        r="12.5"
+        fill="currentColor"
+        fillOpacity="0.1"
+      />
+      <circle
+        cx="222.5"
+        cy="165.5"
+        r="12.5"
+        fill="currentColor"
+        fillOpacity="0.1"
+      />
+      <circle
+        cx="197.5"
+        cy="48.5"
+        r="7.5"
+        fill="currentColor"
+        fillOpacity="0.1"
+      />
+      <circle
+        cx="31.5"
+        cy="30.5"
+        r="7.5"
+        fill="currentColor"
+        fillOpacity="0.1"
+      />
+      <circle
+        cx="27.5"
+        cy="183.5"
+        r="7.5"
+        fill="currentColor"
+        fillOpacity="0.1"
+      />
+      <circle
+        cx="65.5"
+        cy="247.5"
+        r="7.5"
+        fill="currentColor"
+        fillOpacity="0.1"
+      />
       <circle cx="135" cy="253" r="5" fill="currentColor" fillOpacity="0.1" />
       <circle cx="240" cy="241" r="5" fill="currentColor" fillOpacity="0.1" />
       <circle cx="235" cy="57" r="5" fill="currentColor" fillOpacity="0.1" />
       <circle cx="254" cy="148" r="5" fill="currentColor" fillOpacity="0.1" />
       <circle cx="28" cy="258" r="5" fill="currentColor" fillOpacity="0.1" />
-      <path d="M81 136L85 136" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M131 89L145 89" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M45 108L57 108" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M51 108L51 156" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M47 65L47 103" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M55 65L55 103" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M151 126L155 126" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M81 180L85 180" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M151 170L155 170" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M81 158L85 158" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M151 148L155 148" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M81 202L85 202" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M151 192L155 192" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M81 224L85 224" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+      <path
+        d="M81 136L85 136"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M131 89L145 89"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M45 108L57 108"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M51 108L51 156"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M47 65L47 103"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M55 65L55 103"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M151 126L155 126"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M81 180L85 180"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M151 170L155 170"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M81 158L85 158"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M151 148L155 148"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M81 202L85 202"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M151 192L155 192"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M81 224L85 224"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
       <path
         d="M46.6505 159.699C47.4727 158.055 49.1614 157 51 157V157V157C52.8386 157 54.5273 158.055 55.3495 159.699V159.699C56.3642 161.728 56.2233 164.165 54.9648 166.053L51.624 171.064C51.3272 171.509 50.6728 171.509 50.376 171.064L47.0352 166.053C45.7767 164.165 45.6358 161.728 46.6505 159.699V159.699Z"
         stroke="currentColor"

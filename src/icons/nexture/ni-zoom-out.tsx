@@ -1,4 +1,8 @@
-import { NextureIconsProps, sizeHelper, strokeSizeHelper } from "../nexture-icons";
+import {
+  NextureIconsProps,
+  sizeHelper,
+  strokeSizeHelper,
+} from "../nexture-icons";
 
 export default function NiZoomOut({
   className,
@@ -26,7 +30,13 @@ export default function NiZoomOut({
           strokeWidth={iconStrokeWidth}
           strokeLinecap="round"
         />
-        <circle cx="11.5" cy="11.5" r="9.5" stroke="currentColor" strokeWidth={iconStrokeWidth} />
+        <circle
+          cx="11.5"
+          cy="11.5"
+          r="9.5"
+          stroke="currentColor"
+          strokeWidth={iconStrokeWidth}
+        />
         <path
           opacity={oneTone ? 1 : 0.6}
           d="M9 11.5H14"

@@ -8,7 +8,9 @@ export default getRequestConfig(async () => {
   try {
     const localeCookie = await getClientLocale();
     // @ts-expect-error Checking if the locale is valid
-    const locale = LOCALES.includes(localeCookie) ? localeCookie : DEFAULTS.locale;
+    const locale = LOCALES.includes(localeCookie)
+      ? localeCookie
+      : DEFAULTS.locale;
 
     return {
       locale,

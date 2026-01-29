@@ -1,6 +1,8 @@
 import { IllustrationProps } from "./illustration-props";
 
-export default function IllustrationPlatforms({ className }: IllustrationProps) {
+export default function IllustrationPlatforms({
+  className,
+}: IllustrationProps) {
   return (
     <svg
       className={className}
@@ -11,15 +13,30 @@ export default function IllustrationPlatforms({ className }: IllustrationProps) 
       xmlns="http://www.w3.org/2000/svg"
     >
       <circle cx="217" cy="132" r="8" stroke="currentColor" strokeWidth="2.5" />
-      <path d="M195 142H85" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+      <path
+        d="M195 142H85"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
       <path
         d="M196 151V76C196 73.7909 194.209 72 192 72H88C85.7909 72 84 73.7909 84 76V151C84 153.209 85.7909 155 88 155H192C194.209 155 196 153.209 196 151Z"
         stroke="currentColor"
         strokeWidth="2.5"
         strokeLinecap="round"
       />
-      <path d="M160 169H120" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M217 124L217 117" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+      <path
+        d="M160 169H120"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M217 124L217 117"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
       <path
         d="M201 193C207.216 172.409 210.715 160.818 216.903 140.321C216.932 140.226 217.067 140.222 217.096 140.317L233 193"
         stroke="currentColor"
@@ -38,10 +55,36 @@ export default function IllustrationPlatforms({ className }: IllustrationProps) 
         strokeWidth="2.5"
         strokeLinecap="round"
       />
-      <rect x="32" y="117" width="36" height="67" rx="4" fill="currentColor" fillOpacity="0.1" />
-      <rect x="91" y="80" width="98" height="54" rx="4" fill="currentColor" fillOpacity="0.1" />
-      <path d="M47 113H53" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M49 189H51" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+      <rect
+        x="32"
+        y="117"
+        width="36"
+        height="67"
+        rx="4"
+        fill="currentColor"
+        fillOpacity="0.1"
+      />
+      <rect
+        x="91"
+        y="80"
+        width="98"
+        height="54"
+        rx="4"
+        fill="currentColor"
+        fillOpacity="0.1"
+      />
+      <path
+        d="M47 113H53"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M49 189H51"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
       <path
         d="M128.336 134C129.299 128.452 134.137 124.234 139.96 124.234C145.783 124.234 150.621 128.452 151.584 134"
         stroke="currentColor"
@@ -54,11 +97,41 @@ export default function IllustrationPlatforms({ className }: IllustrationProps) 
         strokeWidth="2.5"
         strokeLinecap="round"
       />
-      <circle cx="47.5" cy="59.5" r="12.5" fill="currentColor" fillOpacity="0.1" />
-      <circle cx="160.5" cy="225.5" r="12.5" fill="currentColor" fillOpacity="0.1" />
-      <circle cx="37.5" cy="220.5" r="7.5" fill="currentColor" fillOpacity="0.1" />
-      <circle cx="147.5" cy="50.5" r="7.5" fill="currentColor" fillOpacity="0.1" />
-      <circle cx="238.5" cy="72.5" r="7.5" fill="currentColor" fillOpacity="0.1" />
+      <circle
+        cx="47.5"
+        cy="59.5"
+        r="12.5"
+        fill="currentColor"
+        fillOpacity="0.1"
+      />
+      <circle
+        cx="160.5"
+        cy="225.5"
+        r="12.5"
+        fill="currentColor"
+        fillOpacity="0.1"
+      />
+      <circle
+        cx="37.5"
+        cy="220.5"
+        r="7.5"
+        fill="currentColor"
+        fillOpacity="0.1"
+      />
+      <circle
+        cx="147.5"
+        cy="50.5"
+        r="7.5"
+        fill="currentColor"
+        fillOpacity="0.1"
+      />
+      <circle
+        cx="238.5"
+        cy="72.5"
+        r="7.5"
+        fill="currentColor"
+        fillOpacity="0.1"
+      />
       <circle cx="197" cy="21" r="5" fill="currentColor" fillOpacity="0.1" />
       <circle cx="74" cy="220" r="5" fill="currentColor" fillOpacity="0.1" />
       <circle cx="251" cy="210" r="5" fill="currentColor" fillOpacity="0.1" />

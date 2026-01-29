@@ -3,7 +3,16 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
-import { Box, Button, Divider, FormControl, FormLabel, Input, Paper, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Divider,
+  FormControl,
+  FormLabel,
+  Input,
+  Paper,
+  Typography,
+} from "@mui/material";
 
 import Logo from "@/components/logo/logo";
 import { DEFAULTS } from "@/config";
@@ -21,7 +30,10 @@ export default function Page() {
 
   return (
     <Box className="bg-waves flex min-h-screen w-full items-center justify-center bg-cover bg-center p-4">
-      <Paper elevation={3} className="bg-background-paper shadow-darker-xs w-[32rem] max-w-full rounded-4xl py-14">
+      <Paper
+        elevation={3}
+        className="bg-background-paper shadow-darker-xs w-[32rem] max-w-full rounded-4xl py-14"
+      >
         <Box className="flex flex-col gap-4 px-8 sm:px-14">
           <Box className="flex flex-col">
             <Box className="mb-14 flex justify-center">
@@ -39,13 +51,23 @@ export default function Page() {
               </Box>
 
               <Box className="flex flex-col gap-5">
-                <Box component={"form"} onSubmit={handleSubmit} className="flex flex-col">
-                  <FormControl className="outlined" variant="standard" size="small">
+                <Box
+                  component={"form"}
+                  onSubmit={handleSubmit}
+                  className="flex flex-col"
+                >
+                  <FormControl
+                    className="outlined"
+                    variant="standard"
+                    size="small"
+                  >
                     <FormLabel component="label">Email</FormLabel>
                     <Input
                       placeholder=""
                       value={data.email}
-                      onChange={(e) => setData({ ...data, email: e.target.value })}
+                      onChange={(e) =>
+                        setData({ ...data, email: e.target.value })
+                      }
                     />
                   </FormControl>
 
@@ -56,7 +78,8 @@ export default function Page() {
                   </Box>
 
                   <Typography variant="body2" className="text-text-secondary">
-                    By clicking Continue, Sign in with Google, or Sign in with GitHub, you agree to the{" "}
+                    By clicking Continue, Sign in with Google, or Sign in with
+                    GitHub, you agree to the{" "}
                     <Link
                       target="_blank"
                       href="/auth/terms-and-conditions"
@@ -65,7 +88,11 @@ export default function Page() {
                       Terms and Conditions
                     </Link>{" "}
                     and{" "}
-                    <Link target="_blank" href="/auth/privacy-policy" className="link-primary link-underline-hover">
+                    <Link
+                      target="_blank"
+                      href="/auth/privacy-policy"
+                      className="link-primary link-underline-hover"
+                    >
                       Privacy Policy
                     </Link>
                     .
@@ -79,7 +106,10 @@ export default function Page() {
                 </Typography>
                 <Typography variant="body1" className="text-text-secondary">
                   If you already have an account, please{" "}
-                  <Link href="/auth/sign-in" className="link-primary link-underline-hover">
+                  <Link
+                    href="/auth/sign-in"
+                    className="link-primary link-underline-hover"
+                  >
                     sign in
                   </Link>
                   .

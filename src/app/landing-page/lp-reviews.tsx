@@ -82,7 +82,11 @@ export default function LPReviews() {
                 return <NiFilterPlus size={"small"}></NiFilterPlus>;
               },
               columnReorderIcon: () => {
-                return <NiChevronLeftRightSmall size={"small"}></NiChevronLeftRightSmall>;
+                return (
+                  <NiChevronLeftRightSmall
+                    size={"small"}
+                  ></NiChevronLeftRightSmall>
+                );
               },
               columnMenuIcon: () => {
                 return <NiEllipsisVertical size={"small"}></NiEllipsisVertical>;
@@ -106,7 +110,11 @@ export default function LPReviews() {
                 return (
                   <FormControl size="small" variant="outlined">
                     <InputLabel>{props.label}</InputLabel>
-                    <Select {...propsCasted} IconComponent={NiChevronDownSmall} MenuProps={{ className: "outlined" }} />
+                    <Select
+                      {...propsCasted}
+                      IconComponent={NiChevronDownSmall}
+                      MenuProps={{ className: "outlined" }}
+                    />
                   </FormControl>
                 );
               },
@@ -117,7 +125,9 @@ export default function LPReviews() {
                 return <NiCross size={"medium"} />;
               },
               baseButton: (props) => {
-                return <Button {...props} variant="pastel" color="grey"></Button>;
+                return (
+                  <Button {...props} variant="pastel" color="grey"></Button>
+                );
               },
               moreActionsIcon: () => {
                 return <NiEllipsisVertical size={"medium"} />;
@@ -139,7 +149,11 @@ const columns: GridColDef<(typeof rows)[number]>[] = [
     filterable: false,
     renderCell: (params: GridRenderCellParams<any, string>) => (
       <Box className="flex h-full items-center">
-        <img src={params.value as string} alt="grid image" className="h-9 w-9 rounded-sm object-cover" />
+        <img
+          src={params.value as string}
+          alt="grid image"
+          className="h-9 w-9 rounded-sm object-cover"
+        />
       </Box>
     ),
   },
@@ -149,7 +163,12 @@ const columns: GridColDef<(typeof rows)[number]>[] = [
     headerName: "Message",
     width: 180,
     renderCell: (params: GridRenderCellParams<any, string>) => (
-      <Link href="#" variant="body1" underline="hover" className="text-text-primary">
+      <Link
+        href="#"
+        variant="body1"
+        underline="hover"
+        className="text-text-primary"
+      >
         {params.value}
       </Link>
     ),
@@ -182,9 +201,24 @@ const columns: GridColDef<(typeof rows)[number]>[] = [
     align: "right",
     headerAlign: "right",
     getActions: () => [
-      <GridActionsCellItem key={1} icon={<NiExpand size="medium" />} label="View" showInMenu />,
-      <GridActionsCellItem key={2} icon={<NiDuplicate size="medium" />} label="Duplicate" showInMenu />,
-      <GridActionsCellItem key={0} icon={<NiCrossSquare size="medium" />} label="Delete" showInMenu />,
+      <GridActionsCellItem
+        key={1}
+        icon={<NiExpand size="medium" />}
+        label="View"
+        showInMenu
+      />,
+      <GridActionsCellItem
+        key={2}
+        icon={<NiDuplicate size="medium" />}
+        label="Duplicate"
+        showInMenu
+      />,
+      <GridActionsCellItem
+        key={0}
+        icon={<NiCrossSquare size="medium" />}
+        label="Delete"
+        showInMenu
+      />,
     ],
   },
 ];

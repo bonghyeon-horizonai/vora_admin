@@ -35,7 +35,12 @@ export default function Page() {
               <Typography variant="body1" color="text.secondary">
                 Error Code: 404
               </Typography>
-              <Button variant="outlined" startIcon={<NiHome />} component={Link} href="/home/sub">
+              <Button
+                variant="outlined"
+                startIcon={<NiHome />}
+                component={Link}
+                href="/home/sub"
+              >
                 Home
               </Button>
             </Box>

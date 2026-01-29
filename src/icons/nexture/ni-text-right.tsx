@@ -1,4 +1,8 @@
-import { NextureIconsProps, sizeHelper, strokeSizeHelper } from "../nexture-icons";
+import {
+  NextureIconsProps,
+  sizeHelper,
+  strokeSizeHelper,
+} from "../nexture-icons";
 
 export default function NiTextRight({
   className,
@@ -19,7 +23,12 @@ export default function NiTextRight({
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <path d="M20 6L4 6" stroke="currentColor" strokeWidth={iconStrokeWidth} strokeLinecap="round" />
+        <path
+          d="M20 6L4 6"
+          stroke="currentColor"
+          strokeWidth={iconStrokeWidth}
+          strokeLinecap="round"
+        />
         <path
           opacity={oneTone ? 1 : 0.6}
           d="M20 12L12 12"
@@ -27,7 +36,12 @@ export default function NiTextRight({
           strokeWidth={iconStrokeWidth}
           strokeLinecap="round"
         />
-        <path d="M20 18L8 18" stroke="currentColor" strokeWidth={iconStrokeWidth} strokeLinecap="round" />
+        <path
+          d="M20 18L8 18"
+          stroke="currentColor"
+          strokeWidth={iconStrokeWidth}
+          strokeLinecap="round"
+        />
       </svg>
     );
   } else {

@@ -1,4 +1,8 @@
-import { NextureIconsProps, sizeHelper, strokeSizeHelper } from "../nexture-icons";
+import {
+  NextureIconsProps,
+  sizeHelper,
+  strokeSizeHelper,
+} from "../nexture-icons";
 
 export default function NiResearch({
   className,
@@ -19,8 +23,19 @@ export default function NiResearch({
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <path d="M22 22L18.5 18.5" stroke="currentColor" strokeWidth={iconStrokeWidth} strokeLinecap="round" />
-        <circle cx="11.5" cy="11.5" r="9.5" stroke="currentColor" strokeWidth={iconStrokeWidth} />
+        <path
+          d="M22 22L18.5 18.5"
+          stroke="currentColor"
+          strokeWidth={iconStrokeWidth}
+          strokeLinecap="round"
+        />
+        <circle
+          cx="11.5"
+          cy="11.5"
+          r="9.5"
+          stroke="currentColor"
+          strokeWidth={iconStrokeWidth}
+        />
         <path
           opacity={oneTone ? 1 : 0.6}
           d="M6.49998 14.2109L9.16587 11.5453C9.35348 11.3577 9.65495 11.3493 9.85271 11.5261L11.1477 12.6843C11.3455 12.8612 11.647 12.8527 11.8346 12.6651L14.5 9.99951"

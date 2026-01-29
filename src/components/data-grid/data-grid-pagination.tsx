@@ -1,6 +1,10 @@
 import { TablePagination, TablePaginationProps } from "@mui/material";
 import MuiPagination from "@mui/material/Pagination";
-import { gridPageCountSelector, useGridApiContext, useGridSelector } from "@mui/x-data-grid-pro";
+import {
+  gridPageCountSelector,
+  useGridApiContext,
+  useGridSelector,
+} from "@mui/x-data-grid-pro";
 
 import NiChevronDownSmall from "@/icons/nexture/ni-chevron-down-small";
 import { cn } from "@/lib/utils";
@@ -43,7 +47,10 @@ export default function DataGridPagination(props: any) {
         select: {
           IconComponent: () => {
             return (
-              <NiChevronDownSmall size="medium" className="pointer-events-none absolute right-1"></NiChevronDownSmall>
+              <NiChevronDownSmall
+                size="medium"
+                className="pointer-events-none absolute right-1"
+              ></NiChevronDownSmall>
             );
           },
           className: "hidden!",
@@ -84,7 +91,10 @@ export function DataGridPaginationFullPage(props: any) {
         return (
           <PaginationFullPage
             {...props}
-            className={cn("surface-standard", props.count <= props.rowsPerPage && "hidden")}
+            className={cn(
+              "surface-standard",
+              props.count <= props.rowsPerPage && "hidden",
+            )}
           />
         );
       }}
@@ -95,7 +105,10 @@ export function DataGridPaginationFullPage(props: any) {
         select: {
           IconComponent: () => {
             return (
-              <NiChevronDownSmall size="medium" className="pointer-events-none absolute right-1"></NiChevronDownSmall>
+              <NiChevronDownSmall
+                size="medium"
+                className="pointer-events-none absolute right-1"
+              ></NiChevronDownSmall>
             );
           },
         },

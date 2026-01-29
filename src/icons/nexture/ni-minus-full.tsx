@@ -1,6 +1,14 @@
-import { NextureIconsProps, sizeHelper, strokeSizeHelper } from "../nexture-icons";
+import {
+  NextureIconsProps,
+  sizeHelper,
+  strokeSizeHelper,
+} from "../nexture-icons";
 
-export default function NiMinusFull({ className, variant = "outlined", size = "medium" }: NextureIconsProps) {
+export default function NiMinusFull({
+  className,
+  variant = "outlined",
+  size = "medium",
+}: NextureIconsProps) {
   const iconSize = sizeHelper(size);
   const iconStrokeWidth = strokeSizeHelper(iconSize);
 
@@ -14,7 +22,12 @@ export default function NiMinusFull({ className, variant = "outlined", size = "m
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <path d="M4 12H19.9999" stroke="currentColor" strokeWidth={iconStrokeWidth} strokeLinecap="round" />
+        <path
+          d="M4 12H19.9999"
+          stroke="currentColor"
+          strokeWidth={iconStrokeWidth}
+          strokeLinecap="round"
+        />
       </svg>
     );
   } else {

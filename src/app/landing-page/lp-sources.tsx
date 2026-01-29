@@ -25,7 +25,9 @@ export default function LPSources() {
       <CardContent className="p-0! pb-2!">
         <List className="h-[244px] items-start overflow-auto">
           <ListItem className="px-0 py-0">
-            <ListItemButton classes={{ root: "group items-center justify-between" }}>
+            <ListItemButton
+              classes={{ root: "group items-center justify-between" }}
+            >
               <Box className="flex flex-row items-center">
                 <ListItemAvatar>
                   <Avatar className="medium bg-primary-light/10 mr-3">
@@ -35,7 +37,11 @@ export default function LPSources() {
                 <ListItemText
                   className="w-40 flex-none"
                   primary={
-                    <Typography component="p" variant="subtitle2" className="leading-4">
+                    <Typography
+                      component="p"
+                      variant="subtitle2"
+                      className="leading-4"
+                    >
                       1. Organic Search
                     </Typography>
                   }
@@ -47,7 +53,9 @@ export default function LPSources() {
           </ListItem>
 
           <ListItem className="px-0 py-0">
-            <ListItemButton classes={{ root: "group items-center justify-between" }}>
+            <ListItemButton
+              classes={{ root: "group items-center justify-between" }}
+            >
               <Box className="flex flex-row items-center">
                 <ListItemAvatar>
                   <Avatar className="medium bg-secondary-light/10 mr-3">
@@ -57,7 +65,11 @@ export default function LPSources() {
                 <ListItemText
                   className="w-40 flex-none"
                   primary={
-                    <Typography component="p" variant="subtitle2" className="leading-4">
+                    <Typography
+                      component="p"
+                      variant="subtitle2"
+                      className="leading-4"
+                    >
                       2. Direct
                     </Typography>
                   }
@@ -69,7 +81,9 @@ export default function LPSources() {
           </ListItem>
 
           <ListItem className="px-0 py-0">
-            <ListItemButton classes={{ root: "group items-center justify-between" }}>
+            <ListItemButton
+              classes={{ root: "group items-center justify-between" }}
+            >
               <Box className="flex flex-row items-center">
                 <ListItemAvatar>
                   <Avatar className="medium bg-accent-1-light/10 mr-3">
@@ -79,7 +93,11 @@ export default function LPSources() {
                 <ListItemText
                   className="w-40 flex-none"
                   primary={
-                    <Typography component="p" variant="subtitle2" className="leading-4">
+                    <Typography
+                      component="p"
+                      variant="subtitle2"
+                      className="leading-4"
+                    >
                       3. Refferral
                     </Typography>
                   }
@@ -91,7 +109,9 @@ export default function LPSources() {
           </ListItem>
 
           <ListItem className="px-0 py-0">
-            <ListItemButton classes={{ root: "group items-center justify-between" }}>
+            <ListItemButton
+              classes={{ root: "group items-center justify-between" }}
+            >
               <Box className="flex flex-row items-center">
                 <ListItemAvatar>
                   <Avatar className="medium bg-accent-2-light/10 mr-3">
@@ -101,7 +121,11 @@ export default function LPSources() {
                 <ListItemText
                   className="w-40 flex-none"
                   primary={
-                    <Typography component="p" variant="subtitle2" className="leading-4">
+                    <Typography
+                      component="p"
+                      variant="subtitle2"
+                      className="leading-4"
+                    >
                       4. Social Media
                     </Typography>
                   }

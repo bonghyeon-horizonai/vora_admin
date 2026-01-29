@@ -1,4 +1,8 @@
-import { NextureIconsProps, sizeHelper, strokeSizeHelper } from "../nexture-icons";
+import {
+  NextureIconsProps,
+  sizeHelper,
+  strokeSizeHelper,
+} from "../nexture-icons";
 
 export default function NiLoader({
   className,
@@ -19,8 +23,18 @@ export default function NiLoader({
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <path d="M12 2V4" stroke="currentColor" strokeWidth={iconStrokeWidth} strokeLinecap="round" />
-        <path d="M12 20V22" stroke="currentColor" strokeWidth={iconStrokeWidth} strokeLinecap="round" />
+        <path
+          d="M12 2V4"
+          stroke="currentColor"
+          strokeWidth={iconStrokeWidth}
+          strokeLinecap="round"
+        />
+        <path
+          d="M12 20V22"
+          stroke="currentColor"
+          strokeWidth={iconStrokeWidth}
+          strokeLinecap="round"
+        />
         <path
           opacity={oneTone ? 1 : 0.6}
           d="M2 12L4 12"
@@ -28,9 +42,24 @@ export default function NiLoader({
           strokeWidth={iconStrokeWidth}
           strokeLinecap="round"
         />
-        <path d="M20 12L22 12" stroke="currentColor" strokeWidth={iconStrokeWidth} strokeLinecap="round" />
-        <path d="M7 3.33984L8 5.07189" stroke="currentColor" strokeWidth={iconStrokeWidth} strokeLinecap="round" />
-        <path d="M16 18.9282L17 20.6603" stroke="currentColor" strokeWidth={iconStrokeWidth} strokeLinecap="round" />
+        <path
+          d="M20 12L22 12"
+          stroke="currentColor"
+          strokeWidth={iconStrokeWidth}
+          strokeLinecap="round"
+        />
+        <path
+          d="M7 3.33984L8 5.07189"
+          stroke="currentColor"
+          strokeWidth={iconStrokeWidth}
+          strokeLinecap="round"
+        />
+        <path
+          d="M16 18.9282L17 20.6603"
+          stroke="currentColor"
+          strokeWidth={iconStrokeWidth}
+          strokeLinecap="round"
+        />
         <path
           opacity={oneTone ? 1 : 0.6}
           d="M3.33984 17L5.07189 16"
@@ -38,7 +67,12 @@ export default function NiLoader({
           strokeWidth={iconStrokeWidth}
           strokeLinecap="round"
         />
-        <path d="M18.9282 8L20.6603 7" stroke="currentColor" strokeWidth={iconStrokeWidth} strokeLinecap="round" />
+        <path
+          d="M18.9282 8L20.6603 7"
+          stroke="currentColor"
+          strokeWidth={iconStrokeWidth}
+          strokeLinecap="round"
+        />
         <path
           opacity={oneTone ? 1 : 0.6}
           d="M3.33984 7L5.07189 8"
@@ -46,9 +80,24 @@ export default function NiLoader({
           strokeWidth={iconStrokeWidth}
           strokeLinecap="round"
         />
-        <path d="M18.9282 16L20.6603 17" stroke="currentColor" strokeWidth={iconStrokeWidth} strokeLinecap="round" />
-        <path d="M7 20.6602L8 18.9281" stroke="currentColor" strokeWidth={iconStrokeWidth} strokeLinecap="round" />
-        <path d="M16 5.07178L17 3.33973" stroke="currentColor" strokeWidth={iconStrokeWidth} strokeLinecap="round" />
+        <path
+          d="M18.9282 16L20.6603 17"
+          stroke="currentColor"
+          strokeWidth={iconStrokeWidth}
+          strokeLinecap="round"
+        />
+        <path
+          d="M7 20.6602L8 18.9281"
+          stroke="currentColor"
+          strokeWidth={iconStrokeWidth}
+          strokeLinecap="round"
+        />
+        <path
+          d="M16 5.07178L17 3.33973"
+          stroke="currentColor"
+          strokeWidth={iconStrokeWidth}
+          strokeLinecap="round"
+        />
       </svg>
     );
   } else {

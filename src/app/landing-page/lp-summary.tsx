@@ -1,5 +1,14 @@
 "use client";
-import { Avatar, Box, Button, Card, CardContent, ListItemAvatar, ListItemText, Typography } from "@mui/material";
+import {
+  Avatar,
+  Box,
+  Button,
+  Card,
+  CardContent,
+  ListItemAvatar,
+  ListItemText,
+  Typography,
+} from "@mui/material";
 
 import NiExclamationSquare from "@/icons/nexture/ni-exclamation-square";
 import NiPower from "@/icons/nexture/ni-power";
@@ -30,12 +39,20 @@ export default function LPSummary() {
             <Typography variant="subtitle2">Assignee</Typography>
             <Box className="flex flex-row items-center">
               <ListItemAvatar>
-                <Avatar className="medium mr-3" alt={"Laura Ellis"} src={"/images/avatars/avatar-5.jpg"}></Avatar>
+                <Avatar
+                  className="medium mr-3"
+                  alt={"Laura Ellis"}
+                  src={"/images/avatars/avatar-5.jpg"}
+                ></Avatar>
               </ListItemAvatar>
               <ListItemText
                 className="w-32 flex-none"
                 primary={
-                  <Typography component="p" variant="body1" className="leading-4">
+                  <Typography
+                    component="p"
+                    variant="body1"
+                    className="leading-4"
+                  >
                     Laura Ellis
                   </Typography>
                 }

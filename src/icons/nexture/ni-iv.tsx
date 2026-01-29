@@ -1,6 +1,15 @@
-import { NextureIconsProps, sizeHelper, strokeSizeHelper } from "../nexture-icons";
+import {
+  NextureIconsProps,
+  sizeHelper,
+  strokeSizeHelper,
+} from "../nexture-icons";
 
-export default function NiIv({ className, variant = "outlined", size = "medium", oneTone = false }: NextureIconsProps) {
+export default function NiIv({
+  className,
+  variant = "outlined",
+  size = "medium",
+  oneTone = false,
+}: NextureIconsProps) {
   const iconSize = sizeHelper(size);
   const iconStrokeWidth = strokeSizeHelper(iconSize);
 
@@ -45,8 +54,18 @@ export default function NiIv({ className, variant = "outlined", size = "medium",
           strokeWidth={iconStrokeWidth}
           strokeLinecap="round"
         />
-        <path d="M11.9999 10.5L12 8.5" stroke="currentColor" strokeWidth={iconStrokeWidth} strokeLinecap="round" />
-        <path d="M13 9.49414L11 9.49414" stroke="currentColor" strokeWidth={iconStrokeWidth} strokeLinecap="round" />
+        <path
+          d="M11.9999 10.5L12 8.5"
+          stroke="currentColor"
+          strokeWidth={iconStrokeWidth}
+          strokeLinecap="round"
+        />
+        <path
+          d="M13 9.49414L11 9.49414"
+          stroke="currentColor"
+          strokeWidth={iconStrokeWidth}
+          strokeLinecap="round"
+        />
       </svg>
     );
   } else {

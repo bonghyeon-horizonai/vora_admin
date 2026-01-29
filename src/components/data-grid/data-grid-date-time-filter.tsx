@@ -9,7 +9,9 @@ import NiChevronLeftSmall from "@/icons/nexture/ni-chevron-left-small";
 import NiChevronRightSmall from "@/icons/nexture/ni-chevron-right-small";
 import { cn } from "@/lib/utils";
 
-export default function DataGridDateTimeFilter(props: GridFilterInputValueProps) {
+export default function DataGridDateTimeFilter(
+  props: GridFilterInputValueProps,
+) {
   const { item, applyValue, apiRef } = props;
 
   const handleChange = (newValue: unknown) => {
@@ -24,16 +26,36 @@ export default function DataGridDateTimeFilter(props: GridFilterInputValueProps)
       className="outlined edit-date mb-0"
       slots={{
         openPickerIcon: (props) => {
-          return <NiCalendar {...props} className={cn(props.className, "text-text-secondary")} />;
+          return (
+            <NiCalendar
+              {...props}
+              className={cn(props.className, "text-text-secondary")}
+            />
+          );
         },
         switchViewIcon: (props) => {
-          return <NiChevronDownSmall {...props} className={cn(props.className, "text-text-secondary")} />;
+          return (
+            <NiChevronDownSmall
+              {...props}
+              className={cn(props.className, "text-text-secondary")}
+            />
+          );
         },
         leftArrowIcon: (props) => {
-          return <NiChevronLeftSmall {...props} className={cn(props.className, "text-text-secondary")} />;
+          return (
+            <NiChevronLeftSmall
+              {...props}
+              className={cn(props.className, "text-text-secondary")}
+            />
+          );
         },
         rightArrowIcon: (props) => {
-          return <NiChevronRightSmall {...props} className={cn(props.className, "text-text-secondary")} />;
+          return (
+            <NiChevronRightSmall
+              {...props}
+              className={cn(props.className, "text-text-secondary")}
+            />
+          );
         },
       }}
       slotProps={{

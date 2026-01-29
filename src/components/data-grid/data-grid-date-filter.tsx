@@ -26,20 +26,44 @@ export default function DataGridDateFilter(props: DataGridDateFilterProps) {
     <DatePicker
       defaultValue={item.value ? dayjs(item.value) : null}
       onChange={handleChange}
-      label={isHeaderFilter ? capitalize(item.operator) : apiRef.current.getLocaleText("filterPanelInputLabel")}
+      label={
+        isHeaderFilter
+          ? capitalize(item.operator)
+          : apiRef.current.getLocaleText("filterPanelInputLabel")
+      }
       className="outlined edit-date mb-0"
       slots={{
         openPickerIcon: (props) => {
-          return <NiCalendar {...props} className={cn(props.className, "text-text-secondary")} />;
+          return (
+            <NiCalendar
+              {...props}
+              className={cn(props.className, "text-text-secondary")}
+            />
+          );
         },
         switchViewIcon: (props) => {
-          return <NiChevronDownSmall {...props} className={cn(props.className, "text-text-secondary")} />;
+          return (
+            <NiChevronDownSmall
+              {...props}
+              className={cn(props.className, "text-text-secondary")}
+            />
+          );
         },
         leftArrowIcon: (props) => {
-          return <NiChevronLeftSmall {...props} className={cn(props.className, "text-text-secondary")} />;
+          return (
+            <NiChevronLeftSmall
+              {...props}
+              className={cn(props.className, "text-text-secondary")}
+            />
+          );
         },
         rightArrowIcon: (props) => {
-          return <NiChevronRightSmall {...props} className={cn(props.className, "text-text-secondary")} />;
+          return (
+            <NiChevronRightSmall
+              {...props}
+              className={cn(props.className, "text-text-secondary")}
+            />
+          );
         },
       }}
       slotProps={{

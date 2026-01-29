@@ -30,9 +30,14 @@ type GetThemeImageParams = {
  *                 - directory: Optional directory prefix for all image paths
  * @returns string The resolved image path
  */
-export function getThemeImage({ srcSet, current, directory }: GetThemeImageParams): string {
+export function getThemeImage({
+  srcSet,
+  current,
+  directory,
+}: GetThemeImageParams): string {
   // Helper function to add directory prefix
-  const addDirectory = (path: string) => (directory ? `${directory}${path}` : path);
+  const addDirectory = (path: string) =>
+    directory ? `${directory}${path}` : path;
 
   // Helper function to handle array configs
   const handleArrayConfig = (arr: string[]) => {

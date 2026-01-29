@@ -49,7 +49,10 @@ const ChangeStatus = ({ change }: { change: number | string }) => {
       ) : (
         <NiTriangleUp size="tiny" className="text-success" />
       )}
-      <Typography variant="body2" className={Number(change) < 0 ? "text-error" : "text-success"}>
+      <Typography
+        variant="body2"
+        className={Number(change) < 0 ? "text-error" : "text-success"}
+      >
         {Math.abs(Number(change))}%
       </Typography>
     </Box>

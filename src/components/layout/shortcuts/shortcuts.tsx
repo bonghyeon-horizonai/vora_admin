@@ -39,7 +39,10 @@ export default function Shortcuts() {
   };
 
   const handleClose = (event: Event | React.SyntheticEvent) => {
-    if (anchorRef.current && anchorRef.current.contains(event.target as HTMLElement)) {
+    if (
+      anchorRef.current &&
+      anchorRef.current.contains(event.target as HTMLElement)
+    ) {
       return;
     }
 
@@ -48,7 +51,12 @@ export default function Shortcuts() {
 
   return (
     <>
-      <Tooltip title="Shortcuts" placement="bottom" arrow open={!open && tooltipShow}>
+      <Tooltip
+        title="Shortcuts"
+        placement="bottom"
+        arrow
+        open={!open && tooltipShow}
+      >
         <Button
           variant="text"
           size="large"
@@ -61,7 +69,9 @@ export default function Shortcuts() {
           onMouseEnter={() => setTooltipShow(true)}
           onMouseLeave={() => setTooltipShow(false)}
           ref={anchorRef}
-          startIcon={<NiCells variant={open ? "contained" : "outlined"} size={24} />}
+          startIcon={
+            <NiCells variant={open ? "contained" : "outlined"} size={24} />
+          }
         />
       </Tooltip>
       <Popper
@@ -78,7 +88,11 @@ export default function Shortcuts() {
               <ClickAwayListener onClickAway={handleClose}>
                 <Card className="shadow-darker-sm! w-xs">
                   <Box className="flex flex-1 flex-row items-start justify-between pr-4">
-                    <Typography variant="h6" component="h6" className="card-title px-4 pt-4">
+                    <Typography
+                      variant="h6"
+                      component="h6"
+                      className="card-title px-4 pt-4"
+                    >
                       Shortcuts
                     </Typography>
                     <Button
@@ -100,7 +114,11 @@ export default function Shortcuts() {
                           </ListItemAvatar>
                           <ListItemText
                             primary={
-                              <Typography component="p" variant="subtitle2" className="leading-4">
+                              <Typography
+                                component="p"
+                                variant="subtitle2"
+                                className="leading-4"
+                              >
                                 Add Product
                               </Typography>
                             }
@@ -119,12 +137,19 @@ export default function Shortcuts() {
                         <ListItemButton classes={{ root: "group items-start" }}>
                           <ListItemAvatar>
                             <Avatar className="medium bg-secondary-light/10 mr-3">
-                              <NiCells size="medium" className="text-secondary" />
+                              <NiCells
+                                size="medium"
+                                className="text-secondary"
+                              />
                             </Avatar>
                           </ListItemAvatar>
                           <ListItemText
                             primary={
-                              <Typography component="p" variant="subtitle2" className="leading-4">
+                              <Typography
+                                component="p"
+                                variant="subtitle2"
+                                className="leading-4"
+                              >
                                 Add Category
                               </Typography>
                             }
@@ -144,12 +169,19 @@ export default function Shortcuts() {
                         <ListItemButton classes={{ root: "group items-start" }}>
                           <ListItemAvatar>
                             <Avatar className="medium bg-accent-1-light/10 mr-3">
-                              <NiPercent size="medium" className="text-accent-1" />
+                              <NiPercent
+                                size="medium"
+                                className="text-accent-1"
+                              />
                             </Avatar>
                           </ListItemAvatar>
                           <ListItemText
                             primary={
-                              <Typography component="p" variant="subtitle2" className="leading-4">
+                              <Typography
+                                component="p"
+                                variant="subtitle2"
+                                className="leading-4"
+                              >
                                 Discounts
                               </Typography>
                             }
@@ -169,12 +201,19 @@ export default function Shortcuts() {
                         <ListItemButton classes={{ root: "group items-start" }}>
                           <ListItemAvatar>
                             <Avatar className="medium bg-accent-2-light/10 mr-3">
-                              <NiUsers size="medium" className="text-accent-2" />
+                              <NiUsers
+                                size="medium"
+                                className="text-accent-2"
+                              />
                             </Avatar>
                           </ListItemAvatar>
                           <ListItemText
                             primary={
-                              <Typography component="p" variant="subtitle2" className="leading-4">
+                              <Typography
+                                component="p"
+                                variant="subtitle2"
+                                className="leading-4"
+                              >
                                 Teams
                               </Typography>
                             }
@@ -194,12 +233,19 @@ export default function Shortcuts() {
                         <ListItemButton classes={{ root: "group items-start" }}>
                           <ListItemAvatar>
                             <Avatar className="medium bg-accent-3-light/10 mr-3">
-                              <NiMessages size="medium" className="text-accent-3" />
+                              <NiMessages
+                                size="medium"
+                                className="text-accent-3"
+                              />
                             </Avatar>
                           </ListItemAvatar>
                           <ListItemText
                             primary={
-                              <Typography component="p" variant="subtitle2" className="leading-4">
+                              <Typography
+                                component="p"
+                                variant="subtitle2"
+                                className="leading-4"
+                              >
                                 Comments
                               </Typography>
                             }
@@ -219,12 +265,19 @@ export default function Shortcuts() {
                         <ListItemButton classes={{ root: "group items-start" }}>
                           <ListItemAvatar>
                             <Avatar className="medium bg-accent-4-light/10 mr-3">
-                              <NiTelescope size="medium" className="text-accent-4" />
+                              <NiTelescope
+                                size="medium"
+                                className="text-accent-4"
+                              />
                             </Avatar>
                           </ListItemAvatar>
                           <ListItemText
                             primary={
-                              <Typography component="p" variant="subtitle2" className="leading-4">
+                              <Typography
+                                component="p"
+                                variant="subtitle2"
+                                className="leading-4"
+                              >
                                 Ads
                               </Typography>
                             }
@@ -243,7 +296,12 @@ export default function Shortcuts() {
                     </List>
                   </Box>
                   <CardActions disableSpacing>
-                    <Button variant="outlined" size="tiny" color="grey" className="w-full">
+                    <Button
+                      variant="outlined"
+                      size="tiny"
+                      color="grey"
+                      className="w-full"
+                    >
                       Add Shortcut
                     </Button>
                   </CardActions>

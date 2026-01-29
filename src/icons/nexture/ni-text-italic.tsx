@@ -1,4 +1,8 @@
-import { NextureIconsProps, sizeHelper, strokeSizeHelper } from "../nexture-icons";
+import {
+  NextureIconsProps,
+  sizeHelper,
+  strokeSizeHelper,
+} from "../nexture-icons";
 
 export default function NiTextItalic({
   className,
@@ -19,7 +23,12 @@ export default function NiTextItalic({
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <path d="M9 20.5L15 3.5" stroke="currentColor" strokeWidth={iconStrokeWidth} strokeLinecap="round" />
+        <path
+          d="M9 20.5L15 3.5"
+          stroke="currentColor"
+          strokeWidth={iconStrokeWidth}
+          strokeLinecap="round"
+        />
         <path
           opacity={oneTone ? 1 : 0.6}
           d="M13 2.5C13.2553 2.75987 13.5633 2.94585 13.9033 3.0309C14.627 3.21192 15.373 3.21192 16.0967 3.0309C16.4367 2.94585 16.7447 2.75987 17 2.5"

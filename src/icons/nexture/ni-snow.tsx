@@ -1,4 +1,8 @@
-import { NextureIconsProps, sizeHelper, strokeSizeHelper } from "../nexture-icons";
+import {
+  NextureIconsProps,
+  sizeHelper,
+  strokeSizeHelper,
+} from "../nexture-icons";
 
 export default function NiSnow({
   className,
@@ -18,7 +22,12 @@ export default function NiSnow({
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <path d="M12 2L12 22" stroke="currentColor" strokeWidth={iconStrokeWidth} strokeLinecap="round" />
+        <path
+          d="M12 2L12 22"
+          stroke="currentColor"
+          strokeWidth={iconStrokeWidth}
+          strokeLinecap="round"
+        />
         <path
           opacity={oneTone ? 1 : 0.6}
           d="M9.5 3.5L12 5"
@@ -47,7 +56,12 @@ export default function NiSnow({
           strokeWidth={iconStrokeWidth}
           strokeLinecap="round"
         />
-        <path d="M3.33984 7L20.6604 17" stroke="currentColor" strokeWidth={iconStrokeWidth} strokeLinecap="round" />
+        <path
+          d="M3.33984 7L20.6604 17"
+          stroke="currentColor"
+          strokeWidth={iconStrokeWidth}
+          strokeLinecap="round"
+        />
         <path
           opacity={oneTone ? 1 : 0.6}
           d="M3.38867 9.91506L5.93771 8.5"
@@ -76,7 +90,12 @@ export default function NiSnow({
           strokeWidth={iconStrokeWidth}
           strokeLinecap="round"
         />
-        <path d="M3.33985 17L20.6604 7" stroke="currentColor" strokeWidth={iconStrokeWidth} strokeLinecap="round" />
+        <path
+          d="M3.33985 17L20.6604 7"
+          stroke="currentColor"
+          strokeWidth={iconStrokeWidth}
+          strokeLinecap="round"
+        />
         <path
           opacity={oneTone ? 1 : 0.6}
           d="M5.88867 18.4151L5.93771 15.5"

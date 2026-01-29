@@ -11,7 +11,8 @@ import { MenuShowState } from "@/types";
 import { MenuItem } from "@/types";
 
 export default function Main({ children }: PropsWithChildren) {
-  const { leftPrimaryCurrent, leftSecondaryCurrent, leftMenuWidth } = useLayoutContext();
+  const { leftPrimaryCurrent, leftSecondaryCurrent, leftMenuWidth } =
+    useLayoutContext();
   const [mounted, setMounted] = useState(false);
   const pathname = usePathname();
 
@@ -22,9 +23,13 @@ export default function Main({ children }: PropsWithChildren) {
   const [activeItem, setActiveItem] = useState<MenuItem | undefined>(undefined);
 
   useEffect(() => {
-    let selectedMenu = leftMenuItems.find((item) => item.href && isPathMatch(pathname, item.href));
+    let selectedMenu = leftMenuItems.find(
+      (item) => item.href && isPathMatch(pathname, item.href),
+    );
     if (!selectedMenu && leftMenuBottomItems) {
-      selectedMenu = leftMenuBottomItems.find((item) => item.href && isPathMatch(pathname, item.href));
+      selectedMenu = leftMenuBottomItems.find(
+        (item) => item.href && isPathMatch(pathname, item.href),
+      );
     }
     setActiveItem(selectedMenu);
   }, [pathname]);
@@ -37,12 +42,22 @@ export default function Main({ children }: PropsWithChildren) {
     if (leftPrimaryCurrent === MenuShowState.Show) {
       mainPaddingLeft += leftMenuWidth.primary;
     }
-    if (leftSecondaryCurrent === MenuShowState.Show && activeItem?.children && leftMenuWidth.secondary > 0) {
+    if (
+      leftSecondaryCurrent === MenuShowState.Show &&
+      activeItem?.children &&
+      leftMenuWidth.secondary > 0
+    ) {
       mainPaddingLeft += leftMenuWidth.secondary;
     }
 
     return [mainPaddingLeft];
-  }, [leftPrimaryCurrent, leftSecondaryCurrent, leftMenuWidth, mounted, activeItem]);
+  }, [
+    leftPrimaryCurrent,
+    leftSecondaryCurrent,
+    leftMenuWidth,
+    mounted,
+    activeItem,
+  ]);
 
   const styles = useMemo(
     () => ({
@@ -53,7 +68,10 @@ export default function Main({ children }: PropsWithChildren) {
   );
 
   return (
-    <main className="flex h-full min-h-0 w-full flex-col pt-20 duration-(--layout-duration)" style={styles}>
+    <main
+      className="flex h-full min-h-0 w-full flex-col pt-20 duration-(--layout-duration)"
+      style={styles}
+    >
       {children}
       <Footer />
     </main>

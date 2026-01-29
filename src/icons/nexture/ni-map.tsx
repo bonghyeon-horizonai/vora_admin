@@ -1,4 +1,8 @@
-import { NextureIconsProps, sizeHelper, strokeSizeHelper } from "../nexture-icons";
+import {
+  NextureIconsProps,
+  sizeHelper,
+  strokeSizeHelper,
+} from "../nexture-icons";
 
 export default function NiMap({
   className,
@@ -24,8 +28,18 @@ export default function NiMap({
           stroke="currentColor"
           strokeWidth={iconStrokeWidth}
         />
-        <path opacity={oneTone ? 1 : 0.6} d="M8 3V18" stroke="currentColor" strokeWidth={iconStrokeWidth} />
-        <path opacity={oneTone ? 1 : 0.6} d="M16 5.5V20.5" stroke="currentColor" strokeWidth={iconStrokeWidth} />
+        <path
+          opacity={oneTone ? 1 : 0.6}
+          d="M8 3V18"
+          stroke="currentColor"
+          strokeWidth={iconStrokeWidth}
+        />
+        <path
+          opacity={oneTone ? 1 : 0.6}
+          d="M16 5.5V20.5"
+          stroke="currentColor"
+          strokeWidth={iconStrokeWidth}
+        />
       </svg>
     );
   } else {
@@ -42,7 +56,10 @@ export default function NiMap({
           d="M18.7705 3.77734C20.5988 2.86343 22.7496 4.19246 22.75 6.23633V15.5283C22.7498 17.3273 21.7331 18.9728 20.124 19.7773L17.8955 20.8916C17.529 21.0748 17.1437 21.2071 16.75 21.29V4.74121C16.9119 4.69011 17.0708 4.62671 17.2246 4.5498L18.7705 3.77734Z"
           fill="currentColor"
         />
-        <path d="M13.748 4.35449V20.957L10.252 19.6455V3.04395L13.748 4.35449Z" fill="currentColor" />
+        <path
+          d="M13.748 4.35449V20.957L10.252 19.6455V3.04395L13.748 4.35449Z"
+          fill="currentColor"
+        />
         <path
           d="M7.25 19.2578C7.08796 19.3089 6.92939 19.3742 6.77539 19.4512L5.22949 20.2246C3.40129 21.1382 1.25035 19.8084 1.25 17.7646V8.47266C1.25013 6.67368 2.26695 5.0292 3.87598 4.22461L6.10449 3.11035C6.47103 2.92709 6.85623 2.79387 7.25 2.71094V19.2578Z"
           fill="currentColor"

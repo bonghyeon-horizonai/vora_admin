@@ -11,12 +11,19 @@ export default function LPStats() {
   return (
     <Grid container size={12} spacing={2.5}>
       <Grid size={{ xs: 12 }}>
-        <Card component="a" href="#" className="flex flex-row items-center p-1 transition-transform hover:scale-[1.02]">
+        <Card
+          component="a"
+          href="#"
+          className="flex flex-row items-center p-1 transition-transform hover:scale-[1.02]"
+        >
           <Box className="bg-primary-light/10 flex h-24 w-16 flex-none items-center justify-center rounded-2xl">
             <NiBag className="text-primary" size={"large"} />
           </Box>
           <CardContent>
-            <Typography variant="body1" className="text-text-secondary leading-5">
+            <Typography
+              variant="body1"
+              className="text-text-secondary leading-5"
+            >
               Orders
             </Typography>
             <Box className="flex flex-row items-center gap-2">
@@ -34,12 +41,19 @@ export default function LPStats() {
         </Card>
       </Grid>
       <Grid size={{ xs: 12 }}>
-        <Card component="a" href="#" className="flex flex-row items-center p-1 transition-transform hover:scale-[1.02]">
+        <Card
+          component="a"
+          href="#"
+          className="flex flex-row items-center p-1 transition-transform hover:scale-[1.02]"
+        >
           <Box className="bg-secondary-light/10 flex h-24 w-16 flex-none items-center justify-center rounded-2xl">
             <NiAirBalloon className="text-secondary" size={"large"} />
           </Box>
           <CardContent>
-            <Typography variant="body1" className="text-text-secondary leading-5">
+            <Typography
+              variant="body1"
+              className="text-text-secondary leading-5"
+            >
               Products
             </Typography>
             <Box className="flex flex-row items-center gap-2">
@@ -57,12 +71,19 @@ export default function LPStats() {
         </Card>
       </Grid>
       <Grid size={{ xs: 12 }}>
-        <Card component="a" href="#" className="flex flex-row items-center p-1 transition-transform hover:scale-[1.02]">
+        <Card
+          component="a"
+          href="#"
+          className="flex flex-row items-center p-1 transition-transform hover:scale-[1.02]"
+        >
           <Box className="bg-accent-1-light/10 flex h-24 w-16 flex-none items-center justify-center rounded-2xl">
             <NiCells className="text-accent-1" size={"large"} />
           </Box>
           <CardContent>
-            <Typography variant="body1" className="text-text-secondary leading-5">
+            <Typography
+              variant="body1"
+              className="text-text-secondary leading-5"
+            >
               Categories
             </Typography>
             <Box className="flex flex-row items-center gap-2">

@@ -2,7 +2,12 @@ import { useLayoutContext } from "@/components/layout/layout-context";
 import { cn } from "@/lib/utils";
 
 export default function MenuBackdrop() {
-  const { resetLeftMenu, leftShowBackdrop, temporaryShowPrimaryMenu, setTemporaryShowPrimaryMenu } = useLayoutContext();
+  const {
+    resetLeftMenu,
+    leftShowBackdrop,
+    temporaryShowPrimaryMenu,
+    setTemporaryShowPrimaryMenu,
+  } = useLayoutContext();
 
   const handleOnClick = () => {
     if (temporaryShowPrimaryMenu) {
@@ -17,7 +22,10 @@ export default function MenuBackdrop() {
   return (
     <>
       {(leftShowBackdrop || temporaryShowPrimaryMenu) && (
-        <div className={cn("absolute inset-0 top-0 left-0 z-0")} onClick={() => handleOnClick()}></div>
+        <div
+          className={cn("absolute inset-0 top-0 left-0 z-0")}
+          onClick={() => handleOnClick()}
+        ></div>
       )}
     </>
   );

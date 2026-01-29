@@ -1,6 +1,10 @@
 import React from "react";
 
-import { IconComponent, PlyrLayoutIconProps, PlyrLayoutIcons } from "@vidstack/react/types/vidstack-react.js";
+import {
+  IconComponent,
+  PlyrLayoutIconProps,
+  PlyrLayoutIcons,
+} from "@vidstack/react/types/vidstack-react.js";
 
 const iconPlay =
   '<path d="M16.0452 12.9382C17.7379 11.3451 17.7379 8.65493 16.0452 7.06183L15.3147 6.37431C13.2186 4.40152 10.5337 3.17017 7.67102 2.86885L7.56994 2.85821C5.63108 2.65411 3.84763 3.93712 3.42471 5.84027V5.84027C2.81588 8.58001 2.81588 11.42 3.42471 14.1597V14.1597C3.84763 16.0629 5.63108 17.3459 7.56994 17.1418L7.67102 17.1312C10.5337 16.8298 13.2186 15.5985 15.3147 13.6257L16.0452 12.9382Z" stroke="#fff" stroke-width="1.25"/>';

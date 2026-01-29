@@ -966,7 +966,13 @@ const NextureIcons: React.FC<NextureIconsPropsComponent> = ({
     return null;
   }
   return (
-    <IconComponent variant={variant} size={size} className={className} strokeWidth={strokeWidth} oneTone={oneTone} />
+    <IconComponent
+      variant={variant}
+      size={size}
+      className={className}
+      strokeWidth={strokeWidth}
+      oneTone={oneTone}
+    />
   );
 };
 

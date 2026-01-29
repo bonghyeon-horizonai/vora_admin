@@ -19,11 +19,17 @@ import { cn } from "@/lib/utils";
 import { MenuShowState } from "@/types";
 
 export default function Header() {
-  const { showLeftInMobile, showLeftMobileButton, leftPrimaryCurrent, leftShowBackdrop } = useLayoutContext();
+  const {
+    showLeftInMobile,
+    showLeftMobileButton,
+    leftPrimaryCurrent,
+    leftShowBackdrop,
+  } = useLayoutContext();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const [mounted, setMounted] = useState(false);
-  const [rightButtonsVisibleMobile, setRightButtonsVisibleMobile] = useState(false);
+  const [rightButtonsVisibleMobile, setRightButtonsVisibleMobile] =
+    useState(false);
 
   const handleRightButtonsMobileToggle = () => {
     setRightButtonsVisibleMobile((prevValue) => !prevValue);
@@ -42,7 +48,10 @@ export default function Header() {
       >
         <Box className="flex h-full flex-row items-center">
           <Link href="/home/sub">
-            <Logo classNameFull="ml-2 hidden md:block" classNameMobile="ml-2 md:hidden" />
+            <Logo
+              classNameFull="ml-2 hidden md:block"
+              classNameMobile="ml-2 md:hidden"
+            />
           </Link>
         </Box>
       </Box>
@@ -80,13 +89,21 @@ export default function Header() {
         <Box className="flex h-full flex-1 flex-row items-center gap-4 md:gap-6">
           {/* Logo */}
           <Link href="/home/sub">
-            <Logo classNameFull="ml-2 hidden md:block" classNameMobile="ml-2 md:hidden" />
+            <Logo
+              classNameFull="ml-2 hidden md:block"
+              classNameMobile="ml-2 md:hidden"
+            />
           </Link>
 
           {/* Version select */}
           <Fade in={!rightButtonsVisibleMobile || !isMobile}>
             <Box>
-              <VersionSelect className={cn("sm:flex!", rightButtonsVisibleMobile ? "hidden" : "flex")} />
+              <VersionSelect
+                className={cn(
+                  "sm:flex!",
+                  rightButtonsVisibleMobile ? "hidden" : "flex",
+                )}
+              />
             </Box>
           </Fade>
         </Box>
@@ -94,7 +111,12 @@ export default function Header() {
         {/* Right buttons */}
         <Box className="flex flex-row sm:gap-1">
           <Fade in={rightButtonsVisibleMobile || !isMobile}>
-            <Box className={cn("hidden flex-row sm:flex! sm:gap-1", rightButtonsVisibleMobile ? "flex" : "hidden")}>
+            <Box
+              className={cn(
+                "hidden flex-row sm:flex! sm:gap-1",
+                rightButtonsVisibleMobile ? "flex" : "hidden",
+              )}
+            >
               <Search />
               <Shortcuts />
               <Notifications />

@@ -2,7 +2,15 @@
 import { useState } from "react";
 import { useTranslations } from "use-intl";
 
-import { Avatar, Box, Button, Card, CardContent, Link, Typography } from "@mui/material";
+import {
+  Avatar,
+  Box,
+  Button,
+  Card,
+  CardContent,
+  Link,
+  Typography,
+} from "@mui/material";
 
 import NiBookmark from "@/icons/nexture/ni-bookmark";
 import NiPin from "@/icons/nexture/ni-pin";
@@ -17,13 +25,22 @@ export default function LPUser() {
         <Avatar
           alt="Laura Ellis"
           src="/images/avatars/avatar-1.jpg"
-          className={cn("medium cursor-pointer transition-all", following ? "grayscale-0" : "grayscale-75")}
+          className={cn(
+            "medium cursor-pointer transition-all",
+            following ? "grayscale-0" : "grayscale-75",
+          )}
         />
 
         <Box className="flex flex-1 flex-col gap-4">
           <Box className="mb-1 flex flex-row items-start justify-between gap-1">
             <Box className="flex flex-col">
-              <Link href="#" variant="subtitle2" underline="hover" color="textPrimary" className="-mb-1 pt-0.25">
+              <Link
+                href="#"
+                variant="subtitle2"
+                underline="hover"
+                color="textPrimary"
+                className="-mb-1 pt-0.25"
+              >
                 Laura Ellis
               </Link>
               <Typography className="text-text-secondary" variant="body1">

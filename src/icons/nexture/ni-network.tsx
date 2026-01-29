@@ -1,4 +1,8 @@
-import { NextureIconsProps, sizeHelper, strokeSizeHelper } from "../nexture-icons";
+import {
+  NextureIconsProps,
+  sizeHelper,
+  strokeSizeHelper,
+} from "../nexture-icons";
 
 export default function NiNetwork({
   className,
@@ -29,10 +33,30 @@ export default function NiNetwork({
           stroke="currentColor"
           strokeWidth={iconStrokeWidth}
         />
-        <path d="M6.5 6H5.5" stroke="currentColor" strokeWidth={iconStrokeWidth} strokeLinecap="round" />
-        <path d="M18.5 6H17.5" stroke="currentColor" strokeWidth={iconStrokeWidth} strokeLinecap="round" />
-        <path d="M6.5 10H5.5" stroke="currentColor" strokeWidth={iconStrokeWidth} strokeLinecap="round" />
-        <path d="M18.5 10H17.5" stroke="currentColor" strokeWidth={iconStrokeWidth} strokeLinecap="round" />
+        <path
+          d="M6.5 6H5.5"
+          stroke="currentColor"
+          strokeWidth={iconStrokeWidth}
+          strokeLinecap="round"
+        />
+        <path
+          d="M18.5 6H17.5"
+          stroke="currentColor"
+          strokeWidth={iconStrokeWidth}
+          strokeLinecap="round"
+        />
+        <path
+          d="M6.5 10H5.5"
+          stroke="currentColor"
+          strokeWidth={iconStrokeWidth}
+          strokeLinecap="round"
+        />
+        <path
+          d="M18.5 10H17.5"
+          stroke="currentColor"
+          strokeWidth={iconStrokeWidth}
+          strokeLinecap="round"
+        />
         <path
           opacity={oneTone ? 1 : 0.6}
           d="M6 14L6 18M16 20L8 20M16 20C16 18.8954 16.8954 18 18 18M16 20C16 21.1046 16.8954 22 18 22C19.1046 22 20 21.1046 20 20M4 20L2 20M18 18C19.1046 18 20 18.8954 20 20M18 18L18 14M20 20L22 20M6 18V18C7.10457 18 8 18.8954 8 20V20C8 21.1046 7.10457 22 6 22V22C4.89543 22 4 21.1046 4 20V20C4 18.8954 4.89543 18 6 18Z"

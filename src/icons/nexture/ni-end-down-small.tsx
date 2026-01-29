@@ -1,4 +1,8 @@
-import { NextureIconsProps, sizeHelper, strokeSizeHelper } from "../nexture-icons";
+import {
+  NextureIconsProps,
+  sizeHelper,
+  strokeSizeHelper,
+} from "../nexture-icons";
 
 export default function NiEndDownSmall({
   className,
@@ -26,7 +30,12 @@ export default function NiEndDownSmall({
           strokeWidth={iconStrokeWidth}
           strokeLinecap="round"
         />
-        <path d="M8 15.5L12 15.5L16 15.5" stroke="currentColor" strokeWidth={iconStrokeWidth} strokeLinecap="round" />
+        <path
+          d="M8 15.5L12 15.5L16 15.5"
+          stroke="currentColor"
+          strokeWidth={iconStrokeWidth}
+          strokeLinecap="round"
+        />
       </svg>
     );
   } else {

@@ -1,6 +1,13 @@
 import { ElementType } from "react";
 
-import { Box, Table, TableBody, TableCell, TableRow, Typography } from "@mui/material";
+import {
+  Box,
+  Table,
+  TableBody,
+  TableCell,
+  TableRow,
+  Typography,
+} from "@mui/material";
 import { ChartsTooltipContainerProps } from "@mui/x-charts";
 
 import CustomChartMark from "@/components/charts/mark/custom-chart-mark";
@@ -48,23 +55,30 @@ export default function CustomChartTooltipContent({
                   <Typography variant="subtitle1">{title.label}</Typography>
                 </Box>
               )}
-              <Table className="-mb-1.5 border-separate" style={{ borderSpacing: "0 6px" }}>
+              <Table
+                className="-mb-1.5 border-separate"
+                style={{ borderSpacing: "0 6px" }}
+              >
                 <TableBody>
-                  {values?.map(({ id: valueId, color, label, showMark, value }) => (
-                    <TableRow key={valueId}>
-                      {showMark && (
-                        <TableCell className="p-0 pr-2">
-                          <CustomChartMark color={color} />
+                  {values?.map(
+                    ({ id: valueId, color, label, showMark, value }) => (
+                      <TableRow key={valueId}>
+                        {showMark && (
+                          <TableCell className="p-0 pr-2">
+                            <CustomChartMark color={color} />
+                          </TableCell>
+                        )}
+                        <TableCell
+                          className={`text-text-secondary p-0 pr-4 ${["string", "number"].includes(typeof label) ? "min-w-24" : ""}`}
+                        >
+                          {label ?? ""}
                         </TableCell>
-                      )}
-                      <TableCell
-                        className={`text-text-secondary p-0 pr-4 ${["string", "number"].includes(typeof label) ? "min-w-24" : ""}`}
-                      >
-                        {label ?? ""}
-                      </TableCell>
-                      <TableCell className="text-text-primary p-0">{value ?? "-"}</TableCell>
-                    </TableRow>
-                  ))}
+                        <TableCell className="text-text-primary p-0">
+                          {value ?? "-"}
+                        </TableCell>
+                      </TableRow>
+                    ),
+                  )}
                 </TableBody>
               </Table>
             </Box>

@@ -1,3 +1,3 @@
 export default function Page() {
-    return <div>Event Videos</div>;
+  return <div>Event Videos</div>;
 }

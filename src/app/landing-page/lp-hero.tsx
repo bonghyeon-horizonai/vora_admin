@@ -12,7 +12,10 @@ export default function LPHero() {
   const t = useTranslations("dashboard");
 
   return (
-    <Paper elevation={0} className="3xl:py-12 flex h-full max-w-full items-center justify-center bg-transparent py-8">
+    <Paper
+      elevation={0}
+      className="3xl:py-12 flex h-full max-w-full items-center justify-center bg-transparent py-8"
+    >
       <Box className="flex h-full w-full max-w-[1200px] flex-1 flex-col items-center gap-10">
         <Box className="flex flex-col items-center">
           <Typography
@@ -27,7 +30,10 @@ export default function LPHero() {
             {t("landing-hero-third")}
           </Typography>
 
-          <Typography component="p" className="mb-4 max-w-sm text-center text-[1.125rem] leading-6">
+          <Typography
+            component="p"
+            className="mb-4 max-w-sm text-center text-[1.125rem] leading-6"
+          >
             {t("landing-copy")}
           </Typography>
 

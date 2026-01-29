@@ -1,6 +1,14 @@
-import { NextureIconsProps, sizeHelper, strokeSizeHelper } from "../nexture-icons";
+import {
+  NextureIconsProps,
+  sizeHelper,
+  strokeSizeHelper,
+} from "../nexture-icons";
 
-export default function NiSquare({ className, variant = "outlined", size = "medium" }: NextureIconsProps) {
+export default function NiSquare({
+  className,
+  variant = "outlined",
+  size = "medium",
+}: NextureIconsProps) {
   const iconSize = sizeHelper(size);
   const iconStrokeWidth = strokeSizeHelper(iconSize);
 
@@ -14,7 +22,15 @@ export default function NiSquare({ className, variant = "outlined", size = "medi
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <rect x="2" y="2" width="20" height="20" rx="2" stroke="currentColor" strokeWidth={iconStrokeWidth} />
+        <rect
+          x="2"
+          y="2"
+          width="20"
+          height="20"
+          rx="2"
+          stroke="currentColor"
+          strokeWidth={iconStrokeWidth}
+        />
       </svg>
     );
   } else {

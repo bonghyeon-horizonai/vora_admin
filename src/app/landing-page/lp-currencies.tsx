@@ -1,7 +1,14 @@
 "use client";
 import dayjs from "dayjs";
 
-import { Box, Card, CardContent, Grid, Typography, useTheme } from "@mui/material";
+import {
+  Box,
+  Card,
+  CardContent,
+  Grid,
+  Typography,
+  useTheme,
+} from "@mui/material";
 import { SparkLineChart } from "@mui/x-charts";
 
 import useHighlightedSparkline from "@/hooks/use-highlighted-sparkline";
@@ -39,10 +46,19 @@ export default function LPCurrencies() {
             <Box className="flex-shrink-0">
               <Typography variant="body1" className="w-54">
                 BTC / USD
-                <Typography variant="body1" component="span" className="text-text-secondary-light">
+                <Typography
+                  variant="body1"
+                  component="span"
+                  className="text-text-secondary-light"
+                >
                   {" - "}
                   {dayjs()
-                    .subtract(btcUsdSparkline.props.data.length - btcUsdSparkline.item.index - 1, "day")
+                    .subtract(
+                      btcUsdSparkline.props.data.length -
+                        btcUsdSparkline.item.index -
+                        1,
+                      "day",
+                    )
                     .format("MMMM D dddd")}
                 </Typography>
               </Typography>
@@ -65,10 +81,19 @@ export default function LPCurrencies() {
             <Box className="flex-shrink-0">
               <Typography variant="body1" className="w-54">
                 ETH / USD
-                <Typography variant="body1" component="span" className="text-text-secondary-light">
+                <Typography
+                  variant="body1"
+                  component="span"
+                  className="text-text-secondary-light"
+                >
                   {" - "}
                   {dayjs()
-                    .subtract(ethUsdSparkline.props.data.length - ethUsdSparkline.item.index - 1, "day")
+                    .subtract(
+                      ethUsdSparkline.props.data.length -
+                        ethUsdSparkline.item.index -
+                        1,
+                      "day",
+                    )
                     .format("MMMM D dddd")}
                 </Typography>
               </Typography>
@@ -91,10 +116,19 @@ export default function LPCurrencies() {
             <Box className="flex-shrink-0">
               <Typography variant="body1" className="w-54">
                 XRP / USD
-                <Typography variant="body1" component="span" className="text-text-secondary-light">
+                <Typography
+                  variant="body1"
+                  component="span"
+                  className="text-text-secondary-light"
+                >
                   {" - "}
                   {dayjs()
-                    .subtract(xrpUsdSparkline.props.data.length - xrpUsdSparkline.item.index - 1, "day")
+                    .subtract(
+                      xrpUsdSparkline.props.data.length -
+                        xrpUsdSparkline.item.index -
+                        1,
+                      "day",
+                    )
                     .format("MMMM D dddd")}
                 </Typography>
               </Typography>
@@ -123,7 +157,10 @@ const ChangeStatus = ({ change }: { change: number | string }) => {
       ) : (
         <NiTriangleUp size="tiny" className="text-success" />
       )}
-      <Typography variant="body2" className={Number(change) < 0 ? "text-error" : "text-success"}>
+      <Typography
+        variant="body2"
+        className={Number(change) < 0 ? "text-error" : "text-success"}
+      >
         {Math.abs(Number(change))}%
       </Typography>
     </Box>

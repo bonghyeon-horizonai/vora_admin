@@ -14,7 +14,8 @@ const useHighlightedSparkline = ({
   plotType,
   color,
 }: Pick<SparkLineChartProps, "data" | "plotType" | "color">) => {
-  const [highlightedItem, setHighlightedItem] = useState<HighlightedData | null>(null);
+  const [highlightedItem, setHighlightedItem] =
+    useState<HighlightedData | null>(null);
 
   const lineConfig: Partial<SparkLineChartProps> = useMemo(
     () => ({
@@ -43,7 +44,10 @@ const useHighlightedSparkline = ({
     const index = highlightedItem?.[0]?.dataIndex ?? data.length - 1;
     const value = data[index];
     const prevValue = index > 0 ? data[index - 1] : null;
-    const change = prevValue !== null && prevValue !== 0 ? (((value - prevValue) / prevValue) * 100).toFixed(1) : 0;
+    const change =
+      prevValue !== null && prevValue !== 0
+        ? (((value - prevValue) / prevValue) * 100).toFixed(1)
+        : 0;
     return { value, change, index };
   }, [data, highlightedItem]);
 
@@ -64,7 +68,11 @@ const useHighlightedSparkline = ({
   );
 };
 
-const Tooltip = ({ onItemChange }: { onItemChange: (i: HighlightedData) => void }) => {
+const Tooltip = ({
+  onItemChange,
+}: {
+  onItemChange: (i: HighlightedData) => void;
+}) => {
   const axesTooltip = useAxesTooltip();
   useEffect(() => {
     onItemChange?.(axesTooltip);

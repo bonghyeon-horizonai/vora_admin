@@ -1,7 +1,15 @@
 "use client";
 import { useState } from "react";
 
-import { Box, Card, CardContent, Checkbox, FormControl, FormControlLabel, Typography } from "@mui/material";
+import {
+  Box,
+  Card,
+  CardContent,
+  Checkbox,
+  FormControl,
+  FormControlLabel,
+  Typography,
+} from "@mui/material";
 
 import NiCheckSquare from "@/icons/nexture/ni-check-square";
 import NiSquircle from "@/icons/nexture/ni-squircle";
@@ -104,19 +112,35 @@ export default function LpTasks() {
                   className="items-start"
                   control={
                     <Checkbox
-                      icon={<NiSquircle size={"large"} className="text-text-disabled! group-hover:text-primary!" />}
+                      icon={
+                        <NiSquircle
+                          size={"large"}
+                          className="text-text-disabled! group-hover:text-primary!"
+                        />
+                      }
                       checkedIcon={<NiCheckSquare size={"large"} />}
-                      onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+                      onChange={(
+                        event: React.ChangeEvent<HTMLInputElement>,
+                      ) => {
                         handleCheckChange(event.target.checked, task.id);
                       }}
                     />
                   }
                   label={
                     <Box className="flex flex-col">
-                      <Typography variant="body1" className={cn(task.checked && "line-through")}>
+                      <Typography
+                        variant="body1"
+                        className={cn(task.checked && "line-through")}
+                      >
                         {task.label}
                       </Typography>
-                      <Typography variant="body2" className={cn("text-text-secondary", task.checked && "line-through")}>
+                      <Typography
+                        variant="body2"
+                        className={cn(
+                          "text-text-secondary",
+                          task.checked && "line-through",
+                        )}
+                      >
                         {task.time}
                       </Typography>
                     </Box>

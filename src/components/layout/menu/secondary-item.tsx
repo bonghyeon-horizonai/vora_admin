@@ -4,7 +4,12 @@ import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { Dispatch, useCallback, useEffect, useMemo } from "react";
 
-import { Accordion, AccordionDetails, AccordionSummary, Button } from "@mui/material";
+import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
+  Button,
+} from "@mui/material";
 
 import NiChevronRightSmall from "@/icons/nexture/ni-chevron-right-small";
 import NextureIcons from "@/icons/nexture-icons";
@@ -20,13 +25,23 @@ type Props = {
   onSelect?: (item: MenuItem) => void;
 };
 
-export function SecondaryItem({ item, indent = 0, openedAccordions, setOpenedAccordions, className, onSelect }: Props) {
+export function SecondaryItem({
+  item,
+  indent = 0,
+  openedAccordions,
+  setOpenedAccordions,
+  className,
+  onSelect,
+}: Props) {
   const t = useTranslations("dashboard");
   const pathname = usePathname();
 
   const isActive = useMemo(() => {
     if (item.href && isPathMatch(pathname, item.href)) return true;
-    if (item.children) return item.children.some((child: MenuItem) => child.href && isPathMatch(pathname, child.href));
+    if (item.children)
+      return item.children.some(
+        (child: MenuItem) => child.href && isPathMatch(pathname, child.href),
+      );
     return false;
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
@@ -34,9 +49,16 @@ export function SecondaryItem({ item, indent = 0, openedAccordions, setOpenedAcc
   const handleOnChange = useCallback(
     (expanded: boolean) => {
       if (expanded) {
-        setOpenedAccordions([...openedAccordions.filter((a) => a.indent !== indent), { indent, id: item.id }]);
+        setOpenedAccordions([
+          ...openedAccordions.filter((a) => a.indent !== indent),
+          { indent, id: item.id },
+        ]);
       } else {
-        setOpenedAccordions(openedAccordions.filter((a) => a.indent !== indent && a.id !== item.id));
+        setOpenedAccordions(
+          openedAccordions.filter(
+            (a) => a.indent !== indent && a.id !== item.id,
+          ),
+        );
       }
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -45,7 +67,10 @@ export function SecondaryItem({ item, indent = 0, openedAccordions, setOpenedAcc
 
   useEffect(() => {
     if (isActive) {
-      setOpenedAccordions((prev) => [...prev.filter((a) => a.indent !== indent), { indent, id: item.id }]);
+      setOpenedAccordions((prev) => [
+        ...prev.filter((a) => a.indent !== indent),
+        { indent, id: item.id },
+      ]);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isActive]);
@@ -70,7 +95,10 @@ export function SecondaryItem({ item, indent = 0, openedAccordions, setOpenedAcc
               variant={isActive ? "contained" : "outlined"}
               icon={item.icon}
               size={indent === 1 ? "large" : "medium"}
-              className={cn("transition-transform group-hover:scale-[0.85]", isActive && "scale-[0.85]")}
+              className={cn(
+                "transition-transform group-hover:scale-[0.85]",
+                isActive && "scale-[0.85]",
+              )}
             />
           )
         }
@@ -98,14 +126,20 @@ export function SecondaryItem({ item, indent = 0, openedAccordions, setOpenedAcc
               variant={isActive ? "contained" : "outlined"}
               icon={item.icon}
               size={"large"}
-              className={cn("transition-transform group-hover:scale-[0.85]", isActive && "scale-[0.85]")}
+              className={cn(
+                "transition-transform group-hover:scale-[0.85]",
+                isActive && "scale-[0.85]",
+              )}
             />
           )
         }
         aria-label={t(item.label)}
         onClick={() => {
           onSelect?.(item);
-          setOpenedAccordions((prev) => [...prev.filter((a) => a.indent !== indent), { indent, id: item.id }]);
+          setOpenedAccordions((prev) => [
+            ...prev.filter((a) => a.indent !== indent),
+            { indent, id: item.id },
+          ]);
         }}
       >
         {t(item.label)}
@@ -114,7 +148,11 @@ export function SecondaryItem({ item, indent = 0, openedAccordions, setOpenedAcc
   }
 
   // the item is a link without children
-  if ((!item.children || item.children.filter((x) => !x.hideInMenu).length === 0) && item.href) {
+  if (
+    (!item.children ||
+      item.children.filter((x) => !x.hideInMenu).length === 0) &&
+    item.href
+  ) {
     return (
       <Button
         variant="text"
@@ -131,7 +169,10 @@ export function SecondaryItem({ item, indent = 0, openedAccordions, setOpenedAcc
               variant={isActive ? "contained" : "outlined"}
               icon={item.icon}
               size={"large"}
-              className={cn("transition-transform group-hover:scale-[0.85]", isActive && "scale-[0.85]")}
+              className={cn(
+                "transition-transform group-hover:scale-[0.85]",
+                isActive && "scale-[0.85]",
+              )}
             />
           )
         }
@@ -145,10 +186,15 @@ export function SecondaryItem({ item, indent = 0, openedAccordions, setOpenedAcc
   }
 
   // Item has children - render as accordion
-  const isExpanded = !!openedAccordions.find((a) => a.id === item.id && a.indent === indent);
+  const isExpanded = !!openedAccordions.find(
+    (a) => a.id === item.id && a.indent === indent,
+  );
 
   return (
-    <Accordion expanded={isExpanded} onChange={(_, expanded) => handleOnChange(expanded)}>
+    <Accordion
+      expanded={isExpanded}
+      onChange={(_, expanded) => handleOnChange(expanded)}
+    >
       <AccordionSummary>
         <Button
           variant="text"
@@ -173,7 +219,9 @@ export function SecondaryItem({ item, indent = 0, openedAccordions, setOpenedAcc
               />
             )
           }
-          endIcon={<NiChevronRightSmall size="medium" className="accordion-rotate" />}
+          endIcon={
+            <NiChevronRightSmall size="medium" className="accordion-rotate" />
+          }
           component="div"
         >
           {t(item.label)}

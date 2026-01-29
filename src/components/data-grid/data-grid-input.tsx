@@ -1,5 +1,9 @@
 import { FormControl, Input } from "@mui/material";
-import { GridColDef, GridRenderEditCellParams, useGridApiContext } from "@mui/x-data-grid-pro";
+import {
+  GridColDef,
+  GridRenderEditCellParams,
+  useGridApiContext,
+} from "@mui/x-data-grid-pro";
 
 interface DataGridInputProps extends GridRenderEditCellParams {
   editorProps?: React.ComponentProps<typeof Input>["inputProps"];
@@ -17,8 +21,18 @@ export default function DataGridInput(props: DataGridInputProps) {
   };
 
   return (
-    <FormControl className="outlined edit-input" variant="standard" size="small" fullWidth>
-      <Input defaultValue={value} onChange={handleValueChange} type={type} inputProps={{ ...editorProps }} />
+    <FormControl
+      className="outlined edit-input"
+      variant="standard"
+      size="small"
+      fullWidth
+    >
+      <Input
+        defaultValue={value}
+        onChange={handleValueChange}
+        type={type}
+        inputProps={{ ...editorProps }}
+      />
     </FormControl>
   );
 }

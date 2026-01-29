@@ -2,7 +2,13 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { useLocalStorage } from "react-use";
 
 import { useScreenEffect } from "@/hooks/use-screen";
-import { MenuDefaultWidth, MenuShowState, MenuType, MenuWidth, Screens } from "@/types";
+import {
+  MenuDefaultWidth,
+  MenuShowState,
+  MenuType,
+  MenuWidth,
+  Screens,
+} from "@/types";
 
 type Props = {
   primaryBreakpoint: keyof Screens;
@@ -13,14 +19,23 @@ type Props = {
 };
 
 export function useMenu(config: Props) {
-  const { primaryBreakpoint, secondaryBreakpoint, storageKey, defaultMenuType, menuDefaultWidth } = config;
+  const {
+    primaryBreakpoint,
+    secondaryBreakpoint,
+    storageKey,
+    defaultMenuType,
+    menuDefaultWidth,
+  } = config;
 
   const [showBackdrop, setShowBackdrop] = useState(false);
 
   const [primaryDefault, setPrimaryDefault] = useState<boolean>(false);
   const [secondaryDefault, setSecondaryDefault] = useState<boolean>(false);
 
-  const [menuType, setMenuType] = useLocalStorage<MenuType>(storageKey, defaultMenuType);
+  const [menuType, setMenuType] = useLocalStorage<MenuType>(
+    storageKey,
+    defaultMenuType,
+  );
 
   const [primaryCurrent, setPrimaryCurrent] = useState(MenuShowState.Show);
   const [secondaryCurrent, setSecondaryCurrent] = useState(MenuShowState.Show);
@@ -34,24 +49,38 @@ export function useMenu(config: Props) {
   const resetMenuCallbackRef = useRef<(() => void) | null>(null);
 
   const showBackdropIfNeeded = useCallback(() => {
-    if (primaryCurrent === MenuShowState.TemporaryShow || secondaryCurrent === MenuShowState.TemporaryShow) {
+    if (
+      primaryCurrent === MenuShowState.TemporaryShow ||
+      secondaryCurrent === MenuShowState.TemporaryShow
+    ) {
       setShowBackdrop(true);
     }
   }, [primaryCurrent, secondaryCurrent]);
 
   const hideBackdropIfNeeded = useCallback(() => {
-    if (primaryCurrent !== MenuShowState.TemporaryShow && secondaryCurrent !== MenuShowState.TemporaryShow) {
+    if (
+      primaryCurrent !== MenuShowState.TemporaryShow &&
+      secondaryCurrent !== MenuShowState.TemporaryShow
+    ) {
       setShowBackdrop(false);
     }
   }, [primaryCurrent, secondaryCurrent]);
 
   useEffect(() => {
-    if (primaryCurrent === MenuShowState.TemporaryShow || secondaryCurrent === MenuShowState.TemporaryShow) {
+    if (
+      primaryCurrent === MenuShowState.TemporaryShow ||
+      secondaryCurrent === MenuShowState.TemporaryShow
+    ) {
       setShowBackdrop(true);
     } else {
       setShowBackdrop(false);
     }
-  }, [primaryCurrent, secondaryCurrent, showBackdropIfNeeded, hideBackdropIfNeeded]);
+  }, [
+    primaryCurrent,
+    secondaryCurrent,
+    showBackdropIfNeeded,
+    hideBackdropIfNeeded,
+  ]);
 
   // Hide the secondary menu when the primary menu is hidden
   useEffect(() => {
@@ -63,10 +92,22 @@ export function useMenu(config: Props) {
   // Update menu widths when show states or menu type changes
   useEffect(() => {
     setMenuWidth({
-      primary: primaryCurrent === MenuShowState.Hide ? 0 : menuDefaultWidth[menuType || defaultMenuType].primary,
-      secondary: secondaryCurrent === MenuShowState.Hide ? 0 : menuDefaultWidth[menuType || defaultMenuType].secondary,
+      primary:
+        primaryCurrent === MenuShowState.Hide
+          ? 0
+          : menuDefaultWidth[menuType || defaultMenuType].primary,
+      secondary:
+        secondaryCurrent === MenuShowState.Hide
+          ? 0
+          : menuDefaultWidth[menuType || defaultMenuType].secondary,
     });
-  }, [menuType, primaryCurrent, secondaryCurrent, menuDefaultWidth, defaultMenuType]);
+  }, [
+    menuType,
+    primaryCurrent,
+    secondaryCurrent,
+    menuDefaultWidth,
+    defaultMenuType,
+  ]);
 
   const onReset = useCallback((callback: () => void) => {
     resetMenuCallbackRef.current = callback;
@@ -77,7 +118,9 @@ export function useMenu(config: Props) {
 
   const resetMenu = useCallback(() => {
     setPrimaryCurrent(primaryDefault ? MenuShowState.Show : MenuShowState.Hide);
-    setSecondaryCurrent(secondaryDefault ? MenuShowState.Show : MenuShowState.Hide);
+    setSecondaryCurrent(
+      secondaryDefault ? MenuShowState.Show : MenuShowState.Hide,
+    );
     setMenuWidth({
       primary: menuDefaultWidth[menuType || defaultMenuType].primary,
       secondary: menuDefaultWidth[menuType || defaultMenuType].secondary,
@@ -87,7 +130,14 @@ export function useMenu(config: Props) {
     if (resetMenuCallbackRef.current) {
       resetMenuCallbackRef.current();
     }
-  }, [primaryDefault, secondaryDefault, menuDefaultWidth, menuType, defaultMenuType, hideBackdropIfNeeded]);
+  }, [
+    primaryDefault,
+    secondaryDefault,
+    menuDefaultWidth,
+    menuType,
+    defaultMenuType,
+    hideBackdropIfNeeded,
+  ]);
 
   // Reset menu when defaults or menu type changes
   useEffect(() => {
@@ -131,7 +181,9 @@ export function useMenu(config: Props) {
   }, [hidePrimaryMenu, hideSecondary, hideBackdropIfNeeded]);
 
   const showSecondary = useCallback(() => {
-    setSecondaryCurrent(secondaryDefault ? MenuShowState.Show : MenuShowState.TemporaryShow);
+    setSecondaryCurrent(
+      secondaryDefault ? MenuShowState.Show : MenuShowState.TemporaryShow,
+    );
   }, [secondaryDefault]);
 
   const showInMobile = useCallback(() => {

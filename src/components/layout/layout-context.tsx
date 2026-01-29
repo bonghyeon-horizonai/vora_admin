@@ -1,5 +1,11 @@
 "use client";
-import { createContext, type PropsWithChildren, useContext, useEffect, useState } from "react";
+import {
+  createContext,
+  type PropsWithChildren,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 
 import { DEFAULTS } from "@/config";
 import { LOCAL_STORAGE_KEYS } from "@/constants";
@@ -12,8 +18,11 @@ const LayoutContext = createContext<LayoutContextType | null>(null);
 
 function useLayoutContextValue() {
   const [mounted, setMounted] = useState(false);
-  const [temporaryShowPrimaryMenu, setTemporaryShowPrimaryMenu] = useState(false);
-  const [menuSelectedSecondaryItem, setMenuSelectedSecondaryItem] = useState<MenuItem | undefined>(undefined);
+  const [temporaryShowPrimaryMenu, setTemporaryShowPrimaryMenu] =
+    useState(false);
+  const [menuSelectedSecondaryItem, setMenuSelectedSecondaryItem] = useState<
+    MenuItem | undefined
+  >(undefined);
 
   const leftMenu = useMenu({
     primaryBreakpoint: "md",
@@ -78,7 +87,9 @@ function useLayoutContextValue() {
 
 export default function LayoutContextProvider({ children }: PropsWithChildren) {
   const value = useLayoutContextValue();
-  return <LayoutContext.Provider value={value}>{children}</LayoutContext.Provider>;
+  return (
+    <LayoutContext.Provider value={value}>{children}</LayoutContext.Provider>
+  );
 }
 
 export const useLayoutContext = () => {

@@ -1,6 +1,15 @@
-import { NextureIconsProps, sizeHelper, strokeSizeHelper } from "../nexture-icons";
+import {
+  NextureIconsProps,
+  sizeHelper,
+  strokeSizeHelper,
+} from "../nexture-icons";
 
-export default function NiAt({ className, variant = "outlined", size = "medium", oneTone = false }: NextureIconsProps) {
+export default function NiAt({
+  className,
+  variant = "outlined",
+  size = "medium",
+  oneTone = false,
+}: NextureIconsProps) {
   const iconSize = sizeHelper(size);
   const iconStrokeWidth = strokeSizeHelper(iconSize);
 

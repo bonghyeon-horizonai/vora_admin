@@ -32,16 +32,36 @@ export default function IllustrationStorage({ className }: IllustrationProps) {
         fill="currentColor"
         fillOpacity="0.1"
       />
-      <path d="M35 109L63 109" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M71 109L99 109" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+      <path
+        d="M35 109L63 109"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M71 109L99 109"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
       <path
         d="M180 109L193.278 98.0933C193.684 97.7594 194.28 97.7976 194.641 98.1807L201.338 105.297C201.707 105.689 202.321 105.718 202.726 105.363L225.741 85.166C226.159 84.7993 226.796 84.8439 227.159 85.2654L245 106"
         stroke="currentColor"
         strokeWidth="2.5"
         strokeLinecap="round"
       />
-      <path d="M111 59L117 59" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M123 59L129 59" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+      <path
+        d="M111 59L117 59"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M123 59L129 59"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
       <path
         d="M97.7955 167.169L140.544 190.017C140.615 190.055 140.614 190.157 140.543 190.194L122.009 199.831C121.98 199.846 121.945 199.846 121.916 199.83L79.1676 176.983C79.0966 176.945 79.0972 176.843 79.1686 176.806L97.7022 167.169C97.7315 167.154 97.7664 167.154 97.7955 167.169Z"
         stroke="currentColor"
@@ -72,16 +92,73 @@ export default function IllustrationStorage({ className }: IllustrationProps) {
         strokeWidth="2.5"
         strokeLinecap="round"
       />
-      <path d="M135 59L141 59" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M35 120L63 120" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M71 120L99 120" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <circle cx="69.5" cy="57.5" r="12.5" fill="currentColor" fillOpacity="0.1" />
-      <circle cx="212.5" cy="204.5" r="12.5" fill="currentColor" fillOpacity="0.1" />
-      <circle cx="140.5" cy="121.5" r="25.5" fill="currentColor" fillOpacity="0.1" />
-      <circle cx="49.5" cy="164.5" r="7.5" fill="currentColor" fillOpacity="0.1" />
-      <circle cx="92.5" cy="235.5" r="7.5" fill="currentColor" fillOpacity="0.1" />
-      <circle cx="197.5" cy="47.5" r="7.5" fill="currentColor" fillOpacity="0.1" />
-      <circle cx="91.5" cy="32.5" r="7.5" fill="currentColor" fillOpacity="0.1" />
+      <path
+        d="M135 59L141 59"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M35 120L63 120"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M71 120L99 120"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <circle
+        cx="69.5"
+        cy="57.5"
+        r="12.5"
+        fill="currentColor"
+        fillOpacity="0.1"
+      />
+      <circle
+        cx="212.5"
+        cy="204.5"
+        r="12.5"
+        fill="currentColor"
+        fillOpacity="0.1"
+      />
+      <circle
+        cx="140.5"
+        cy="121.5"
+        r="25.5"
+        fill="currentColor"
+        fillOpacity="0.1"
+      />
+      <circle
+        cx="49.5"
+        cy="164.5"
+        r="7.5"
+        fill="currentColor"
+        fillOpacity="0.1"
+      />
+      <circle
+        cx="92.5"
+        cy="235.5"
+        r="7.5"
+        fill="currentColor"
+        fillOpacity="0.1"
+      />
+      <circle
+        cx="197.5"
+        cy="47.5"
+        r="7.5"
+        fill="currentColor"
+        fillOpacity="0.1"
+      />
+      <circle
+        cx="91.5"
+        cy="32.5"
+        r="7.5"
+        fill="currentColor"
+        fillOpacity="0.1"
+      />
       <circle cx="135" cy="243" r="5" fill="currentColor" fillOpacity="0.1" />
       <circle cx="37" cy="71" r="5" fill="currentColor" fillOpacity="0.1" />
       <circle cx="227" cy="27" r="5" fill="currentColor" fillOpacity="0.1" />
@@ -96,15 +173,60 @@ export default function IllustrationStorage({ className }: IllustrationProps) {
         strokeLinecap="round"
       />
       <circle cx="195" cy="78" r="5" stroke="currentColor" strokeWidth="2.5" />
-      <path d="M62 208H64" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M62 214H64" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M62 220H64" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M69 220H71" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M76 220H78" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M69 208H71" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M69 214H71" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M76 208H78" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M76 214H78" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+      <path
+        d="M62 208H64"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M62 214H64"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M62 220H64"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M69 220H71"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M76 220H78"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M69 208H71"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M69 214H71"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M76 208H78"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M76 214H78"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
     </svg>
   );
 }

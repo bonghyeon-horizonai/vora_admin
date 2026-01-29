@@ -75,7 +75,8 @@ const config: Config = {
         textBeforeEdge: "text-before-edge",
       },
       colors: {
-        foreground: "color-mix(in oklab, hsl(var(--background)) var(--foreground-opacity), transparent)",
+        foreground:
+          "color-mix(in oklab, hsl(var(--background)) var(--foreground-opacity), transparent)",
         // ---------- Text Colors ---------- // //
         "text-primary": {
           DEFAULT: "hsl(var(--text-primary))",

@@ -1,4 +1,8 @@
-import { NextureIconsProps, sizeHelper, strokeSizeHelper } from "../nexture-icons";
+import {
+  NextureIconsProps,
+  sizeHelper,
+  strokeSizeHelper,
+} from "../nexture-icons";
 
 export default function NiKey({
   className,
@@ -18,7 +22,13 @@ export default function NiKey({
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <circle cx="15" cy="9" r="7" stroke="currentColor" strokeWidth={iconStrokeWidth} />
+        <circle
+          cx="15"
+          cy="9"
+          r="7"
+          stroke="currentColor"
+          strokeWidth={iconStrokeWidth}
+        />
         <circle
           opacity={oneTone ? 1 : 0.6}
           cx="15.5"

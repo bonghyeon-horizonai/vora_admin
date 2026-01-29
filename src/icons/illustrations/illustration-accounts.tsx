@@ -25,10 +25,30 @@ export default function IllustrationAccount({ className }: IllustrationProps) {
         fill="currentColor"
         fillOpacity="0.1"
       />
-      <path d="M167.785 129.111L167.785 66.1108" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M158.785 110.292L167.785 110.292" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M158.785 124.201L167.785 124.201" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M162.059 117.656L167.786 117.656" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+      <path
+        d="M167.785 129.111L167.785 66.1108"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M158.785 110.292L167.785 110.292"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M158.785 124.201L167.785 124.201"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M162.059 117.656L167.786 117.656"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
       <circle
         cx="167.785"
         cy="52.2007"
@@ -59,8 +79,20 @@ export default function IllustrationAccount({ className }: IllustrationProps) {
         strokeWidth="2.5"
         strokeLinecap="round"
       />
-      <circle cx="217.5" cy="180.5" r="12.5" fill="currentColor" fillOpacity="0.1" />
-      <circle cx="90.5" cy="95.5" r="12.5" fill="currentColor" fillOpacity="0.1" />
+      <circle
+        cx="217.5"
+        cy="180.5"
+        r="12.5"
+        fill="currentColor"
+        fillOpacity="0.1"
+      />
+      <circle
+        cx="90.5"
+        cy="95.5"
+        r="12.5"
+        fill="currentColor"
+        fillOpacity="0.1"
+      />
       <circle cx="41" cy="193" r="8" fill="currentColor" fillOpacity="0.1" />
       <circle cx="236" cy="58" r="8" fill="currentColor" fillOpacity="0.1" />
       <circle cx="67" cy="46" r="8" fill="currentColor" fillOpacity="0.1" />
@@ -76,25 +108,60 @@ export default function IllustrationAccount({ className }: IllustrationProps) {
         strokeWidth="2.5"
         strokeLinecap="round"
       />
-      <path d="M134.5 213.75L172.5 213.75" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+      <path
+        d="M134.5 213.75L172.5 213.75"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
       <path
         d="M143.5 224.25L133.707 214.457C133.317 214.067 133.317 213.433 133.707 213.043L143.5 203.25"
         stroke="currentColor"
         strokeWidth="2.5"
         strokeLinecap="round"
       />
-      <path d="M104 170L119 170" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M104 178L140 178" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M104 186L140 186" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M104 194L140 194" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M104 202L120 202" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+      <path
+        d="M104 170L119 170"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M104 178L140 178"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M104 186L140 186"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M104 194L140 194"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M104 202L120 202"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
       <path
         d="M81 148.734C81.3082 146.731 82.0917 145.143 83.3506 143.972C84.7585 142.657 86.5067 142 88.5951 142C90.6835 142 92.3848 142.631 93.6988 143.894C95.0129 145.131 95.6699 146.871 95.6699 149.113C95.6699 150.66 95.2827 151.949 94.5084 152.979C94.0625 153.598 93.7223 154.036 93.4876 154.294C93.253 154.552 92.9362 154.887 92.5373 155.299C92.1619 155.686 90.3782 157.223 90.3782 157.223L88.865 158.438C88.2796 158.908 87.939 159.618 87.939 160.368V160.368V165.178"
         stroke="currentColor"
         strokeWidth="2.5"
         strokeLinecap="round"
       />
-      <path d="M87.9385 169.306V170.596" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+      <path
+        d="M87.9385 169.306V170.596"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
     </svg>
   );
 }

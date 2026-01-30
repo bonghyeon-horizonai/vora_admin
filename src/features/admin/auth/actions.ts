@@ -6,7 +6,7 @@ import { revalidatePath } from "next/cache";
 import { OTP } from "otplib";
 import qrcode from "qrcode";
 
-import { createSession, deleteSession } from "@/lib/auth";
+import { createSession, deleteSession, getSession } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { admins } from "@/lib/db/schema";
 
@@ -114,4 +114,25 @@ export async function disableTwoFactor(adminId: string) {
 export async function adminLogout() {
   await deleteSession();
   return { success: true };
+}
+
+export async function getAuthenticatedAdmin() {
+  const session = await getSession();
+
+  if (!session) {
+    return null;
+  }
+
+  const [admin] = await db
+    .select({
+      id: admins.id,
+      email: admins.email,
+      name: admins.name,
+      role: admins.role,
+      profileImageUrl: admins.profileImageUrl,
+    })
+    .from(admins)
+    .where(eq(admins.id, session.adminId));
+
+  return admin || null;
 }

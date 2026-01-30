@@ -71,6 +71,7 @@ jobs:
           image: ${{ needs.build.outputs.image }}
           environment-variables: |
             DATABASE_URL=${{ secrets.DATABASE_URL }}
+            SESSION_SECRET=${{ secrets.SESSION_SECRET }}
 
       - name: Deploy Amazon ECS task definition
         uses: aws-actions/amazon-ecs-deploy-task-definition@v2

@@ -2,23 +2,31 @@
 /* Button Group */
 /* --------------------------- */
 @layer utilities {
-  .MuiButtonGroup-root .MuiButtonGroup-groupedHorizontal.MuiButtonGroup-firstButton,
-  .MuiButtonGroup-root .MuiButtonGroup-groupedHorizontal.MuiButtonGroup-middleButton {
+  .MuiButtonGroup-root
+    .MuiButtonGroup-groupedHorizontal.MuiButtonGroup-firstButton,
+  .MuiButtonGroup-root
+    .MuiButtonGroup-groupedHorizontal.MuiButtonGroup-middleButton {
     @apply rounded-r-none;
   }
 
-  .MuiButtonGroup-root .MuiButtonGroup-groupedHorizontal.MuiButtonGroup-lastButton,
-  .MuiButtonGroup-root .MuiButtonGroup-groupedHorizontal.MuiButtonGroup-middleButton {
+  .MuiButtonGroup-root
+    .MuiButtonGroup-groupedHorizontal.MuiButtonGroup-lastButton,
+  .MuiButtonGroup-root
+    .MuiButtonGroup-groupedHorizontal.MuiButtonGroup-middleButton {
     @apply rounded-l-none;
   }
 
-  .MuiButtonGroup-root .MuiButtonGroup-groupedVertical.MuiButtonGroup-firstButton,
-  .MuiButtonGroup-root .MuiButtonGroup-groupedVertical.MuiButtonGroup-middleButton {
+  .MuiButtonGroup-root
+    .MuiButtonGroup-groupedVertical.MuiButtonGroup-firstButton,
+  .MuiButtonGroup-root
+    .MuiButtonGroup-groupedVertical.MuiButtonGroup-middleButton {
     @apply rounded-b-none;
   }
 
-  .MuiButtonGroup-root .MuiButtonGroup-groupedVertical.MuiButtonGroup-lastButton,
-  .MuiButtonGroup-root .MuiButtonGroup-groupedVertical.MuiButtonGroup-middleButton {
+  .MuiButtonGroup-root
+    .MuiButtonGroup-groupedVertical.MuiButtonGroup-lastButton,
+  .MuiButtonGroup-root
+    .MuiButtonGroup-groupedVertical.MuiButtonGroup-middleButton {
     @apply rounded-t-none;
   }
 

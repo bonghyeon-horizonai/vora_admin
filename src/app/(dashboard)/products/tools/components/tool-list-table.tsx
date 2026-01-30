@@ -206,11 +206,9 @@ export default function ToolListTable({
     ? [{ field: sortBy, sort: sortOrder || "desc" }]
     : [];
 
-  const currentPageInUrl = parseInt(searchParams.get("page") || "1", 10);
-
   // Use URL as the master source of truth for pagination state to avoid race conditions
   const [paginationModel, setPaginationModel] = useState({
-    page: currentPageInUrl - 1,
+    page: page - 1,
     pageSize,
   });
 
@@ -220,15 +218,12 @@ export default function ToolListTable({
     isNavigatingRef.current = false;
 
     setPaginationModel((current) => {
-      if (
-        current.page !== currentPageInUrl - 1 ||
-        current.pageSize !== pageSize
-      ) {
-        return { page: currentPageInUrl - 1, pageSize };
+      if (current.page !== page - 1 || current.pageSize !== pageSize) {
+        return { page: page - 1, pageSize };
       }
       return current;
     });
-  }, [currentPageInUrl, pageSize]);
+  }, [page, pageSize]);
 
   const handlePaginationModelChange = (model: {
     page: number;
@@ -242,7 +237,7 @@ export default function ToolListTable({
     const newPage = model.page + 1;
 
     // Only update state and URL if the page actually changed in the URL
-    if (newPage !== currentPageInUrl) {
+    if (newPage !== page) {
       // Set navigation flag to prevent DataGrid reset events
       isNavigatingRef.current = true;
       setPaginationModel(model);

@@ -48,13 +48,16 @@
     }
   }
 
-  .plyr__menu__container .plyr__control[role="menuitemradio"]:focus-visible:before,
-  .plyr__menu__container .plyr__control[role="menuitemradio"][data-focus]:before,
+  .plyr__menu__container
+    .plyr__control[role="menuitemradio"]:focus-visible:before,
+  .plyr__menu__container
+    .plyr__control[role="menuitemradio"][data-focus]:before,
   .plyr__menu__container .plyr__control[role="menuitemradio"]:hover:before {
     @apply bg-grey-50!;
   }
 
-  .plyr__menu__container .plyr__control[role="menuitemradio"][aria-checked="true"]:before {
+  .plyr__menu__container
+    .plyr__control[role="menuitemradio"][aria-checked="true"]:before {
     @apply bg-primary!;
   }
 

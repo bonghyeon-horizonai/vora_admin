@@ -88,16 +88,12 @@ export default function ToolForm({ tool, isNew }: ToolFormProps) {
     control,
     handleSubmit,
     formState: { errors },
-    setValue,
-    watch,
   } = useForm<CreateToolSchema>({
     resolver: zodResolver(
       createToolSchema,
     ) as unknown as Resolver<CreateToolSchema>,
     defaultValues,
   });
-
-  const i18nValues = watch("i18n");
 
   const onSubmit = (data: CreateToolSchema) => {
     setError(null);

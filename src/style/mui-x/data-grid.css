@@ -182,7 +182,8 @@
       @apply py-0.5!;
     }
 
-    .MuiFormControl-root.MuiTextField-root .MuiInputBase-root.MuiOutlinedInput-root {
+    .MuiFormControl-root.MuiTextField-root
+      .MuiInputBase-root.MuiOutlinedInput-root {
       @apply border-grey-200 border border-solid! bg-transparent px-[calc(1rem-1px)]! py-[calc(.375rem-1px)]! outline-2 -outline-offset-1 outline-transparent transition-all;
 
       .MuiOutlinedInput-notchedOutline {
@@ -342,7 +343,8 @@
       }
     }
 
-    .MuiDataGrid-columnHeader[aria-colindex="1"] .MuiDataGrid-columnHeaderTitleContainer {
+    .MuiDataGrid-columnHeader[aria-colindex="1"]
+      .MuiDataGrid-columnHeaderTitleContainer {
       @apply pl-3.5;
     }
 

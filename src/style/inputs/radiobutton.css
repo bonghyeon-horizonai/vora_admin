@@ -115,8 +115,12 @@
     }
   }
 
-  .MuiFormControlLabel-root:not(.Mui-disabled):has(.MuiRadio-root.MuiRadio-colorPrimary.Mui-checked),
-  .MuiFormControlLabel-root:not(.Mui-disabled):has(.MuiRadio-root.MuiRadio-colorPrimary.MuiRadio-indeterminate) {
+  .MuiFormControlLabel-root:not(.Mui-disabled):has(
+      .MuiRadio-root.MuiRadio-colorPrimary.Mui-checked
+    ),
+  .MuiFormControlLabel-root:not(.Mui-disabled):has(
+      .MuiRadio-root.MuiRadio-colorPrimary.MuiRadio-indeterminate
+    ) {
     &:hover svg {
       @apply text-primary-light;
     }
@@ -129,8 +133,12 @@
     }
   }
 
-  .MuiFormControlLabel-root:not(.Mui-disabled):has(.MuiRadio-root.MuiRadio-colorSecondary.Mui-checked),
-  .MuiFormControlLabel-root:not(.Mui-disabled):has(.MuiRadio-root.MuiRadio-colorSecondary.MuiRadio-indeterminate) {
+  .MuiFormControlLabel-root:not(.Mui-disabled):has(
+      .MuiRadio-root.MuiRadio-colorSecondary.Mui-checked
+    ),
+  .MuiFormControlLabel-root:not(.Mui-disabled):has(
+      .MuiRadio-root.MuiRadio-colorSecondary.MuiRadio-indeterminate
+    ) {
     &:hover svg {
       @apply text-secondary-light;
     }
@@ -143,8 +151,12 @@
     }
   }
 
-  .MuiFormControlLabel-root:not(.Mui-disabled):has(.MuiRadio-root.MuiRadio-colorAccent-1.Mui-checked),
-  .MuiFormControlLabel-root:not(.Mui-disabled):has(.MuiRadio-root.MuiRadio-colorAccent-1.MuiRadio-indeterminate) {
+  .MuiFormControlLabel-root:not(.Mui-disabled):has(
+      .MuiRadio-root.MuiRadio-colorAccent-1.Mui-checked
+    ),
+  .MuiFormControlLabel-root:not(.Mui-disabled):has(
+      .MuiRadio-root.MuiRadio-colorAccent-1.MuiRadio-indeterminate
+    ) {
     &:hover svg {
       @apply text-accent-1-light;
     }
@@ -157,8 +169,12 @@
     }
   }
 
-  .MuiFormControlLabel-root:not(.Mui-disabled):has(.MuiRadio-root.MuiRadio-colorAccent-2.Mui-checked),
-  .MuiFormControlLabel-root:not(.Mui-disabled):has(.MuiRadio-root.MuiRadio-colorAccent-2.MuiRadio-indeterminate) {
+  .MuiFormControlLabel-root:not(.Mui-disabled):has(
+      .MuiRadio-root.MuiRadio-colorAccent-2.Mui-checked
+    ),
+  .MuiFormControlLabel-root:not(.Mui-disabled):has(
+      .MuiRadio-root.MuiRadio-colorAccent-2.MuiRadio-indeterminate
+    ) {
     &:hover svg {
       @apply text-accent-2-light;
     }
@@ -171,8 +187,12 @@
     }
   }
 
-  .MuiFormControlLabel-root:not(.Mui-disabled):has(.MuiRadio-root.MuiRadio-colorAccent-3.Mui-checked),
-  .MuiFormControlLabel-root:not(.Mui-disabled):has(.MuiRadio-root.MuiRadio-colorAccent-3.MuiRadio-indeterminate) {
+  .MuiFormControlLabel-root:not(.Mui-disabled):has(
+      .MuiRadio-root.MuiRadio-colorAccent-3.Mui-checked
+    ),
+  .MuiFormControlLabel-root:not(.Mui-disabled):has(
+      .MuiRadio-root.MuiRadio-colorAccent-3.MuiRadio-indeterminate
+    ) {
     &:hover svg {
       @apply text-accent-3-light;
     }
@@ -185,8 +205,12 @@
     }
   }
 
-  .MuiFormControlLabel-root:not(.Mui-disabled):has(.MuiRadio-root.MuiRadio-colorAccent-4.Mui-checked),
-  .MuiFormControlLabel-root:not(.Mui-disabled):has(.MuiRadio-root.MuiRadio-colorAccent-4.MuiRadio-indeterminate) {
+  .MuiFormControlLabel-root:not(.Mui-disabled):has(
+      .MuiRadio-root.MuiRadio-colorAccent-4.Mui-checked
+    ),
+  .MuiFormControlLabel-root:not(.Mui-disabled):has(
+      .MuiRadio-root.MuiRadio-colorAccent-4.MuiRadio-indeterminate
+    ) {
     &:hover svg {
       @apply text-accent-4-light;
     }
@@ -199,8 +223,12 @@
     }
   }
 
-  .MuiFormControlLabel-root:not(.Mui-disabled):has(.MuiRadio-root.MuiRadio-colorWarning.Mui-checked),
-  .MuiFormControlLabel-root:not(.Mui-disabled):has(.MuiRadio-root.MuiRadio-colorWarning-4.MuiRadio-indeterminate) {
+  .MuiFormControlLabel-root:not(.Mui-disabled):has(
+      .MuiRadio-root.MuiRadio-colorWarning.Mui-checked
+    ),
+  .MuiFormControlLabel-root:not(.Mui-disabled):has(
+      .MuiRadio-root.MuiRadio-colorWarning-4.MuiRadio-indeterminate
+    ) {
     &:hover svg {
       @apply text-warning-light;
     }
@@ -213,8 +241,12 @@
     }
   }
 
-  .MuiFormControlLabel-root:not(.Mui-disabled):has(.MuiRadio-root.MuiRadio-colorSuccess.Mui-checked),
-  .MuiFormControlLabel-root:not(.Mui-disabled):has(.MuiRadio-root.MuiRadio-colorSuccess-4.MuiRadio-indeterminate) {
+  .MuiFormControlLabel-root:not(.Mui-disabled):has(
+      .MuiRadio-root.MuiRadio-colorSuccess.Mui-checked
+    ),
+  .MuiFormControlLabel-root:not(.Mui-disabled):has(
+      .MuiRadio-root.MuiRadio-colorSuccess-4.MuiRadio-indeterminate
+    ) {
     &:hover svg {
       @apply text-success-light;
     }
@@ -227,8 +259,12 @@
     }
   }
 
-  .MuiFormControlLabel-root:not(.Mui-disabled):has(.MuiRadio-root.MuiRadio-colorInfo.Mui-checked),
-  .MuiFormControlLabel-root:not(.Mui-disabled):has(.MuiRadio-root.MuiRadio-colorInfo-4.MuiRadio-indeterminate) {
+  .MuiFormControlLabel-root:not(.Mui-disabled):has(
+      .MuiRadio-root.MuiRadio-colorInfo.Mui-checked
+    ),
+  .MuiFormControlLabel-root:not(.Mui-disabled):has(
+      .MuiRadio-root.MuiRadio-colorInfo-4.MuiRadio-indeterminate
+    ) {
     &:hover svg {
       @apply text-info-light;
     }
@@ -241,8 +277,12 @@
     }
   }
 
-  .MuiFormControlLabel-root:not(.Mui-disabled):has(.MuiRadio-root.MuiRadio-colorError.Mui-checked),
-  .MuiFormControlLabel-root:not(.Mui-disabled):has(.MuiRadio-root.MuiRadio-colorError-4.MuiRadio-indeterminate) {
+  .MuiFormControlLabel-root:not(.Mui-disabled):has(
+      .MuiRadio-root.MuiRadio-colorError.Mui-checked
+    ),
+  .MuiFormControlLabel-root:not(.Mui-disabled):has(
+      .MuiRadio-root.MuiRadio-colorError-4.MuiRadio-indeterminate
+    ) {
     &:hover svg {
       @apply text-error-light;
     }

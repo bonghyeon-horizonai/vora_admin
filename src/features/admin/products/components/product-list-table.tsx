@@ -42,7 +42,6 @@ interface ProductListTableProps {
 export default function ProductListTable({
   products: productsData,
   total,
-  page,
   pageSize,
   sortBy,
   sortOrder,

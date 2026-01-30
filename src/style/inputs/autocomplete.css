@@ -178,7 +178,10 @@
   }
 
   /* Autocomplete items */
-  .MuiAutocomplete-popper .MuiAutocomplete-paper .MuiAutocomplete-listbox .MuiAutocomplete-option {
+  .MuiAutocomplete-popper
+    .MuiAutocomplete-paper
+    .MuiAutocomplete-listbox
+    .MuiAutocomplete-option {
     @apply font-body my-0.5 rounded-sm px-4 py-2 text-base leading-5 font-medium tracking-normal normal-case shadow-none;
 
     &:hover {

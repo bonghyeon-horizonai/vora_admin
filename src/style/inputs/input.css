@@ -128,8 +128,10 @@
       @apply bg-transparent;
     }
 
-    &:hover:not(.Mui-disabled):not(.Mui-readOnly) .MuiOutlinedInput-notchedOutline,
-    &:hover:not(.Mui-disabled):not(.Mui-readOnly) .MuiPickersOutlinedInput-notchedOutline {
+    &:hover:not(.Mui-disabled):not(.Mui-readOnly)
+      .MuiOutlinedInput-notchedOutline,
+    &:hover:not(.Mui-disabled):not(.Mui-readOnly)
+      .MuiPickersOutlinedInput-notchedOutline {
       @apply border-grey-500;
     }
 
@@ -137,8 +139,10 @@
       @apply outline-none!;
     }
 
-    &.Mui-focused:not(.Mui-disabled):not(.Mui-readOnly) .MuiOutlinedInput-notchedOutline,
-    &.Mui-focused:not(.Mui-disabled):not(.Mui-readOnly) .MuiPickersOutlinedInput-notchedOutline {
+    &.Mui-focused:not(.Mui-disabled):not(.Mui-readOnly)
+      .MuiOutlinedInput-notchedOutline,
+    &.Mui-focused:not(.Mui-disabled):not(.Mui-readOnly)
+      .MuiPickersOutlinedInput-notchedOutline {
       @apply border-primary/40;
     }
 
@@ -192,7 +196,8 @@
 
   /* Filled input  */
   .MuiFormControl-root .MuiInputBase-root.MuiFilledInput-root,
-  .MuiFormControl-root .MuiPickersInputBase-root.MuiPickersFilledInput-underline {
+  .MuiFormControl-root
+    .MuiPickersInputBase-root.MuiPickersFilledInput-underline {
     @apply bg-grey-25 placeholder:opacity-disabled h-auto min-h-0 rounded-lg p-0 outline-2 -outline-offset-1 outline-transparent transition-all;
 
     &.Mui-focused:not(.Mui-disabled):not(.Mui-readOnly) {
@@ -332,13 +337,16 @@
     @apply pr-4!;
   }
 
-  .MuiFilledInput-adornedStart .MuiInputBase-input.MuiInputBase-inputAdornedStart,
-  .MuiOutlinedInput-root.MuiInputBase-adornedStart .MuiInputBase-input.MuiInputBase-inputAdornedStart {
+  .MuiFilledInput-adornedStart
+    .MuiInputBase-input.MuiInputBase-inputAdornedStart,
+  .MuiOutlinedInput-root.MuiInputBase-adornedStart
+    .MuiInputBase-input.MuiInputBase-inputAdornedStart {
     @apply pl-2!;
   }
 
   .MuiFilledInput-adornedEnd .MuiInputBase-input.MuiInputBase-inputAdornedEnd,
-  .MuiOutlinedInput-root.MuiInputBase-adornedEnd .MuiInputBase-input.MuiInputBase-inputAdornedEnd {
+  .MuiOutlinedInput-root.MuiInputBase-adornedEnd
+    .MuiInputBase-input.MuiInputBase-inputAdornedEnd {
     @apply pr-2!;
   }
 
@@ -355,17 +363,22 @@
     }
   }
 
-  .MuiPickersFilledInput-underline .MuiInputAdornment-filled.MuiInputAdornment-sizeMedium,
-  .MuiInputBase-root.MuiFilledInput-root .MuiInputAdornment-filled.MuiInputAdornment-sizeMedium {
+  .MuiPickersFilledInput-underline
+    .MuiInputAdornment-filled.MuiInputAdornment-sizeMedium,
+  .MuiInputBase-root.MuiFilledInput-root
+    .MuiInputAdornment-filled.MuiInputAdornment-sizeMedium {
     @apply font-body text-text-secondary mt-[1.375rem]! self-start text-base leading-5;
   }
 
-  .MuiPickersFilledInput-underline .MuiInputAdornment-filled.MuiInputAdornment-sizeSmall,
-  .MuiInputBase-root.MuiFilledInput-root .MuiInputAdornment-filled.MuiInputAdornment-sizeSmall {
+  .MuiPickersFilledInput-underline
+    .MuiInputAdornment-filled.MuiInputAdornment-sizeSmall,
+  .MuiInputBase-root.MuiFilledInput-root
+    .MuiInputAdornment-filled.MuiInputAdornment-sizeSmall {
     @apply font-body text-text-secondary mt-[1.125rem]! self-start text-base leading-5;
   }
 
-  .MuiInputAdornment-root.MuiInputAdornment-positionEnd.MuiInputAdornment-filled .MuiButtonBase-root {
+  .MuiInputAdornment-root.MuiInputAdornment-positionEnd.MuiInputAdornment-filled
+    .MuiButtonBase-root {
     @apply -mt-4;
   }
 
@@ -401,22 +414,30 @@
     @apply text-text-primary;
   }
 
-  .MuiFormControl-root .MuiInputBase-root.MuiOutlinedInput-root:not(:hover).Mui-error:not(.Mui-focused) {
+  .MuiFormControl-root
+    .MuiInputBase-root.MuiOutlinedInput-root:not(:hover).Mui-error:not(
+      .Mui-focused
+    ) {
     @apply bg-transparent!;
     .MuiOutlinedInput-notchedOutline {
       @apply border-error!;
     }
   }
 
-  .MuiFormControl-root .MuiInputBase-root.MuiFilledInput-root:not(:hover).Mui-error:not(.Mui-focused) {
+  .MuiFormControl-root
+    .MuiInputBase-root.MuiFilledInput-root:not(:hover).Mui-error:not(
+      .Mui-focused
+    ) {
     @apply bg-error-light/10!;
   }
 
-  .MuiFormControl-root .MuiInputBase-root:not(:hover).Mui-error:not(.Mui-focused) {
+  .MuiFormControl-root
+    .MuiInputBase-root:not(:hover).Mui-error:not(.Mui-focused) {
     @apply bg-error-light/10!;
   }
 
-  .MuiFormControl-root.outlined .MuiInputBase-root:not(:hover).Mui-error:not(.Mui-focused) {
+  .MuiFormControl-root.outlined
+    .MuiInputBase-root:not(:hover).Mui-error:not(.Mui-focused) {
     @apply border-error! bg-transparent!;
   }
 

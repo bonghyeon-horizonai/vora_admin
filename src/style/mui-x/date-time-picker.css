@@ -243,7 +243,9 @@
     @apply border-transparent;
   }
 
-  .MuiDateRangePickerDay-rangeIntervalDayHighlight:not(.MuiDateRangePickerDay-hiddenDayFiller) {
+  .MuiDateRangePickerDay-rangeIntervalDayHighlight:not(
+      .MuiDateRangePickerDay-hiddenDayFiller
+    ) {
     @apply bg-grey-25;
   }
 
@@ -277,11 +279,13 @@
     @apply rounded-r-md;
   }
 
-  .MuiDateRangePickerDay-root:last-of-type .MuiDateRangePickerDay-rangeIntervalDayPreview {
+  .MuiDateRangePickerDay-root:last-of-type
+    .MuiDateRangePickerDay-rangeIntervalDayPreview {
     @apply rounded-r-md;
   }
 
-  .MuiDateRangePickerDay-root:first-of-type .MuiDateRangePickerDay-rangeIntervalDayPreview {
+  .MuiDateRangePickerDay-root:first-of-type
+    .MuiDateRangePickerDay-rangeIntervalDayPreview {
     @apply rounded-l-md;
   }
 

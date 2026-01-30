@@ -10,7 +10,10 @@
   .MuiTreeItem-content,
   .MuiTreeItem2-content {
     @apply mb-1 rounded-xs px-2 py-1.5 transition-all;
-    padding-left: calc(0.5rem + var(--TreeView-itemChildrenIndentation) * var(--TreeView-itemDepth));
+    padding-left: calc(
+      0.5rem + var(--TreeView-itemChildrenIndentation) *
+        var(--TreeView-itemDepth)
+    );
     &:hover {
       @apply bg-grey-25;
     }

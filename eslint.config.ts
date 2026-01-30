@@ -12,6 +12,24 @@ import nextPlugin from "@next/eslint-plugin-next";
 export default [
   // Base JS & environment settings
   {
+    ignores: [
+      ".cache",
+      ".next/*",
+      ".next/**/*",
+      ".wrangler",
+      "bun.lock",
+      "next-env.d.ts",
+      "next-eslint-plugin-next.d.ts",
+      "next.config.ts",
+      "node_modules",
+      "package-lock.json",
+      "public",
+      "public/initial-loader.js",
+      "yarn.lock",
+    ],
+  },
+  // Base JS & environment settings
+  {
     files: ["**/*.{js,jsx,ts,tsx}"],
     languageOptions: {
       parser: tseslint.parser,
@@ -30,20 +48,6 @@ export default [
       react: { version: "detect" },
       next: { rootDir: ["./src"] },
     },
-    ignores: [
-      ".cache",
-      ".next",
-      ".wrangler",
-      "bun.lock",
-      "next-env.d.ts",
-      "next-eslint-plugin-next.d.ts",
-      "next.config.ts",
-      "node_modules",
-      "package-lock.json",
-      "public",
-      "public/initial-loader.js",
-      "yarn.lock",
-    ],
   },
   // Recommended rules
   js.configs.recommended,
@@ -66,6 +70,8 @@ export default [
         "error",
         {
           caughtErrors: "none",
+          argsIgnorePattern: "^_",
+          varsIgnorePattern: "^_",
         },
       ],
       "@typescript-eslint/no-explicit-any": "off",

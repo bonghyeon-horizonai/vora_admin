@@ -1,11 +1,9 @@
 import CreateToolButton from "./components/create-tool-button";
 import ToolListFilters from "./components/tool-list-filters";
 import ToolListTable from "./components/tool-list-table";
-import { Suspense } from "react";
 
 import { Box, Paper, Stack, Typography } from "@mui/material";
 
-import Loading from "@/app/loading";
 import { getToolList } from "@/features/admin/tools/queries";
 
 interface PageProps {

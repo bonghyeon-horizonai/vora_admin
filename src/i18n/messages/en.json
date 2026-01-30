@@ -224,6 +224,21 @@
     "admins-delete-confirm-message": "Are you sure you want to delete this admin? This action cannot be undone.",
     "admins-delete-confirm-cancel": "Cancel",
     "admins-delete-confirm-delete": "Delete",
-    "admins-delete-progress": "Deleting..."
+    "admins-delete-confirm-delete": "Delete",
+    "admins-delete-progress": "Deleting...",
+    "admins-detail-title": "Admin Details",
+    "admins-detail-back": "Back",
+    "admins-detail-email": "Email",
+    "admins-detail-role": "Role",
+    "admins-detail-created-at": "Created At",
+    "admins-detail-updated-at": "Updated At",
+    "admins-detail-last-login": "Last Login",
+    "admins-detail-logs": "Admin Logs",
+    "admins-log-action": "Action",
+    "admins-log-target": "Target",
+    "admins-log-ip": "IP Address",
+    "admins-log-time": "Time",
+    "admins-log-no-logs": "No logs found",
+    "admins-log-title": "Admin Activity Logs"
   }
 }

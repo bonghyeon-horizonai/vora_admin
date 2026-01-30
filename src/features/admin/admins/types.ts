@@ -8,6 +8,36 @@ export interface Admin {
   lastLoginAt?: string;
   createdAt: string;
   updatedAt: string;
+  logs: AdminLog[];
+}
+
+export interface AdminLog {
+  id: string;
+  action: string;
+  target: string;
+  ipAddress: string;
+  createdAt: string;
+}
+
+export interface AdminLogItem extends AdminLog {
+  adminId: string;
+  adminName: string;
+  adminEmail: string;
+  adminImage?: string;
+}
+
+export interface GetAdminLogsParams {
+  page?: number;
+  pageSize?: number;
+  adminId?: string;
+}
+
+export interface AdminLogListResponse {
+  data: AdminLogItem[];
+  total: number;
+  page: number;
+  pageSize: number;
+  totalPages: number;
 }
 
 export interface AdminListItem {

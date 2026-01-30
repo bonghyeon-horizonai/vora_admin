@@ -224,6 +224,21 @@
     "admins-delete-confirm-message": "이 관리자를 삭제하시겠습니까? 삭제된 관리자는 복구할 수 없습니다.",
     "admins-delete-confirm-cancel": "취소",
     "admins-delete-confirm-delete": "삭제",
-    "admins-delete-progress": "삭제 중..."
+    "admins-delete-confirm-delete": "삭제",
+    "admins-delete-progress": "삭제 중...",
+    "admins-detail-title": "관리자 상세 정보",
+    "admins-detail-back": "뒤로",
+    "admins-detail-email": "이메일",
+    "admins-detail-role": "권한",
+    "admins-detail-created-at": "생성일",
+    "admins-detail-updated-at": "수정일",
+    "admins-detail-last-login": "최근 로그인",
+    "admins-detail-logs": "관리자 로그",
+    "admins-log-action": "작업",
+    "admins-log-target": "대상",
+    "admins-log-ip": "IP 주소",
+    "admins-log-time": "시간",
+    "admins-log-no-logs": "로그가 없습니다",
+    "admins-log-title": "관리자 활동 로그"
   }
 }

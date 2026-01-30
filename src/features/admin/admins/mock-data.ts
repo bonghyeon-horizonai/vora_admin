@@ -11,6 +11,29 @@ export const MOCK_ADMINS: Admin[] = [
     lastLoginAt: "2024-01-20T10:30:00Z",
     createdAt: "2023-01-15T09:00:00Z",
     updatedAt: "2024-01-20T10:30:00Z",
+    logs: [
+      {
+        id: "log-1",
+        action: "CREATE_MEMBER",
+        target: "user-123",
+        ipAddress: "192.168.1.1",
+        createdAt: "2024-01-20T10:35:00Z",
+      },
+      {
+        id: "log-2",
+        action: "UPDATE_PRODUCT",
+        target: "prod-456",
+        ipAddress: "192.168.1.1",
+        createdAt: "2024-01-19T14:20:00Z",
+      },
+      {
+        id: "log-3",
+        action: "LOGIN",
+        target: "-",
+        ipAddress: "192.168.1.1",
+        createdAt: "2024-01-20T10:30:00Z",
+      },
+    ],
   },
   {
     id: "admin-2",
@@ -22,6 +45,7 @@ export const MOCK_ADMINS: Admin[] = [
     lastLoginAt: "2024-01-19T15:45:00Z",
     createdAt: "2023-03-10T11:20:00Z",
     updatedAt: "2024-01-19T15:45:00Z",
+    logs: [],
   },
   {
     id: "admin-3",
@@ -31,6 +55,7 @@ export const MOCK_ADMINS: Admin[] = [
     status: "INACTIVE",
     createdAt: "2023-06-05T14:10:00Z",
     updatedAt: "2023-11-20T09:15:00Z",
+    logs: [],
   },
   {
     id: "admin-4",
@@ -42,6 +67,7 @@ export const MOCK_ADMINS: Admin[] = [
     lastLoginAt: "2024-01-21T08:50:00Z",
     createdAt: "2023-07-22T16:30:00Z",
     updatedAt: "2024-01-21T08:50:00Z",
+    logs: [],
   },
   {
     id: "admin-5",
@@ -51,6 +77,7 @@ export const MOCK_ADMINS: Admin[] = [
     status: "BANNED",
     createdAt: "2023-08-14T13:40:00Z",
     updatedAt: "2023-12-05T11:25:00Z",
+    logs: [],
   },
   {
     id: "admin-6",
@@ -62,6 +89,7 @@ export const MOCK_ADMINS: Admin[] = [
     lastLoginAt: "2024-01-18T09:15:00Z",
     createdAt: "2023-09-30T10:05:00Z",
     updatedAt: "2024-01-18T09:15:00Z",
+    logs: [],
   },
   {
     id: "admin-7",
@@ -71,6 +99,7 @@ export const MOCK_ADMINS: Admin[] = [
     status: "ACTIVE",
     createdAt: "2023-10-12T15:55:00Z",
     updatedAt: "2024-01-15T14:20:00Z",
+    logs: [],
   },
   {
     id: "admin-8",
@@ -81,6 +110,7 @@ export const MOCK_ADMINS: Admin[] = [
     profileImage: "https://i.pravatar.cc/150?u=admin8",
     createdAt: "2023-11-05T12:40:00Z",
     updatedAt: "2023-12-25T09:50:00Z",
+    logs: [],
   },
   {
     id: "admin-9",
@@ -91,6 +121,7 @@ export const MOCK_ADMINS: Admin[] = [
     lastLoginAt: "2024-01-22T08:30:00Z",
     createdAt: "2023-12-18T11:10:00Z",
     updatedAt: "2024-01-22T08:30:00Z",
+    logs: [],
   },
   {
     id: "admin-10",
@@ -102,6 +133,7 @@ export const MOCK_ADMINS: Admin[] = [
     lastLoginAt: "2024-01-20T16:20:00Z",
     createdAt: "2024-01-05T09:30:00Z",
     updatedAt: "2024-01-20T16:20:00Z",
+    logs: [],
   },
   {
     id: "admin-11",
@@ -111,6 +143,7 @@ export const MOCK_ADMINS: Admin[] = [
     status: "ACTIVE",
     createdAt: "2024-01-08T14:45:00Z",
     updatedAt: "2024-01-19T10:15:00Z",
+    logs: [],
   },
   {
     id: "admin-12",
@@ -122,5 +155,6 @@ export const MOCK_ADMINS: Admin[] = [
     lastLoginAt: "2024-01-21T11:50:00Z",
     createdAt: "2024-01-12T13:25:00Z",
     updatedAt: "2024-01-21T11:50:00Z",
+    logs: [],
   },
 ];

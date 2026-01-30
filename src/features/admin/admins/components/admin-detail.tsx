@@ -1,4 +1,5 @@
 import { Admin } from "../types";
+import TwoFactorAuth from "./two-factor-auth";
 import dayjs from "dayjs";
 import { useTranslations } from "next-intl";
 
@@ -129,6 +130,8 @@ export default function AdminDetailView({ admin }: AdminDetailViewProps) {
           </Grid>
         </CardContent>
       </Card>
+
+      <TwoFactorAuth adminId={admin.id} isEnabled={admin.twoFactorEnabled} />
 
       <Card>
         <CardHeader title={t("admins-detail-logs")} />

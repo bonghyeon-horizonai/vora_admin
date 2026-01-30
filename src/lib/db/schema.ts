@@ -154,6 +154,78 @@ export const workflowTypeEnum = pgEnum("workflow_type_enum", [
   "PRESENTATION",
 ]);
 
+export const adminRoleEnum = pgEnum("admin_role_enum", [
+  "SUPER_ADMIN",
+  "ADMIN",
+  "MANAGER",
+]);
+
+export const adminStatusEnum = pgEnum("admin_status_enum", [
+  "ACTIVE",
+  "INACTIVE",
+  "BANNED",
+]);
+
+export const admins = pgTable(
+  "admins",
+  {
+    id: uuid().defaultRandom().primaryKey().notNull(),
+    name: text().notNull(),
+    email: text().notNull(),
+    profileImageUrl: text("profile_image_url"),
+    password: text(),
+    twoFactorEnabled: boolean("two_factor_enabled").default(false).notNull(),
+    twoFactorSecret: text("two_factor_secret"),
+    role: adminRoleEnum().default("MANAGER").notNull(),
+    status: adminStatusEnum().default("ACTIVE").notNull(),
+    lastLoginAt: timestamp("last_login_at", {
+      withTimezone: true,
+      mode: "string",
+    }),
+    createdAt: timestamp("created_at", {
+      withTimezone: true,
+      mode: "string",
+    }).default(sql`CURRENT_TIMESTAMP`),
+    updatedAt: timestamp("updated_at", {
+      withTimezone: true,
+      mode: "string",
+    }).default(sql`CURRENT_TIMESTAMP`),
+    deletedAt: timestamp("deleted_at", { withTimezone: true, mode: "string" }),
+  },
+  (table) => [
+    uniqueIndex("idx_admins_email").using(
+      "btree",
+      table.email.asc().nullsLast().op("text_ops"),
+    ),
+  ],
+);
+
+export const adminLogs = pgTable(
+  "admin_logs",
+  {
+    id: uuid().defaultRandom().primaryKey().notNull(),
+    adminId: uuid("admin_id").notNull(),
+    action: text().notNull(),
+    target: text().notNull(),
+    ipAddress: text("ip_address"),
+    createdAt: timestamp("created_at", {
+      withTimezone: true,
+      mode: "string",
+    }).default(sql`CURRENT_TIMESTAMP`),
+  },
+  (table) => [
+    index("idx_admin_logs_admin_id").using(
+      "btree",
+      table.adminId.asc().nullsLast().op("uuid_ops"),
+    ),
+    foreignKey({
+      columns: [table.adminId],
+      foreignColumns: [admins.id],
+      name: "fk_admin_logs_admin",
+    }).onDelete("cascade"),
+  ],
+);
+
 export const sessions = pgTable(
   "sessions",
   {

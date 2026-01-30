@@ -1,4 +1,3 @@
-import { MOCK_ADMINS } from "./mock-data";
 import {
   Admin,
   AdminListResponse,
@@ -7,50 +6,63 @@ import {
   GetAdminListParams,
   GetAdminLogsParams,
 } from "./types";
+import { and, count, desc, eq, ilike, or, SQL } from "drizzle-orm";
+
+import { db } from "@/lib/db";
+import { adminLogs, admins } from "@/lib/db/schema";
 
 export async function getAllAdminLogs({
   page = 1,
   pageSize = 10,
   adminId,
 }: GetAdminLogsParams): Promise<AdminLogListResponse> {
-  // Simulate API delay
-  await new Promise((resolve) => setTimeout(resolve, 500));
+  const offset = (page - 1) * pageSize;
 
-  let allLogs: AdminLogItem[] = [];
-
-  // Flatten logs from all admins
-  MOCK_ADMINS.forEach((admin) => {
-    if (admin.logs) {
-      admin.logs.forEach((log) => {
-        allLogs.push({
-          ...log,
-          adminId: admin.id,
-          adminName: admin.name,
-          adminEmail: admin.email,
-          adminImage: admin.profileImage,
-        });
-      });
-    }
-  });
-
-  // Filter by adminId if provided
+  const filters: SQL[] = [];
   if (adminId) {
-    allLogs = allLogs.filter((log) => log.adminId === adminId);
+    filters.push(eq(adminLogs.adminId, adminId));
   }
 
-  // Sort by createdAt desc
-  allLogs.sort(
-    (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime(),
-  );
+  const whereClause = filters.length > 0 ? and(...filters) : undefined;
 
-  // Pagination
-  const total = allLogs.length;
-  const start = (page - 1) * pageSize;
-  const end = start + pageSize;
-  const paginatedLogs = allLogs.slice(start, end);
+  const [logsData, countMetadata] = await Promise.all([
+    db
+      .select({
+        id: adminLogs.id,
+        adminId: adminLogs.adminId,
+        action: adminLogs.action,
+        target: adminLogs.target,
+        ipAddress: adminLogs.ipAddress,
+        createdAt: adminLogs.createdAt,
+        adminName: admins.name,
+        adminEmail: admins.email,
+        adminImage: admins.profileImageUrl,
+      })
+      .from(adminLogs)
+      .leftJoin(admins, eq(adminLogs.adminId, admins.id))
+      .where(whereClause)
+      .orderBy(desc(adminLogs.createdAt))
+      .limit(pageSize)
+      .offset(offset),
+    db.select({ count: count() }).from(adminLogs).where(whereClause),
+  ]);
+
+  const total = countMetadata[0].count;
+
+  const mappedLogs: AdminLogItem[] = logsData.map((log) => ({
+    id: log.id,
+    action: log.action,
+    target: log.target,
+    ipAddress: log.ipAddress || "",
+    createdAt: log.createdAt || new Date().toISOString(),
+    adminId: log.adminId,
+    adminName: log.adminName || "Unknown",
+    adminEmail: log.adminEmail || "",
+    adminImage: log.adminImage || undefined,
+  }));
 
   return {
-    data: paginatedLogs,
+    data: mappedLogs,
     total,
     page,
     pageSize,
@@ -66,54 +78,50 @@ export async function getAdminList({
   search,
   status,
 }: GetAdminListParams): Promise<AdminListResponse> {
-  // Simulate API delay
-  await new Promise((resolve) => setTimeout(resolve, 500));
+  const offset = (page - 1) * pageSize;
 
-  let filteredAdmins = [...MOCK_ADMINS];
+  const filters: SQL[] = [];
 
   if (search) {
-    const searchLower = search.toLowerCase();
-    filteredAdmins = filteredAdmins.filter(
-      (admin) =>
-        admin.name.toLowerCase().includes(searchLower) ||
-        admin.email.toLowerCase().includes(searchLower),
+    const searchLower = `%${search.toLowerCase()}%`;
+    filters.push(
+      or(ilike(admins.name, searchLower), ilike(admins.email, searchLower))!,
     );
   }
 
   if (status) {
-    filteredAdmins = filteredAdmins.filter((admin) => admin.status === status);
+    filters.push(eq(admins.status, status as "ACTIVE" | "INACTIVE" | "BANNED"));
   }
 
-  // Sorting
-  filteredAdmins.sort((a, b) => {
-    const aValue = a[sortBy as keyof typeof a];
-    const bValue = b[sortBy as keyof typeof b];
+  const whereClause = filters.length > 0 ? and(...filters) : undefined;
 
-    if (!aValue || !bValue) return 0;
+  const [adminsData, countMetadata] = await Promise.all([
+    db
+      .select()
+      .from(admins)
+      .where(whereClause)
+      .limit(pageSize)
+      .offset(offset)
+      .orderBy(
+        sortOrder === "desc"
+          ? desc(admins[sortBy as keyof typeof admins] as any)
+          : (admins[sortBy as keyof typeof admins] as any),
+      ),
+    db.select({ count: count() }).from(admins).where(whereClause),
+  ]);
 
-    if (sortOrder === "asc") {
-      return aValue > bValue ? 1 : -1;
-    } else {
-      return aValue < bValue ? 1 : -1;
-    }
-  });
-
-  // Pagination
-  const total = filteredAdmins.length;
-  const start = (page - 1) * pageSize;
-  const end = start + pageSize;
-  const paginatedAdmins = filteredAdmins.slice(start, end);
+  const total = countMetadata[0].count;
 
   return {
-    data: paginatedAdmins.map((admin) => ({
+    data: adminsData.map((admin) => ({
       id: admin.id,
       name: admin.name,
       email: admin.email,
       role: admin.role,
       status: admin.status,
-      image: admin.profileImage,
-      lastLoginAt: admin.lastLoginAt,
-      createdAt: admin.createdAt,
+      image: admin.profileImageUrl || undefined,
+      lastLoginAt: admin.lastLoginAt || undefined,
+      createdAt: admin.createdAt || new Date().toISOString(),
     })),
     total,
     page,
@@ -123,12 +131,34 @@ export async function getAdminList({
 }
 
 export async function getAdminDetail(id: string): Promise<Admin | null> {
-  // Simulate API delay
-  await new Promise((resolve) => setTimeout(resolve, 500));
-
-  const admin = MOCK_ADMINS.find((a) => a.id === id);
+  const [admin] = await db.select().from(admins).where(eq(admins.id, id));
 
   if (!admin) return null;
 
-  return admin;
+  const logs = await db
+    .select()
+    .from(adminLogs)
+    .where(eq(adminLogs.adminId, id))
+    .orderBy(desc(adminLogs.createdAt))
+    .limit(20);
+
+  return {
+    id: admin.id,
+    name: admin.name,
+    email: admin.email,
+    role: admin.role,
+    status: admin.status,
+    profileImage: admin.profileImageUrl || undefined,
+    lastLoginAt: admin.lastLoginAt || undefined,
+    createdAt: admin.createdAt || new Date().toISOString(),
+    updatedAt: admin.updatedAt || new Date().toISOString(),
+    twoFactorEnabled: admin.twoFactorEnabled,
+    logs: logs.map((log) => ({
+      id: log.id,
+      action: log.action,
+      target: log.target,
+      ipAddress: log.ipAddress || "",
+      createdAt: log.createdAt || new Date().toISOString(),
+    })),
+  };
 }

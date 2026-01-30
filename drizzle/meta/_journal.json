@@ -22,6 +22,20 @@
       "when": 1769585480656,
       "tag": "0002_bitter_star_brand",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1769744045253,
+      "tag": "0003_next_namorita",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1769750079884,
+      "tag": "0004_bouncy_jimmy_woo",
+      "breakpoints": true
     }
   ]
 }

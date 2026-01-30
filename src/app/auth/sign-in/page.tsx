@@ -24,17 +24,10 @@ import {
 
 import Logo from "@/components/logo/logo";
 import { DEFAULTS } from "@/config";
+import { adminLogin } from "@/features/admin/auth/actions";
 import NiCrossSquare from "@/icons/nexture/ni-cross-square";
 import NiEyeClose from "@/icons/nexture/ni-eye-close";
 import NiEyeOpen from "@/icons/nexture/ni-eye-open";
-
-const validationSchema = yup.object({
-  email: yup
-    .string()
-    .required("The field is required")
-    .email("Enter a valid email"),
-  password: yup.string().required("The field is required"),
-});
 
 type InputErrorProps = {
   title: string;
@@ -58,16 +51,51 @@ const InputErrorTooltip = ({ title }: InputErrorProps) => {
 export default function Page() {
   const router = useRouter();
   const [submitted, setSubmitted] = useState(false);
+  const [showTwoFactor, setShowTwoFactor] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const formik = useFormik({
     initialValues: {
-      email: "info@gogo.dev",
-      password: "nexture",
+      email: "",
+      password: "",
+      twoFactorToken: "",
     },
-    validationSchema,
-    onSubmit: (values) => {
-      console.log(JSON.stringify(values, null, 2));
-      router.push(DEFAULTS.appRoot);
+    validationSchema: yup.object({
+      email: yup
+        .string()
+        .required("The field is required")
+        .email("Enter a valid email"),
+      password: yup.string().required("The field is required"),
+      twoFactorToken: showTwoFactor
+        ? yup
+            .string()
+            .required("2FA code is required")
+            .length(6, "Code must be 6 digits")
+        : yup.string(),
+    }),
+    onSubmit: async (values) => {
+      setErrorMessage(null);
+      const formData = new FormData();
+      formData.append("email", values.email);
+      formData.append("password", values.password);
+      if (showTwoFactor) {
+        formData.append("twoFactorToken", values.twoFactorToken);
+      }
+
+      console.log("Submitting login...", {
+        email: values.email,
+        showTwoFactor,
+      });
+
+      const result = await adminLogin(formData);
+
+      if (result.error) {
+        setErrorMessage(result.error);
+      } else if (result.twoFactorRequired) {
+        setShowTwoFactor(true);
+      } else if (result.success) {
+        router.push(DEFAULTS.appRoot);
+      }
     },
     validateOnBlur: false,
     validateOnMount: false,
@@ -254,6 +282,39 @@ export default function Page() {
                       }
                     />
                   </FormControl>
+
+                  {showTwoFactor && (
+                    <FormControl
+                      className="outlined"
+                      variant="standard"
+                      size="small"
+                    >
+                      <FormLabel component="label" className="flex flex-row">
+                        2FA Code
+                        {formik.touched.twoFactorToken &&
+                          formik.errors.twoFactorToken && (
+                            <InputErrorTooltip
+                              title={formik.errors.twoFactorToken}
+                            />
+                          )}
+                      </FormLabel>
+                      <Input
+                        id="twoFactorToken"
+                        name="twoFactorToken"
+                        placeholder="000000"
+                        value={formik.values.twoFactorToken}
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        inputProps={{ maxLength: 6 }}
+                      />
+                    </FormControl>
+                  )}
+
+                  {errorMessage && (
+                    <Alert severity="error" className="mb-4">
+                      {errorMessage}
+                    </Alert>
+                  )}
 
                   {submitted && !formik.isValid && (
                     <Alert

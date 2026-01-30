@@ -132,27 +132,27 @@ export default function AdminListTable({
       renderCell: (params: GridRenderCellParams) => {
         let label = params.value;
         switch (params.value) {
-            case "SUPER_ADMIN":
-                label = t("admins-role-super-admin");
-                break;
-            case "ADMIN":
-                label = t("admins-role-admin");
-                break;
-            case "MANAGER":
-                label = t("admins-role-manager");
-                break;
+          case "SUPER_ADMIN":
+            label = t("admins-role-super-admin");
+            break;
+          case "ADMIN":
+            label = t("admins-role-admin");
+            break;
+          case "MANAGER":
+            label = t("admins-role-manager");
+            break;
         }
 
         return (
-            <Box sx={{ display: "flex", alignItems: "center", height: "100%" }}>
-              <Chip
-                label={label}
-                size="small"
-                variant="outlined"
-                sx={{ textTransform: "capitalize" }}
-              />
-            </Box>
-          );
+          <Box sx={{ display: "flex", alignItems: "center", height: "100%" }}>
+            <Chip
+              label={label}
+              size="small"
+              variant="outlined"
+              sx={{ textTransform: "capitalize" }}
+            />
+          </Box>
+        );
       },
     },
     {
@@ -186,37 +186,37 @@ export default function AdminListTable({
       },
     },
     {
-        field: "createdAt",
-        headerName: t("admins-col-created-at"),
-        width: 130,
-        renderCell: (params: GridRenderCellParams) => {
-          if (!params.value) return "-";
-          const date = new Date(params.value);
-          return (
-            <Box sx={{ display: "flex", alignItems: "center", height: "100%" }}>
-              <Typography variant="body2">
-                {date.toLocaleDateString(locale === "ko" ? "ko-KR" : "en-US")}
-              </Typography>
-            </Box>
-          );
-        },
+      field: "createdAt",
+      headerName: t("admins-col-created-at"),
+      width: 130,
+      renderCell: (params: GridRenderCellParams) => {
+        if (!params.value) return "-";
+        const date = new Date(params.value);
+        return (
+          <Box sx={{ display: "flex", alignItems: "center", height: "100%" }}>
+            <Typography variant="body2">
+              {date.toLocaleDateString(locale === "ko" ? "ko-KR" : "en-US")}
+            </Typography>
+          </Box>
+        );
       },
-      {
-        field: "lastLoginAt",
-        headerName: t("admins-col-last-login"),
-        width: 130,
-        renderCell: (params: GridRenderCellParams) => {
-          if (!params.value) return "-";
-          const date = new Date(params.value);
-          return (
-            <Box sx={{ display: "flex", alignItems: "center", height: "100%" }}>
-              <Typography variant="body2">
-                {date.toLocaleDateString(locale === "ko" ? "ko-KR" : "en-US")}
-              </Typography>
-            </Box>
-          );
-        },
+    },
+    {
+      field: "lastLoginAt",
+      headerName: t("admins-col-last-login"),
+      width: 130,
+      renderCell: (params: GridRenderCellParams) => {
+        if (!params.value) return "-";
+        const date = new Date(params.value);
+        return (
+          <Box sx={{ display: "flex", alignItems: "center", height: "100%" }}>
+            <Typography variant="body2">
+              {date.toLocaleDateString(locale === "ko" ? "ko-KR" : "en-US")}
+            </Typography>
+          </Box>
+        );
       },
+    },
     {
       field: "actions",
       headerName: t("admins-col-actions"),
